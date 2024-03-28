@@ -3,7 +3,7 @@ Micro Reactive UI Framework in F# based on VanJS
 
 ```sh
 git clone https://github.com/ken-okabe/vanfs
-
+cd vanfs
 dotnet new console -lang F#
 dotnet new tool-manifest
 dotnet tool install fable
