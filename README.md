@@ -12,9 +12,6 @@ npm i -D vanjs-core
 npm i -D vite
 
 npm i @material/web
-
-dotnet fable watch
-npx vite
 ```
 
 
@@ -31,7 +28,9 @@ npm i -D vanjs-core
 npm i -D vite
 
 npm i @material/web
+```
 
+```sh
 dotnet fable watch
 npx vite
 ```
