@@ -2,7 +2,7 @@
 
 VanFS is a project template for 1:1 bindings from F# to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP
 
-## VanJS
+## VanJS code in JavaScript
 
 ```js
 import van from "vanjs-core"
@@ -23,7 +23,7 @@ const Hello =
 van.add(document.body, Hello())
 ```
 
-## VanFS
+## VanFS code in F#
 
 ```fsharp
 module CounterApp
