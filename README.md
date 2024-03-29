@@ -127,12 +127,12 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**
-⬇ TypeScript Compiler (tsc) running on [Node.js](https://nodejs.org/)
+>  **TypeScirpt**  
+⬇ TypeScript Compiler (tsc) running on [Node.js](https://nodejs.org/)  
  **JavaScript**  running in the Browser
 
->  **F#**
-⬇ [Fable Compiler (fable)](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)
+>  **F#**  
+⬇ [Fable Compiler (fable)](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  
  **JavaScript**  running in the Browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
