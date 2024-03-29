@@ -180,7 +180,7 @@ npm init -y
 npm i -D vanjs-core
 npm i -D vite
 # Copy&Place `van-api` `web-imports` directory
-# Copy&Place `index.html` file
+# Copy&Place `index.html` `vite.config.ts` file
 # modify `my-project.fsproj`
 #  <ItemGroup>
 #    <Compile Include="van-api/fs/*" />
@@ -188,7 +188,7 @@ npm i -D vite
 #  </ItemGroup>
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711728744181.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711729299132.png)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
