@@ -32,7 +32,7 @@ van.add(document.body, Hello())
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
 ```fsharp
-module CounterApp
+module HelloApp
 open Browser
 open Browser.Types
 open Fable.Core.JsInterop
@@ -53,7 +53,7 @@ let Hello =
                 li [a [{|href="https://vanjs.org/"|}; "🍦VanJS"]]
             ]
         ]
-        
+
 add [document.body; Hello()]
 |> ignore
 ```
@@ -103,7 +103,7 @@ let bindT =
                 timelineB
                 |> nextT (a |> monadf).lastVal
                 |> ignore
-        timelineA.lastFns <- timelineA.lastFns @ [ newFn ] 
+        timelineA.lastFns <- timelineA.lastFns @ [ newFn ]
         timelineB
 ```
 
@@ -127,12 +127,12 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**   
-⬇ TypeScript Compiler (tsc) running on [Node.js](https://nodejs.org/)   
+>  **TypeScirpt**
+⬇ TypeScript Compiler (tsc) running on [Node.js](https://nodejs.org/)
  **JavaScript**  running in the Browser
 
->  **F#**   
-⬇ [Fable Compiler (fable)](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)      
+>  **F#**
+⬇ [Fable Compiler (fable)](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)
  **JavaScript**  running in the Browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
@@ -164,6 +164,8 @@ npm i -D vanjs-core
 npm i -D vite
 ```
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711727772764.png)
+
 #### or Create a project from scratch
 
 ```sh
@@ -178,6 +180,7 @@ npm init -y
 npm i -D vanjs-core
 npm i -D vite
 # Copy&Place `van-api` `web-imports` directory
+# Copy&Place `index.html` file
 # modify `my-project.fsproj`
 #  <ItemGroup>
 #    <Compile Include="van-api/fs/*" />
@@ -185,7 +188,7 @@ npm i -D vite
 #  </ItemGroup>
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711727358235.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711728744181.png)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

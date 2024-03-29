@@ -1,6 +1,4 @@
-﻿module CounterApp
-
-// use the identical tag names for the standard HTML tagsmodule CounterApp
+﻿module HelloApp
 open Browser
 open Browser.Types
 open Fable.Core.JsInterop
