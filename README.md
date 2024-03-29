@@ -27,14 +27,11 @@ van.add(document.body, Hello())
 
 ```fsharp
 module CounterApp
-
 open Browser
 open Browser.Types
 open Fable.Core.JsInterop
-
 open Van.Basic // import tags, add
 
-// use the identical tag names for the standard HTML tags
 let a: Tag = tags?a
 let p: Tag = tags?p
 let div: Tag = tags?div
