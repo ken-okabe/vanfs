@@ -1,6 +1,6 @@
 # vanfs
 
-Micro Reactive UI Framework in F# based on VanJS
+1:1 bindings from F# to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP
 
 ```sh
 git clone https://github.com/ken-okabe/vanfs
