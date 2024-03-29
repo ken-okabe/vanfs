@@ -1,4 +1,5 @@
 # vanfs
+
 Micro Reactive UI Framework in F# based on VanJS
 
 ```sh
@@ -10,10 +11,7 @@ dotnet add package Fable.Browser.Dom
 npm init -y
 npm i -D vanjs-core
 npm i -D vite
-
-npm i @material/web
 ```
-
 
 ```sh
 mkdir my-project
@@ -26,7 +24,9 @@ dotnet add package Fable.Browser.Dom
 npm init -y
 npm i -D vanjs-core
 npm i -D vite
+```
 
+```sh
 npm i @material/web
 ```
 
