@@ -7,16 +7,18 @@ VanFS is a project template for 1:1 bindings from F# to [VanJS](https://vanjs.or
 ```js
 import van from "vanjs-core"
 
-const {a, p, div, li, ul} = van.tags
+const { a, p, div, li, ul } = van.tags
 // Reusable components can be just pure vanilla JavaScript functions.
 // Here we capitalize the first letter to follow React conventions.
-const Hello = () => div(
-  p("👋Hello"),
-  ul(
-    li("🗺️World"),
-    li(a({href: "https://vanjs.org/"}, "🍦VanJS")),
-  ),
-)
+const Hello =
+    () =>
+        div(
+            p("👋Hello"),
+            ul(
+                li("🗺️World"),
+                li(a({ href: "https://vanjs.org/" }, "🍦VanJS")),
+            ),
+        )
 
 van.add(document.body, Hello())
 ```
