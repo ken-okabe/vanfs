@@ -1,0 +1,16 @@
+/*
+https://learn.microsoft.com/en-us/fluent-ui/web-components/components/card?pivots=typescript
+
+*/
+
+body {
+    font-family: sans-serif;
+    padding: 1em;
+    background-color: beige;
+  }
+
+.custom {
+    --card-width: 200px;
+    --card-height: 150px;
+    padding: 22px;
+  }

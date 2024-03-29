@@ -128,14 +128,16 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 More precisely,
 
 >  **TypeScirpt**  
-⬇ TypeScript Compiler (tsc) running on [Node.js](https://nodejs.org/)  
+⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
  **JavaScript**  running in the Browser
 
 >  **F#**  
-⬇ [Fable Compiler (fable)](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  
+⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
  **JavaScript**  running in the Browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711730729603.png)
 
 ## Build a VanFS project template
 
@@ -180,7 +182,7 @@ npm init -y
 npm i -D vanjs-core
 npm i -D vite
 # Copy&Place `van-api` `web-imports` directory
-# Copy&Place `index.html` `vite.config.ts` file
+# Copy&Place `index.html` `Program.fs` `vite.config.ts` file
 # modify `my-project.fsproj`
 #  <ItemGroup>
 #    <Compile Include="van-api/fs/*" />
@@ -220,9 +222,38 @@ npm i -D vite
 dotnet fable watch
 ```
 
-## Live Preview by Vite
+## Live Preview with Vite
 
 ```sh
-
 npx vite
 ```
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711730067105.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711730144988.png)
+
+## CSS
+
+
+
+## Web Components
+
+https://fluent1.microsoft.design/
+
+https://fluent1.microsoft.design/#/web
+
+https://developer.microsoft.com/en-us/fluentui#/get-started/web
+
+https://learn.microsoft.com/en-us/fluent-ui/web-components/
+
+https://learn.microsoft.com/en-us/fluent-ui/web-components/getting-started/install-packages
+
+https://learn.microsoft.com/en-us/fluent-ui/web-components/components/slider?pivots=typescript
+
+
+
+
+
+npm i @fluentui/web-components
+
+npm i 

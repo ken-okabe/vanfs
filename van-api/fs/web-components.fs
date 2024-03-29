@@ -4,5 +4,5 @@ module WebComponents =
     open Fable.Core.JsInterop
 
     let componentTags: obj
-        = importMember "../ts/web-imports"
+        = importMember "../ts/web-components"
 

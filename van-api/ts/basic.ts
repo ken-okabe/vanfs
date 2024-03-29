@@ -1,5 +1,15 @@
 import van from 'vanjs-core'
 
+import { cssURLs } from '../../web-imports/css-urls';
+
+// css imports
+cssURLs.forEach(url => {
+    let stylesheet = document.createElement("link");
+    stylesheet.rel = "stylesheet";
+    stylesheet.href = url;
+    document.head.appendChild(stylesheet);
+});
+
 // unary function ([a,b,c,...]) in F#
 // -> n-ary function (a,b,c,...) in VanJS
 let n =
