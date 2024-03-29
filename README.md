@@ -41,7 +41,6 @@ let div: Tag = tags?div
 let ul: Tag = tags?ul
 let li: Tag = tags?li
 
-
 let Hello =
     fun _ ->
         div [
