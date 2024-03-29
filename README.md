@@ -2,6 +2,8 @@
 
 **VanFS is a project template** for 1:1 bindings from F# to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP
 
+# 1:1 bindings of HTML-tag-functions to compose UI
+
 ## VanJS code in JavaScript
 
 ```js
