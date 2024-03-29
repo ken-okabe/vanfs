@@ -2,9 +2,9 @@
 
 **VanFS is a project template** for 1:1 bindings from F# to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP
 
-# 1:1 bindings of HTML-tag-functions to compose UI
+## 1:1 bindings of HTML-tag-functions to compose UI
 
-## VanJS code in JavaScript
+### VanJS code in JavaScript
 
 ```js
 import van from "vanjs-core"
@@ -25,7 +25,7 @@ const Hello =
 van.add(document.body, Hello())
 ```
 
-## VanFS code in F#
+### VanFS code in F#
 
 ```fsharp
 module CounterApp
@@ -54,9 +54,9 @@ add [document.body; Hello()]
 |> ignore
 ```
 
-# Build a project
+## Build a project
 
-## Quick Start
+#### Quick Start
 
 ```sh
 git clone https://github.com/ken-okabe/vanfs
@@ -69,7 +69,7 @@ npm i -D vanjs-core
 npm i -D vite
 ```
 
-## Create a project from scratch
+#### Create a project from scratch
 
 ```sh
 mkdir my-project
@@ -84,13 +84,13 @@ npm i -D vanjs-core
 npm i -D vite
 ```
 
-# Compile from F# to JavaScript
+## Compile from F# to JavaScript
 
 ```sh
 dotnet fable watch
 ```
 
-# Live Preview by Vite
+## Live Preview by Vite
 
 ```sh
 
