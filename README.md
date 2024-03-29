@@ -5,6 +5,8 @@
 ## VanJS
 
 ```js
+import van from "vanjs-core"
+
 const {a, p, div, li, ul} = van.tags
 // Reusable components can be just pure vanilla JavaScript functions.
 // Here we capitalize the first letter to follow React conventions.
