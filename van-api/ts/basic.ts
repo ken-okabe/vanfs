@@ -1,5 +1,6 @@
 import van from 'vanjs-core'
 
+import '../../web-imports/components'
 import { cssURLs } from '../../web-imports/css-urls';
 
 // css imports

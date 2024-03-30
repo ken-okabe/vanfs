@@ -234,26 +234,280 @@ npx vite
 
 ## CSS
 
+Everything you need to customize or import is located under `web-imports` directory.
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
+
+#### /web-imports/custom.css
+
+```css
+body {
+    font-family: sans-serif;
+    padding: 1em;
+    background-color: beige;
+  }
+```
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754561732.png)
 
 ## Web Components
 
-https://fluent1.microsoft.design/
+**VanFS** can leverage custom HTML tags provided by  **Web Components** with  **design systems** : [Microsoft Fluent](https://fluent2.microsoft.design/), [Google Material Design](https://m3.material.io/), etc. .
 
-https://fluent1.microsoft.design/#/web
+---
 
-https://developer.microsoft.com/en-us/fluentui#/get-started/web
+## [Fluent](https://fluent2.microsoft.design/)
 
-https://learn.microsoft.com/en-us/fluent-ui/web-components/
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711756843224.png)
 
-https://learn.microsoft.com/en-us/fluent-ui/web-components/getting-started/install-packages
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711756903076.png)
 
-https://learn.microsoft.com/en-us/fluent-ui/web-components/components/slider?pivots=typescript
+https://github.com/microsoft/fluentui/
 
+## Install the Fluent UI Web Components with NPM or Alternatives
 
+https://www.npmjs.com/package/@fluentui/web-components
 
+```sh
+npm install @fluentui/web-components
+```
 
+## Import and Register the web components
 
-npm i @fluentui/web-components
+Let's use Fruent  Web **Card**  and  **Checkbox**.
 
-npm i 
+https://learn.microsoft.com/en-us/fluent-ui/web-components/components/card?pivots=typescript
+
+https://learn.microsoft.com/en-us/fluent-ui/web-components/components/checkbox?pivots=typescript
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
+
+#### /web-imports/components.ts
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+
+```ts
+import {
+    provideFluentDesignSystem,
+    fluentCard,
+    fluentCheckbox
+} from "@fluentui/web-components";
+
+provideFluentDesignSystem()
+    .register(
+        fluentCard()
+    );
+
+provideFluentDesignSystem()
+    .register(
+        fluentCheckbox()
+    );
+```
+
+## Some Web Components use CSS
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
+
+#### /web-imports/custom.css
+
+```css
+body {
+    font-family: sans-serif;
+    padding: 1em;
+    background-color: beige;
+  }
+
+.custom {
+    --card-width: 200px;
+    --card-height: 150px;
+    padding: 22px;
+  }
+```
+
+## Use Web Components from `Program.fs`
+
+#### Program.fs
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+module WebComponentsApp
+open Browser
+open Browser.Types
+open Fable.Core.JsInterop
+open Van.Basic // import tags, add
+
+let br : Tag = tags?br
+
+// Define the fluent-card and fluent-checkbox tags
+let fluentCard: Tag = tags?``fluent-card``
+let fluentCheckbox: Tag = tags?``fluent-checkbox``
+
+let List =
+    fun _ ->
+        fluentCard [
+            {|``class``="custom"|}
+            // class is a reserved word in F#
+            // so we use backticks to escape it
+            fluentCheckbox ["Did you check this?"]
+            br []
+            fluentCheckbox [{|``checked``=true; disabled=true|}; "Is this disabled?"]
+            br []
+            fluentCheckbox [{|``checked``=true|}; "Checked by default?" ]
+        ]
+
+add [document.body; List()]
+|> ignore
+```
+
+## Clean the fable project and compile again
+
+When major changes are made, cleaning the Fable project is sometimes necessary.
+
+```sh
+dotnet fable clean
+
+dotnet fable watch
+```
+
+## Live Preview with Vite
+
+```sh
+npx vite
+```
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711758425606.png)
+
+---
+
+## [Material Design](https://m3.material.io/)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711759476213.png)
+
+https://material-web.dev/about/intro/
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711759837554.png)
+
+https://github.com/material-components/material-web
+
+## Install the Material Web Components with NPM or Alternatives
+
+https://material-web.dev/about/quick-start/
+
+https://www.npmjs.com/package/@material/web
+
+```sh
+npm install @material/web
+```
+
+## Import the web components
+
+Let's use Material web **Icon Buttons**.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711760987250.png)
+
+https://material-web.dev/components/icon-button/
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
+
+#### /web-imports/components.ts
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+
+```ts
+import '@material/web/icon/icon.js';
+import '@material/web/iconbutton/icon-button.js';
+```
+
+## Material Web Components use Google Fonts/Icons
+
+https://m3.material.io/styles/icons/overview
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711761560892.png)
+
+https://fonts.google.com/icons
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711761915503.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
+
+#### /web-imports/css-urls.ts
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+
+```ts
+export let cssURLs = [
+    "../../web-imports/custom.css",
+
+    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+];
+```
+
+## Use Web Components from `Program.fs`
+
+#### Program.fs
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharpmodule CounterApp
+
+open Browser
+open Browser.Types
+open Fable.Core.JsInterop
+
+open Van.Basic // import tags, add
+open Van.Timeline // import Timeline
+
+let h2: Tag = tags?h1
+
+let fluentCard: Tag = tags?``fluent-card``
+let icon: Tag = tags?``md-icon``
+let iconButton: Tag = tags?``md-icon-button``
+
+let Counter =
+    fun _ ->
+        let counter = Timeline 0
+
+        counter
+        |> bindT logT
+        |> ignore
+
+        fluentCard [
+            {|``class``="custom"|}
+
+            h2 [ "❤️ "; counter.el; ];
+            iconButton [{|onclick =
+                        fun _ ->
+                            counter
+                            |> nextT (counter.lastVal + 1)|};
+
+                        icon ["thumb_up"]
+                        ];
+            iconButton [{|onclick =
+                        fun _ ->
+                            counter
+                            |> nextT (counter.lastVal - 1)|};
+
+                        icon ["thumb_down"]
+                        ];
+        ]
+
+add [document.body; Counter()]
+|> ignore
+```
+
+## Clean the fable project and compile again
+
+```sh
+dotnet fable clean
+
+dotnet fable watch
+```
+
+## Live Preview with Vite
+
+```sh
+npx vite
+```
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711763051470.png)
