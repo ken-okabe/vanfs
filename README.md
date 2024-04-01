@@ -127,12 +127,12 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**  
-⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
+>  **TypeScirpt**
+⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)
  **JavaScript**  running in the Browser
 
->  **F#**  
-⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
+>  **F#**
+⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)
  **JavaScript**  running in the Browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
@@ -250,7 +250,7 @@ body {
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754561732.png)
 
-## Web Components
+# Web Components
 
 **VanFS** can leverage custom HTML tags provided by  **Web Components** with  **design systems** : [Microsoft Fluent](https://fluent2.microsoft.design/), [Google Material Design](https://m3.material.io/), etc. .
 
@@ -449,16 +449,19 @@ export let cssURLs = [
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
-```fsharpmodule CounterApp
+```fsharp
+module CounterApp
+
+module Program
 
 open Browser
 open Browser.Types
 open Fable.Core.JsInterop
 
 open Van.Basic // import tags, add
-open Van.Timeline // import Timeline
+open Van.TimelineElement // import Timeline
 
-let h2: Tag = tags?h1
+let h2: Tag = tags?h2
 
 let fluentCard: Tag = tags?``fluent-card``
 let icon: Tag = tags?``md-icon``
@@ -475,21 +478,21 @@ let Counter =
         fluentCard [
             {|``class``="custom"|}
 
-            h2 [ "❤️ "; counter.el; ];
+            h2 ["❤️ "; counter.el]
             iconButton [{|onclick =
                         fun _ ->
                             counter
-                            |> nextT (counter.lastVal + 1)|};
+                            |> nextT (counter.lastVal + 1)|}
 
                         icon ["thumb_up"]
-                        ];
+                        ]
             iconButton [{|onclick =
                         fun _ ->
                             counter
-                            |> nextT (counter.lastVal - 1)|};
+                            |> nextT (counter.lastVal - 1)|}
 
                         icon ["thumb_down"]
-                        ];
+                        ]
         ]
 
 add [document.body; Counter()]
@@ -510,4 +513,97 @@ dotnet fable watch
 npx vite
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711763051470.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711997650375.png)
+
+---
+
+# Timeline
+
+## Functional Reactive Programming (FRP)
+
+# Timeline Nullable
+
+#### Program.fs
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+module Number
+
+open Browser
+open Browser.Types
+open Fable.Core.JsInterop
+
+open Van.Basic // import tags, add
+open Van.TimelineElement // import Timeline
+open Van.TimelineNullableElement // import Null etc.
+open System
+
+let h4: Tag = tags?h4
+
+let fluentCard: Tag = tags?``fluent-card``
+
+let fluentTextField: Tag = tags?``fluent-text-field``
+
+let Number =
+    fun _ ->
+        let number = Timeline Null
+
+        let numberX2 =
+            number
+            |> mapTN (fun n -> Nullable(n * 2)) //System.Nullable
+
+        fluentCard [
+            {|``class``="custom1"|}
+
+            h4 [ "Number" ]
+            fluentTextField [
+                {|
+                appearance="outline"
+                required=true
+                ``type``="number"
+                placeholder="1"
+                oninput=
+                    fun e ->
+                        let value =
+                            if e?target?value=""
+                            then Null
+                            else Nullable e?target?value
+                            
+                        if value=Null // clear the output textField
+                        then numberX2
+                             |> nextTN Null
+                             |> ignore
+                             document.getElementById("output-field")?value
+                                <- "" // clear the output textField
+                        else ()
+
+                        number
+                        |> nextTN value
+                        |> ignore
+                |}
+            ]
+
+            h4 [ "Number × 2" ]
+            fluentTextField [
+                {|
+                appearance="outline"
+                readonly=true
+                placeholder="2"
+                value=numberX2.el
+                id="output-field"
+                |}
+            ]
+
+        ]
+
+add [document.body; Number()]
+|> ignore
+```
+
+
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712011529413.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712011575293.png)
+

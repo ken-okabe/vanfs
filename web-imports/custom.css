@@ -12,3 +12,9 @@ body {
     --card-height: 150px;
     padding: 22px;
   }
+
+.custom1 {
+    --card-width: 200px;
+    --card-height: 250px;
+    padding: 22px;
+  }

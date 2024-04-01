@@ -4,7 +4,8 @@
 import {
     provideFluentDesignSystem,
     fluentCard,
-    fluentCheckbox
+    fluentCheckbox,
+    fluentTextField
 } from "@fluentui/web-components";
 
 provideFluentDesignSystem()
@@ -15,6 +16,11 @@ provideFluentDesignSystem()
 provideFluentDesignSystem()
     .register(
         fluentCheckbox()
+    );
+
+provideFluentDesignSystem()
+    .register(
+        fluentTextField()
     );
 
 //https://material-web.dev/components/icon-button/
