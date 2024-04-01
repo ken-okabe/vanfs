@@ -1,24 +1,45 @@
-﻿module HelloApp
+﻿module Program
+
 open Browser
 open Browser.Types
 open Fable.Core.JsInterop
+
 open Van.Basic // import tags, add
+open Van.TimelineElement // import Timeline
 
-let a: Tag = tags?a
-let p: Tag = tags?p
-let div: Tag = tags?div
-let ul: Tag = tags?ul
-let li: Tag = tags?li
+let h2: Tag = tags?h1
 
-let Hello =
+let fluentCard: Tag = tags?``fluent-card``
+let icon: Tag = tags?``md-icon``
+let iconButton: Tag = tags?``md-icon-button``
+
+let Counter =
     fun _ ->
-        div [
-            p ["👋Hello"]
-            ul [
-                li ["🗺️World"]
-                li [a [{|href="https://vanjs.org/"|}; "🍦VanJS"]]
-            ]
+        let counter = Timeline 0
+
+        counter
+        |> bindT logT
+        |> ignore
+
+        fluentCard [
+            {|``class``="custom"|}
+
+            h2 [ "❤️ "; counter.el; ];
+            iconButton [{|onclick =
+                        fun _ ->
+                            counter
+                            |> nextT (counter.lastVal + 1)|};
+
+                        icon ["thumb_up"]
+                        ];
+            iconButton [{|onclick =
+                        fun _ ->
+                            counter
+                            |> nextT (counter.lastVal - 1)|};
+
+                        icon ["thumb_down"]
+                        ];
         ]
 
-add [document.body; Hello()]
+add [document.body; Counter()]
 |> ignore

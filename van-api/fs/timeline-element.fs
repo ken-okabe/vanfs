@@ -1,5 +1,5 @@
 namespace Van
-module Timeline =
+module TimelineElement =
 
     open Fable.Core.JsInterop
 
@@ -14,13 +14,13 @@ module Timeline =
     type Timeline<'a> =
         { mutable lastVal: 'a
           mutable lastFns: list<'a -> unit>
-          mutable el: StateElement<'a>} // native VanJS state object
+          mutable el: StateElement<'a>} // <== add native VanJS state object
 
     let Timeline =
         fun a ->
             { lastVal = a;
               lastFns = [];
-              el = state a} // native VanJS state object
+              el = state a} // <== add native VanJS state object
 
     let nextT =
         fun a timeline ->
@@ -28,7 +28,7 @@ module Timeline =
             timeline.lastFns
             |> List.iter (fun f -> f a) //perform all fns in the list
             // Update the native VanJS state object simultaneously.
-            timeline.el?``val`` <- a
+            timeline.el?``val`` <- a // <======================= add
             //----------------------------------------------------
             timeline // return the modified timeline
 
@@ -45,7 +45,8 @@ module Timeline =
     //----------------------------------------------
     let mapT =
         fun f -> (f >> Timeline) |> bindT
-    //----------------------------------------------
+
+    //==============================================================
     let log = // 'a -> unit
         fun a -> printfn "%A" a
 
@@ -53,3 +54,4 @@ module Timeline =
         fun a ->
             log a
             Timeline a
+

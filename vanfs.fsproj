@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="van-api/fs/*" />
+    <Compile Include="timeline/*" />
+    <Compile Include="van-api/fs/*.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
