@@ -250,6 +250,9 @@ body {
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754561732.png)
 
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+
 # Web Components
 
 **VanFS** can leverage custom HTML tags provided by  **Web Components** with  **design systems** : [Microsoft Fluent](https://fluent2.microsoft.design/), [Google Material Design](https://m3.material.io/), etc. .
@@ -515,7 +518,7 @@ npx vite
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711997650375.png)
 
----
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 # Timeline
 
