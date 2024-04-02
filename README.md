@@ -82,6 +82,10 @@ In fact, in modern web development, JavaScript has increasingly become a compile
 
 **AltJS -> VanJS**
 
+[How Did VanJS Get Its Name?](https://vanjs.org/about#name)
+
+>Under the hood,  **VanJS**  stays truthful to Vanilla JavaScript as close as possible, as there is no transpiling, virtual DOM or any hidden logic.  **VanJS**  code can be translated to Vanilla JavaScript code in a very straightforward way.
+
 ## Why we should avoid using TypeScript and migrate to F#
 
 Undoubtedly, TypeScript is the most commonly used AltJS. It is a superset of JavaScript that adds type safety and other features.  **So why not use TypeScript?**
@@ -155,11 +159,13 @@ Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compil
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712070754189.png)
 
-Fable brings F# to the browser.
+ **Fable brings F# to the browser.** 
 
 ## Why browser? Why VanJS?
 
-Lots of why here.
+There are a lot of **why** s here! 
+
+Since this is related to the big topic of frontend app development, including my personal opinions, I have isolated the article.
 
 [Frontend app development](./README-why.md)
 
