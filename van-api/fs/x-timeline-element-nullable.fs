@@ -1,5 +1,5 @@
 namespace Van
-module TimelineNullableElement =
+module TimelineElementNullable =
 
     open Van.TimelineElement
     open Fable.Core.JsInterop
@@ -48,4 +48,3 @@ module TimelineNullableElement =
                 |> bindTN task
                 |> ignore
                 taskResult
-

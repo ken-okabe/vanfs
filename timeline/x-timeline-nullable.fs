@@ -3,7 +3,7 @@ module TimelineNullable =
 
     open Timeline.Timeline
     open System
-    
+
     let Null = Nullable ()
 
     let nextTN =
@@ -34,14 +34,3 @@ module TimelineNullable =
     //----------------------------------------------
     let mapTN =
         fun f -> (f >> Timeline) |> bindTN
-
-    //==============================================================
-    let taskT =
-        fun coreTask ->
-            fun taskStart ->
-                let taskResult = Timeline Null
-                let task = coreTask taskResult
-                taskStart
-                |> bindTN task
-                |> ignore
-                taskResult

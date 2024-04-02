@@ -18,3 +18,8 @@ body {
     --card-height: 250px;
     padding: 22px;
   }
+
+.custom2 {
+    --card-width: 300px;
+    --card-height: 90px;
+  }

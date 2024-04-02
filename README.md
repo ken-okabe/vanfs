@@ -2,7 +2,13 @@
 
 **VanFS is a project template** for 1:1 bindings from [F#](https://fsharp.org/) to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP ([Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming))
 
-## 1:1 bindings of HTML-tag-functions to compose UI
+## What is [VanJS](https://vanjs.org/)?
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712047413143.png)
+
+https://vanjs.org/
+
+> **VanJS**  ([abbreviated Vanilla JavaScript](https://vanjs.org/about#name)) is an   ***ultra-lightweight***  ,   ***zero-dependency***  , and   ***unopinionated***   Reactive UI framework based on pure vanilla JavaScript and DOM. Programming with  **VanJS**  feels like building React apps in a [scripting language](https://vanjs.org/about#story), without JSX. Check-out the Hello World code below:
 
 ### VanJS code in JavaScript
 
@@ -26,6 +32,8 @@ const Hello =
 
 van.add(document.body, Hello())
 ```
+
+##  VanFS is a F# project template for one-to-one direct bindings of VanJS
 
 ### VanFS code in F#
 
@@ -58,19 +66,27 @@ add [document.body; Hello()]
 |> ignore
 ```
 
-## Why you should avoid using JavaScript
+## Why we should avoid using JavaScript
 
-Because  **JavaScript is not a type-safe language**,  which can lead to  **runtime errors and bugs** . In modern web development, JavaScript has become  **a compile target from an AltJS**.
+**VanJS is a library based on vanilla JavaScript for well-established reasons.**
 
-[TypeScript](https://www.typescriptlang.org/) is the most commonly used AltJS language to compile to JavaScript.
+However, to take full advantage of  **VanJS** , we should consider using alternative languages instead of JavaScript, which are commonly referred to as  **AltJS** .
+
+One of the critical reasons is that  **JavaScript is not a type-safe language** , which can lead to runtime errors and bugs.
+
+In fact, in modern web development, JavaScript has increasingly become a compile target from other languages, such as [TypeScript](https://www.typescriptlang.org/).
 
 **TypeScript -> JavaScript**
 
-**VanJS**  can be considered as a compile target from an AltJS.
+## VanJS can be considered as a compile target from an AltJS
 
-## Why you should avoid using TypeScript and migrate to F#
+**AltJS -> VanJS**
 
-There are many reasons, but mostly,  **productivity.**
+## Why we should avoid using TypeScript and migrate to F#
+
+Undoubtedly, TypeScript is the most commonly used AltJS. It is a superset of JavaScript that adds type safety and other features.  **So why not use TypeScript?**
+
+There are many reasons, but chief among them is developer  **productivity** .
 
 For instance, the below are the identical code written in TypeScript and F#.
 
@@ -109,13 +125,13 @@ let bindT =
 
 Such a clean code to write and read!
 
-In F#, you rarely need to add types manually thanks to its powerful type inference. This makes F# development feel similar to legacy JavaScript coding.
+In F#, we rarely need to add types manually thanks to its powerful type inference. This makes F# development feel similar to legacy JavaScript coding.
 
 In reality, it is much more than that.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711717723241.png)
 
-The powerful F# compiler  **automatically generates type annotations**  in your VSCode editor, eliminating the need for manual typing that TypeScript demands.
+The powerful F# compiler  **automatically generates type annotations**  in VSCode editor, eliminating the need for manual typing that TypeScript demands.
 
 ## F# as an AltJS: A Comparison with TypeScript
 
@@ -127,17 +143,25 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**
-⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)
+>  **TypeScirpt**  
+⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
  **JavaScript**  running in the Browser
 
->  **F#**
-⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)
+>  **F#**  
+⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
  **JavaScript**  running in the Browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711730729603.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712070754189.png)
+
+Fable brings F# to the browser.
+
+## Why browser? Why VanJS?
+
+Lots of why here.
+
+[Frontend app development](./README-why.md)
 
 ## Build a VanFS project template
 
@@ -234,7 +258,7 @@ npx vite
 
 ## CSS
 
-Everything you need to customize or import is located under `web-imports` directory.
+Everything we need to customize or import is located under `web-imports` directory.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
 
@@ -251,7 +275,6 @@ body {
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754561732.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
-
 
 # Web Components
 
@@ -432,6 +455,16 @@ https://fonts.google.com/icons
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711761915503.png)
 
+## Install Google Fonts/Icons
+
+Obtain required CSS URLs from the Google Fonts page.
+
+https://fonts.google.com/icons?selected=Material+Symbols+Outlined:star:FILL@0;wght@400;GRAD@0;opsz@24
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712042147933.png)
+
+Add the CSS URL to
+
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
 
 #### /web-imports/css-urls.ts
@@ -446,7 +479,13 @@ export let cssURLs = [
 ];
 ```
 
-## Use Web Components from `Program.fs`
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# Functional Reactive Programming (FRP)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712039784885.png)
+
+## Timeline
 
 #### Program.fs
 
@@ -502,29 +541,9 @@ add [document.body; Counter()]
 |> ignore
 ```
 
-## Clean the fable project and compile again
-
-```sh
-dotnet fable clean
-
-dotnet fable watch
-```
-
-## Live Preview with Vite
-
-```sh
-npx vite
-```
-
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711997650375.png)
 
-<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
-
-# Timeline
-
-## Functional Reactive Programming (FRP)
-
-# Timeline Nullable
+## Timeline Nullable
 
 #### Program.fs
 
@@ -539,7 +558,7 @@ open Fable.Core.JsInterop
 
 open Van.Basic // import tags, add
 open Van.TimelineElement // import Timeline
-open Van.TimelineNullableElement // import Null etc.
+open Van.TimelineElementNullable // import Null etc.
 open System
 
 let h4: Tag = tags?h4
@@ -604,9 +623,12 @@ add [document.body; Number()]
 |> ignore
 ```
 
-
-
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712011529413.png)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712011575293.png)
 
+## Timeline Task
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712038600017.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712038609796.png)
