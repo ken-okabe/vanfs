@@ -8,7 +8,7 @@
 
 https://github.com/vanjs-org/van
 
->🍦 VanJS: World's smallest reactive UI framework. Incredibly Powerful, Insanely Small - Everyone can build a useful UI app in an hour. 
+>🍦 VanJS: World's smallest reactive UI framework. Incredibly Powerful, Insanely Small - Everyone can build a useful UI app in an hour.
 
 https://vanjs.org/
 
@@ -74,6 +74,10 @@ add [document.body; Hello()]
 
 **VanJS is a library based on vanilla JavaScript for well-established reasons.**
 
+[How Did VanJS Get Its Name?](https://vanjs.org/about#name)
+
+>Under the hood,  **VanJS**  stays truthful to Vanilla JavaScript as close as possible, as there is no transpiling, virtual DOM or any hidden logic.  **VanJS**  code can be translated to Vanilla JavaScript code in a very straightforward way.
+
 However, to take full advantage of  **VanJS** , we should consider using alternative languages instead of JavaScript, which are commonly referred to as  **AltJS** .
 
 One of the critical reasons is that  **JavaScript is not a type-safe language** , which can lead to runtime errors and bugs.
@@ -85,10 +89,6 @@ In fact, in modern web development, JavaScript has increasingly become  **a comp
 ## VanJS can be regarded as a compile target from an AltJS
 
 **AltJS -> VanJS**
-
-[How Did VanJS Get Its Name?](https://vanjs.org/about#name)
-
->Under the hood,  **VanJS**  stays truthful to Vanilla JavaScript as close as possible, as there is no transpiling, virtual DOM or any hidden logic.  **VanJS**  code can be translated to Vanilla JavaScript code in a very straightforward way.
 
 ## Why we should avoid using TypeScript and migrate to F#
 
@@ -153,21 +153,21 @@ More precisely,
 
 >  **TypeScirpt**  
 ⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
- **JavaScript**  running in the Browser
+ **JavaScript**  running in the browser
 
 >  **F#**  
 ⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
- **JavaScript**  running in the Browser
+ **JavaScript**  running in the browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712070754189.png)
 
- **Fable brings F# to the browser.** 
+**Fable enables F# code to be compiled to JavaScript and run in the browser.**
 
 ## Why browser? Why VanJS?
 
-There are a lot of **why** s here! 
+There are a lot of **why** s here!
 
 Since this is related to the big topic of frontend app development, including my personal opinions, I have isolated the article.
 
@@ -240,7 +240,7 @@ npm i -D vite
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="van-api/fs/*" />
+    <Compile Include="van-api/fs/*.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
@@ -497,19 +497,15 @@ export let cssURLs = [
 
 # Functional Reactive Programming (FRP)
 
- **VanFS**  is described as
+**VanFS**  is described as
 
 1:1 bindings from F# to  **VanJS**  (A tiny Reactive UI Framework without React/JSX) + WebComponents + FRP
 
 or
 
- **VanFS**  is a F# project template for one-to-one direct bindings of  **VanJS** 
+**VanFS**  is a F# project template for one-to-one direct bindings of  **VanJS**
 
 This is absolutely true within the scope of the basic features for composing UIs.
-
-
-
-
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712039784885.png)
 

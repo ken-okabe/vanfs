@@ -1,5 +1,15 @@
 # Why browser? Why VanJS?
 
+Cross platform
+
+
+.Net is big
+
+Lately, .net become
+
+
+WASM
+
 ## Why browser
 
 ## Why we should use VanJS
