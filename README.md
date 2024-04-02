@@ -6,6 +6,10 @@
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712047413143.png)
 
+https://github.com/vanjs-org/van
+
+>🍦 VanJS: World's smallest reactive UI framework. Incredibly Powerful, Insanely Small - Everyone can build a useful UI app in an hour. 
+
 https://vanjs.org/
 
 > **VanJS**  ([abbreviated Vanilla JavaScript](https://vanjs.org/about#name)) is an   ***ultra-lightweight***  ,   ***zero-dependency***  , and   ***unopinionated***   Reactive UI framework based on pure vanilla JavaScript and DOM. Programming with  **VanJS**  feels like building React apps in a [scripting language](https://vanjs.org/about#story), without JSX. Check-out the Hello World code below:
@@ -33,7 +37,7 @@ const Hello =
 van.add(document.body, Hello())
 ```
 
-##  VanFS is a F# project template for one-to-one direct bindings of VanJS
+## VanFS is a F# project template for one-to-one direct bindings of VanJS
 
 ### VanFS code in F#
 
@@ -74,11 +78,11 @@ However, to take full advantage of  **VanJS** , we should consider using alterna
 
 One of the critical reasons is that  **JavaScript is not a type-safe language** , which can lead to runtime errors and bugs.
 
-In fact, in modern web development, JavaScript has increasingly become a compile target from other languages, such as [TypeScript](https://www.typescriptlang.org/).
+In fact, in modern web development, JavaScript has increasingly become  **a compile target**  from other languages, such as [TypeScript](https://www.typescriptlang.org/).
 
 **TypeScript -> JavaScript**
 
-## VanJS can be considered as a compile target from an AltJS
+## VanJS can be regarded as a compile target from an AltJS
 
 **AltJS -> VanJS**
 
@@ -168,6 +172,10 @@ There are a lot of **why** s here!
 Since this is related to the big topic of frontend app development, including my personal opinions, I have isolated the article.
 
 [Frontend app development](./README-why.md)
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# Getting Started
 
 ## Build a VanFS project template
 
@@ -488,6 +496,20 @@ export let cssURLs = [
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 # Functional Reactive Programming (FRP)
+
+ **VanFS**  is described as
+
+1:1 bindings from F# to  **VanJS**  (A tiny Reactive UI Framework without React/JSX) + WebComponents + FRP
+
+or
+
+ **VanFS**  is a F# project template for one-to-one direct bindings of  **VanJS** 
+
+This is absolutely true within the scope of the basic features for composing UIs.
+
+
+
+
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712039784885.png)
 
