@@ -563,8 +563,8 @@ open Fable.Core.JsInterop
 open Van.Basic // import tags, add
 open Van.TimelineElement // import Timeline
 
+let div: Tag = tags?div
 let h2: Tag = tags?h2
-let fluentCard: Tag = tags?``fluent-card``
 let icon: Tag = tags?``md-icon``
 let iconButton: Tag = tags?``md-icon-button``
 
@@ -577,8 +577,7 @@ let Counter =
                      console.log $"Counter: {value}")
         |> ignore
 
-        fluentCard [
-            {|``class``="custom"|}
+        div [
             h2 ["❤️ "; counter.el]
             iconButton [
                 {|onclick = fun _ ->
