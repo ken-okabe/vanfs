@@ -237,7 +237,7 @@ npm i -D vite
 # Copy&Place `index.html` `Program.fs` `vite.config.ts` file
 # modify `my-project.fsproj`
 #  <ItemGroup>
-#    <Compile Include="van-api/fs/*" />
+#    <Compile Include="van-api/fs/*.fs" />
 #    <Compile Include="Program.fs" />
 #  </ItemGroup>
 ```
