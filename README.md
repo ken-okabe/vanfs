@@ -147,9 +147,13 @@ In reality, it is much more than that.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711717723241.png)
 
-The powerful F# compiler  **automatically generates type annotations**  in VSCode editor, eliminating the need for manual typing that TypeScript demands.
+The powerful F# compiler  **automatically generates type annotations**  in  **VSCode**  editor, eliminating the need for manual typing that TypeScript demands.
 
 While programmers may want to define fundamental object types that form the backbone of their code, in other places, if the F# compiler warns for a demand of manual type annotations, usually,  **something is wrong** .
+
+In F#, if the compiler cannot infer the type, in most cases, it suggests that there may be mathematical inconsistencies.
+
+In TypeScript, if the compiler cannot infer the type, it often suggests limitations in its type inference capabilities. This makes it hard to determine the precise cause of the problem.
 
 As a result, F# programmers are naturally led to write mathematically consistent and rigorous code; unfortunately, this benefit **rarely** happens in TypeScript.
 
@@ -519,9 +523,11 @@ or
 
 **VanFS**  is a F# project template for one-to-one direct bindings of  **VanJS**
 
-This is absolutely true within the scope of the basic features for composing UIs.
+ **This is absolutely true within the scope of the basic features for composing UIs, but not true for its state management.** 
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712039784885.png)
+
+VanJS 
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712106536645.png)
 
@@ -634,9 +640,7 @@ open Van.TimelineElementNullable // import Null etc.
 open System
 
 let h4: Tag = tags?h4
-
 let fluentCard: Tag = tags?``fluent-card``
-
 let fluentTextField: Tag = tags?``fluent-text-field``
 
 let Number =
