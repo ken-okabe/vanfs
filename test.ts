@@ -15,12 +15,14 @@ const Counter =
                 {
                     onclick: () => ++counter.val
                 },
-                "👍"),
+                "👍"
+            ),
             button(
                 {
                     onclick: () => --counter.val
                 },
-                "👎"),
+                "👎"
+            ),
         )
     }
 

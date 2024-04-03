@@ -214,12 +214,8 @@ See [Fable Setup Documentaion](https://fable.io/docs/getting-started/setup.html)
 ```sh
 git clone https://github.com/ken-okabe/vanfs
 cd vanfs
-dotnet tool install fable
-dotnet add package Fable.Core
-dotnet add package Fable.Browser.Dom
-npm init -y
-npm i -D vanjs-core
-npm i -D vite
+dotnet restore
+npm i
 ```
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711727772764.png)
@@ -523,11 +519,11 @@ or
 
 **VanFS**  is a F# project template for one-to-one direct bindings of  **VanJS**
 
- **This is absolutely true within the scope of the basic features for composing UIs, but not true for its state management.** 
+**This is absolutely true within the scope of the basic features for composing UIs, but not true for its state management.**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712039784885.png)
 
-VanJS 
+VanJS
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712106536645.png)
 
@@ -557,12 +553,14 @@ const Counter =
                 {
                     onclick: () => ++counter.val
                 },
-                "👍"),
+                "👍"
+            ),
             button(
                 {
                     onclick: () => --counter.val
                 },
-                "👎"),
+                "👎"
+            ),
         )
     }
 
