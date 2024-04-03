@@ -1,14 +1,16 @@
-# Why browser? Why VanJS?
+# Versatility of Web Technology for Cross-Platform App Development
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712154398813.png)
 
 Cross platform
-
 
 .Net is big
 
 Lately, .net become
 
-
 WASM
+
+F#はエコが急激に先細る
 
 ## Why browser
 

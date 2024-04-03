@@ -1,4 +1,4 @@
-# VanFS
+# 🍦VanFS
 
 **VanFS is a project template** for 1:1 bindings from [F#](https://fsharp.org/) to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP ([Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming))
 
@@ -70,13 +70,21 @@ add [document.body; Hello()]
 |> ignore
 ```
 
-## Why we should avoid using JavaScript
+## Why VanJS is based on vanilla JavaScript
 
-**VanJS is a library based on vanilla JavaScript for well-established reasons.**
+[VanJS: About - the Story behind VanJS](https://vanjs.org/about#story)
 
-[How Did VanJS Get Its Name?](https://vanjs.org/about#name)
+>But I think, in a nutshell, the best way to describe it is:  ***VanJS**  is the scripting language for UI, just like bash is the  *scripting language*  for terminal.*
+
+> *Being the scripting language for UI* , is the fundamental principle that guides the design of  **VanJS** . It's based on JavaScript so that it can work in as many environments as possibles, not only for websites, but also for webviews which most major OSes support.
+
+[VanJS: About - How Did VanJS Get Its Name?](https://vanjs.org/about#name)
 
 >Under the hood,  **VanJS**  stays truthful to Vanilla JavaScript as close as possible, as there is no transpiling, virtual DOM or any hidden logic.  **VanJS**  code can be translated to Vanilla JavaScript code in a very straightforward way.
+
+## Why we should avoid using JavaScript
+
+VanJS is a library based on vanilla JavaScript for well-established reasons.
 
 However, to take full advantage of  **VanJS** , we should consider using alternative languages instead of JavaScript, which are commonly referred to as  **AltJS** .
 
@@ -141,6 +149,10 @@ In reality, it is much more than that.
 
 The powerful F# compiler  **automatically generates type annotations**  in VSCode editor, eliminating the need for manual typing that TypeScript demands.
 
+While programmers may want to define fundamental object types that form the backbone of their code, in other places, if the F# compiler warns for a demand of manual type annotations, usually, something is wrong.
+
+As a result, F# programmers are naturally led to write mathematically consistent and rigorous code; unfortunately, this benefit **rarely** happens in TypeScript.
+
 ## F# as an AltJS: A Comparison with TypeScript
 
 F# is generally recognized as running on the [.NET Framework](https://dotnet.microsoft.com/), but just as TypeScript is compiled to JavaScript, F# is also compiled to JavaScript.
@@ -167,15 +179,17 @@ Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compil
 
 ## Why browser? Why VanJS?
 
-There are a lot of **why** s here!
+There are a lot of **Why** s here!
 
 Since this is related to the big topic of frontend app development, including my personal opinions, I have isolated the article.
 
-[Frontend app development](./README-why.md)
+[Versatility of Web Technology for Cross-Platform App Development](./README-why.md)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712154361707.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# Getting Started
+# 🚀Getting Started
 
 ## Build a VanFS project template
 
@@ -290,7 +304,7 @@ body {
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# Web Components
+# 🌐Web Components
 
 **VanFS** can leverage custom HTML tags provided by  **Web Components** with  **design systems** : [Microsoft Fluent](https://fluent2.microsoft.design/), [Google Material Design](https://m3.material.io/), etc. .
 
@@ -495,7 +509,7 @@ export let cssURLs = [
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# Functional Reactive Programming (FRP)
+# ⏱️Functional Reactive Programming (FRP)
 
 **VanFS**  is described as
 
@@ -720,7 +734,7 @@ let Tasks =
         let progressStart = true
         let progressDone = false
         let percentInit = 0.0
-        let percentStart = 0.0//{|indeterminate=true|}
+        let percentStart = 0.0
         let percentDone = 1.0
 
         let timelineProgress1 = Timeline progressInit
