@@ -10,7 +10,7 @@ https://github.com/vanjs-org/van
 
 >🍦 VanJS: World's smallest reactive UI framework. Incredibly Powerful, Insanely Small - Everyone can build a useful UI app in an hour.
 
-https://vanjs.org/
+https://vanjs.org
 
 > **VanJS**  ([abbreviated Vanilla JavaScript](https://vanjs.org/about#name)) is an   ***ultra-lightweight***  ,   ***zero-dependency***  , and   ***unopinionated***   Reactive UI framework based on pure vanilla JavaScript and DOM. Programming with  **VanJS**  feels like building React apps in a [scripting language](https://vanjs.org/about#story), without JSX. Check-out the Hello World code below:
 
@@ -96,7 +96,7 @@ In fact, in modern web development, JavaScript has increasingly become  **a comp
 
 ## VanJS can be regarded as a compile target from an AltJS
 
-**AltJS -> VanJS**
+**VanFS (AltJS) -> VanJS**
 
 ## Why we should avoid using TypeScript and migrate to F#
 
@@ -149,7 +149,7 @@ In reality, it is much more than that.
 
 The powerful F# compiler  **automatically generates type annotations**  in VSCode editor, eliminating the need for manual typing that TypeScript demands.
 
-While programmers may want to define fundamental object types that form the backbone of their code, in other places, if the F# compiler warns for a demand of manual type annotations, usually, something is wrong.
+While programmers may want to define fundamental object types that form the backbone of their code, in other places, if the F# compiler warns for a demand of manual type annotations, usually,  **something is wrong** .
 
 As a result, F# programmers are naturally led to write mathematically consistent and rigorous code; unfortunately, this benefit **rarely** happens in TypeScript.
 
