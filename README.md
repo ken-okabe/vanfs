@@ -756,49 +756,49 @@ let Tasks =
                 |> ignore
 
         let taskDone =
-            fun timelineProgress timelinePercent taskResult->
+            fun timelineProgress timelinePercent timelineResult->
                 timelineProgress
                 |> nextT progressDone
                 |> ignore
                 timelinePercent
                 |> nextT percentDone
                 |> ignore
-                taskResult
+                timelineResult
                 |> nextTN (Nullable 999)
                 |> ignore
 
         let task1 =
-            fun taskResult previousResult ->
+            fun timelineResult previousResult ->
                 log "-----------task1 started..."
                 taskStart timelineProgress1 timelinePercent1
                 // delay-------------------------------
                 let f = fun _ ->
                     log "...task1 done"
-                    taskDone timelineProgress1 timelinePercent1 taskResult
+                    taskDone timelineProgress1 timelinePercent1 timelineResult
                 setTimeout f 2500
-                taskResult
+                timelineResult
 
         let task2 =
-            fun taskResult previousResult ->
+            fun timelineResult previousResult ->
                 log "-----------task2 started..."
                 taskStart timelineProgress2 timelinePercent2
                 // delay-------------------------------
                 let f = fun _ ->
                     log "...task2 done"
-                    taskDone timelineProgress2 timelinePercent2 taskResult
+                    taskDone timelineProgress2 timelinePercent2 timelineResult
                 setTimeout f 2500
-                taskResult
+                timelineResult
 
         let task3 =
-            fun taskResult previousResult ->
+            fun timelineResult previousResult ->
                 log "-----------task3 started..."
                 taskStart timelineProgress3 timelinePercent3
                 // delay-------------------------------
                 let f = fun _ ->
                     log "...task3 done"
-                    taskDone timelineProgress3 timelinePercent3 taskResult
+                    taskDone timelineProgress3 timelinePercent3 timelineResult
                 setTimeout f 2500
-                taskResult
+                timelineResult
 
         let taskStarter = Timeline Null //tasks disabled initially
 

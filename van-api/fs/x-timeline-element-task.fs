@@ -6,17 +6,17 @@ module TimelineElementTask =
     open System
 
     let taskT =
-        fun coreTask ->
-            fun taskStart ->
-                let taskResult = Timeline Null
-                let task = coreTask taskResult
-                taskStart
-                |> bindTN task
+        fun task ->
+            fun taskStarter ->
+                let timelineResult = Timeline Null
+                let coreTask = task timelineResult
+                taskStarter
+                |> bindTN coreTask
                 |> ignore
-                taskResult
+                timelineResult
     //--------------------------
     let (+>) =
         fun task1 task2 ->
-            fun taskResult previousResult ->
-                task1 taskResult previousResult
+            fun timelineResult previousResult ->
+                task1 timelineResult previousResult
                 |> taskT task2

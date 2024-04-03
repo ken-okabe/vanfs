@@ -1,4 +1,4 @@
-﻿module CounterApp
+﻿module Tasks
 
 open Browser
 open Browser.Types
@@ -6,38 +6,127 @@ open Fable.Core.JsInterop
 
 open Van.Basic // import tags, add
 open Van.TimelineElement // import Timeline
+open Van.TimelineElementNullable // import Null etc.
+open Van.TimelineElementTask
+open System
 
-let div: Tag = tags?div
-let h2: Tag = tags?h2
-let icon: Tag = tags?``md-icon``
-let iconButton: Tag = tags?``md-icon-button``
+open System.Timers
+let setTimeout f delay =
+    let timer = new Timer(float delay)
+    timer.AutoReset <- false
+    timer.Elapsed.Add(fun _ -> f())
+    timer.Start()
+let br: Tag = tags?``br``
+let fluentCard: Tag = tags?``fluent-card``
+let linerProgress: Tag = tags?``md-linear-progress``
 
-let Counter =
+let Tasks =
     fun _ ->
-        let counter = Timeline 0
+        let progressInit = false
+        let progressStart = true
+        let progressDone = false
+        let percentInit = 0.0
+        let percentStart = 0.0
+        let percentDone = 1.0
 
-        counter
-        |> mapT (fun value ->
-                     console.log $"Counter: {value}")
+        let timelineProgress1 = Timeline progressInit
+        let timelineProgress2 = Timeline progressInit
+        let timelineProgress3 = Timeline progressInit
+        let timelinePercent1 = Timeline percentInit
+        let timelinePercent2 = Timeline percentInit
+        let timelinePercent3 = Timeline percentInit
+
+        let taskStart =
+            fun timelineProgress timelinePercent ->
+                timelineProgress
+                |> nextT progressStart
+                |> ignore
+                timelinePercent
+                |> nextT percentStart
+                |> ignore
+
+        let taskDone =
+            fun timelineProgress timelinePercent timelineResult->
+                timelineProgress
+                |> nextT progressDone
+                |> ignore
+                timelinePercent
+                |> nextT percentDone
+                |> ignore
+                timelineResult
+                |> nextTN (Nullable 999)
+                |> ignore
+
+        let task1 =
+            fun timelineResult previousResult ->
+                log "-----------task1 started..."
+                taskStart timelineProgress1 timelinePercent1
+                // delay-------------------------------
+                let f = fun _ ->
+                    log "...task1 done"
+                    taskDone timelineProgress1 timelinePercent1 timelineResult
+                setTimeout f 2500
+                timelineResult
+
+        let task2 =
+            fun timelineResult previousResult ->
+                log "-----------task2 started..."
+                taskStart timelineProgress2 timelinePercent2
+                // delay-------------------------------
+                let f = fun _ ->
+                    log "...task2 done"
+                    taskDone timelineProgress2 timelinePercent2 timelineResult
+                setTimeout f 2500
+                timelineResult
+
+        let task3 =
+            fun timelineResult previousResult ->
+                log "-----------task3 started..."
+                taskStart timelineProgress3 timelinePercent3
+                // delay-------------------------------
+                let f = fun _ ->
+                    log "...task3 done"
+                    taskDone timelineProgress3 timelinePercent3 timelineResult
+                setTimeout f 2500
+                timelineResult
+
+        let taskStarter = Timeline Null //tasks disabled initially
+
+        let task123 =
+            task1 +>
+            task2 +>
+            task3
+
+        taskStarter
+        |> taskT task123
         |> ignore
 
-        div [
-            h2 ["❤️ "; counter.el]
-            iconButton [
-                {|onclick = fun _ ->
-                                counter
-                                |> nextT (counter.lastVal + 1)
-                |}
-                icon ["thumb_up"]
+        let start =
+            fun _ -> // taskes enabled
+                taskStarter
+                |> nextTN (Nullable 0)
+                |> ignore
+
+        setTimeout start 2000
+
+        fluentCard [
+            {|``class``="custom2"|}
+            br []
+            linerProgress [
+                {|indeterminate=timelineProgress1.el
+                  value=timelinePercent1.el|}
             ]
-            iconButton [
-                {|onclick = fun _ ->
-                                counter
-                                |> nextT (counter.lastVal - 1)
-                |}
-                icon ["thumb_down"]
+            br []
+            linerProgress [
+                {|indeterminate=timelineProgress2.el
+                  value=timelinePercent2.el|}
+            ]
+            br []
+            linerProgress [
+                {|indeterminate=timelineProgress3.el
+                  value=timelinePercent3.el|}
             ]
         ]
 
-add [document.body; Counter()]
+add [document.body; Tasks()]
 |> ignore
