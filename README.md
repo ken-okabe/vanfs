@@ -511,7 +511,11 @@ export let cssURLs = [
 
 # ⏱️Functional Reactive Programming (FRP)
 
+## (1:1 bindings for composing UIs) + FRP
+
 **VanFS**  is described as
+
+---
 
 1:1 bindings from F# to  **VanJS**  (A tiny Reactive UI Framework without React/JSX) + WebComponents + FRP
 
@@ -519,11 +523,19 @@ or
 
 **VanFS**  is a F# project template for one-to-one direct bindings of  **VanJS**
 
-**This is absolutely true within the scope of the basic features for composing UIs, but not true for its state management.**
+---
+
+**1:1 bindings is absolutely true within the scope of the basic features for composing UIs, but not true for its state management.**
+
+## VanJS is a framework that embraces Reactive Programming
+
+VanJS reactively binds its state objects to corresponding DOM elements. This means that when a state object updates, the corresponding DOM element automatically updates as well. This approach is a common feature among declarative UI libraries such as React, SolidJS, etc.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712039784885.png)
 
-VanJS
+## VanJS state API
+
+In order to utilize the state management, VanJS provides two APIs: `van.state` and `van.derive`.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712106536645.png)
 
@@ -531,7 +543,61 @@ VanJS
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712106818761.png)
 
+## VanFS is a framework that embraces Functional Reactive Programming (FRP)
+
+**VanJS**  is **Reactive**.
+
+**VanFS**  is  **Functional Reactive** .
+
+## What is Functional Programming?
+
+What is  **Functional Programming** ? It's a programming a programming paradigm that uses **Expression** as the building blocks of the code .
+
+What is Expression? 
+
+$1 + 2$
+
+$5 - 3$
+
+$2 \times 3$
+
+$8 \div 4$
+
+These are familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation) called **four arithmetic operations** , which is a type of expression.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712224131411.png)
+
+or
+
+$a  \triangleright function$
+
+`a |> function`
+
+This is a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation) called  **[Pipeline (operation)](https://learn.microsoft.com/en-us/dotnet/fsharp/tour#pipelines)** , which is a type of expression.
+
+$list \quad \triangleright  map \quad function$
+
+`list |> map function`
+
+This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Endo-functor** , which is a type of expression.
+
+$list \quad \triangleright  bind \quad monadicFunction$
+
+`list |> bind monadicFunction`
+
+This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Monad** , which is a type of expression.
+
+## It's not strictly an API (Application Programming Interface), but simply Expressions of Math (Algebra) 
+
+
+
 ## Timeline
+
+| **Field** | **Description**       |
+|--------------|------------------------|
+| lastVal      | Previous value         |
+| el           | Equivalent to `van.state.a` |
+
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
 
