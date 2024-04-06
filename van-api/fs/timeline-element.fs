@@ -8,7 +8,7 @@ module TimelineElement =
     // val is a reserved word in F#
     // so we use backticks to escape it
 
-    let state<'a> (a: 'a):StateElement<'a> =
+    let state<'a> (a: 'a): StateElement<'a> =
         importMember "../ts/state"
 
     type Timeline<'a> =
