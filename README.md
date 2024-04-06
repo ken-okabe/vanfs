@@ -1,6 +1,14 @@
-# 🍦VanFS
+# 🍦 VanFS
 
 **VanFS is a project template** for 1:1 bindings from [F#](https://fsharp.org/) to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP ([Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming))
+
+| Contents |
+|--------------|
+| [🍦 VanFS](#vanfs)  |
+| [🚀 Getting Started](#getting-started) |
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#%EF%B8%8F-functional-reactive-programming-frp) |
+| [⏱️ Timeline](#%EF%B8%8F-timeline)         | 
 
 ## What is VanJS?
 
@@ -70,7 +78,7 @@ add [document.body; Hello()]
 |> ignore
 ```
 
-## Why VanJS is based on vanilla JavaScript
+## Why VanJS is based on Vanilla JavaScript
 
 [VanJS: About - the Story behind VanJS](https://vanjs.org/about#story)
 
@@ -84,9 +92,9 @@ add [document.body; Hello()]
 
 ## Why we should avoid using JavaScript
 
-VanJS is a library based on vanilla JavaScript for well-established reasons.
+VanJS is a library based on Vanilla JavaScript for the well-established reasons.
 
-However, to take full advantage of  **VanJS** , we should consider using alternative languages instead of JavaScript, which are commonly referred to as  **AltJS** .
+However, to take full advantage of  **VanJS** , we should consider using  **alternative languages instead of JavaScript** , which are commonly referred to as  **AltJS** .
 
 One of the critical reasons is that  **JavaScript is not a type-safe language** , which can lead to runtime errors and bugs.
 
@@ -197,7 +205,7 @@ I've created a separate article on this topic since it's part of the larger fron
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# 🚀Getting Started
+# 🚀 Getting Started
 
 ## Build a VanFS project template
 
@@ -579,7 +587,7 @@ $$
 
 So, this is FRP.
 
- **Functional Reactive Programming (FRP)**  is a programming paradigm that uses mathematical expressions, specifically  **binary operations** , as a means of implementing  **Reactive Programming** .
+**Functional Reactive Programming (FRP)**  is a programming paradigm that uses mathematical expressions, specifically  **binary operations** , as a means of implementing  **Reactive Programming** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
@@ -587,7 +595,7 @@ So, this is FRP.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
- **Timeline**  is a fundamentally standalone FRP library, with no dependencies on  **VanJS**  or  **F#**  asynchronous features. [The codebase is a compact pure function implementation of approximately 30-40 lines of code.
+**Timeline**  is a fundamentally standalone FRP library, with no dependencies on  **VanJS**  or  **F#**  asynchronous features. [The codebase is a compact pure function implementation of approximately 30-40 lines of code.
 ](./timeline/timeline.fs)
 
 [**TimelineElement**](./van-api/fs/timeline-element.fs) is a modified version of **Timeline**, which wraps the `State` object of **VanJS** and serves as an additional module for utilizing the state management of **VanFS**.
@@ -596,7 +604,7 @@ So, this is FRP.
 
 ## 🔍 Type
 
-###  `Timeline<'a>` 
+###  `Timeline<'a>`
 
 ```fsharp
 record Timeline<'a>
@@ -610,7 +618,6 @@ record Timeline<'a>
 | `el`           | Reactive DOM element of the Timeline | `State` |
 
 ---
-
 
 ## 🔍 Functions
 
@@ -637,7 +644,6 @@ console.log counter.val;
 
 #### VanFS
 
-
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
 ```fsharp
@@ -655,13 +661,13 @@ $$
 TimelineA ~ ~ * ~ ~ Function ~ ~ \rightarrow ~ ~ TimelineB
 $$
 
-### `mapT` 
+### `mapT`
 
 ```fsharp
 ('a -> 'b) -> (Timeline<'a> -> Timeline<'b>)
 ```
 
-### `bindT` 
+### `bindT`
 
 ```fsharp
 ('a -> Timeline<'b>) -> (Timeline<'a> -> Timeline<'b>)
@@ -669,7 +675,7 @@ $$
 
 #### VanFS
 
-When the binary operator:  $*$  is `mapT`, 
+When the binary operator:  $*$  is `mapT`,
 
 $$
 TimelineB ~ ~ = ~ ~ TimelineA ~ ~ mapT ~ ~ double
@@ -688,8 +694,6 @@ let timelineB =
 console.log timelineB.lastVal
 // 2
 ```
-
-
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
@@ -723,7 +727,7 @@ $$
 TimelineA ~ ~ nextT ~ ~ newValue ~ ~ \rightarrow ~ ~ TimelineA'
 $$
 
-### `nextT` 
+### `nextT`
 
 ```fsharp
 'a -> Timeline<'a> -> Timeline<'a>
@@ -760,7 +764,6 @@ console.log timelineA.lastVal
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
 An update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.
-
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
