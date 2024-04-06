@@ -663,7 +663,6 @@ $$
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
 ```fsharp
-
 let double = fun a -> a * 2
 
 let timelineA = Timeline 1
@@ -673,7 +672,6 @@ let timelineB =
 
 console.log timelineB.lastVal
 // 2
-
 ```
 
 
@@ -707,7 +705,7 @@ console.log(arrayB);
 ## 3️⃣ Function to update `Timeline<'a>`
 
 $$
-TimelineA ~ ~ nextT ~ ~ newValue ~ ~ \rightarrow ~ ~ TimelineB
+TimelineA ~ ~ nextT ~ ~ newValue ~ ~ \rightarrow ~ ~ TimelineA'
 $$
 
 ### `nextT` 
@@ -717,7 +715,7 @@ $$
 ```
 
 $$
-TimelineB ~ ~ = ~ ~ TimelineA ~ ~ nextT ~ ~ newValue
+TimelineA' ~ ~ = ~ ~ TimelineA ~ ~ nextT ~ ~ newValue
 $$
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
