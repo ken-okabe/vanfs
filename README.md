@@ -189,7 +189,7 @@ Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compil
 
 There are a lot of **Why** s here!
 
-Since this is related to the big topic of frontend app development, including my personal opinions, I have isolated the article.
+I've created a separate article on this topic since it's part of the larger frontend app development landscape and deserves a focused discussion with my own opinions.
 
 ### [Versatility of Web Technology for Cross-Platform App Development](./README-why.md)
 
@@ -555,7 +555,7 @@ In order to utilize the state management, VanJS provides two APIs: `van.state` a
 
 ## What is Functional Programming?
 
-This is an extremely important topic, so I have isolated the article.
+Given the critical significance of functional programming in modern software development, I have dedicated a separate article to exploring its key concepts and benefits.
 
 ### [What is Functional Programming?](./README-whatisFP.md)
 
@@ -579,9 +579,19 @@ $$
 
 So, this is FRP.
 
+FRP is the principles of functional programming and its applications in real-world scenarios.
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 # ⏱️ Timeline
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+ **Timeline**  is a fundamentally standalone FRP library, with no dependencies on  **VanJS**  or  **F#**  asynchronous features. [The codebase is a compact pure function composition of approximately 30-40 lines](./timeline/timeline.fs).
+
+**TimelineElement** is an additional module for state management of  **VanFS** ,  extending  **Timeline**,  by wrapping the `State` object of  **VanJS**.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
 ## 🔍 Type
 
