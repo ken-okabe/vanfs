@@ -589,7 +589,7 @@ FRP is the principles of functional programming and its applications in real-wor
 
  **Timeline**  is a fundamentally standalone FRP library, with no dependencies on  **VanJS**  or  **F#**  asynchronous features. [The codebase is a compact pure function composition of approximately 30-40 lines](./timeline/timeline.fs).
 
-**TimelineElement** is an additional module for state management of  **VanFS** ,  extending  **Timeline**,  by wrapping the `State` object of  **VanJS**.
+**TimelineElement** is a modified version of **Timeline**, which wraps the `State` object of **VanJS** and serves as an additional module for utilizing the state management of **VanFS**.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
