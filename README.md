@@ -4,6 +4,7 @@
 
 | Contents |
 |--------------|
+| [🍦 VanFS](#top) |
 | [🚀 Getting Started](#1) |
 | [🌐 Web Components](#2) |
 | [⚡️ Functional Reactive Programming (FRP)](#3) |
