@@ -567,11 +567,15 @@ $$
 TimelineA ~ ~ * ~ ~ Function ~ \rightarrow ~ TimelineB
 $$
 
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
 This is the identical structure of:
 
 $$
 ListA ~ ~ * ~ ~ Function ~ \rightarrow ~ ListB
 $$
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
 So, this is FRP.
 
