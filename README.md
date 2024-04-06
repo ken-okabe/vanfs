@@ -662,7 +662,9 @@ $$
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
-```fsharplet double = fun a -> a * 2
+```fsharp
+
+let double = fun a -> a * 2
 
 let timelineA = Timeline 1
 
@@ -671,6 +673,7 @@ let timelineB =
 
 console.log timelineB.lastVal
 // 2
+
 ```
 
 
