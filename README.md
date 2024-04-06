@@ -662,10 +662,18 @@ $$
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
-```fsharplet double = fun a -> a * 2let timelineA = Timeline 1let timelineB =    timelineA |> mapT double
+```fsharplet double = fun a -> a * 2
+
+let timelineA = Timeline 1
+
+let timelineB =
+    timelineA |> mapT double
 
 console.log timelineB.lastVal
-// 2```
+// 2
+```
+
+
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
