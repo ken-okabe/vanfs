@@ -27,3 +27,11 @@ const Counter =
     }
 
 van.add(document.body, Counter())
+
+
+let double = a => a * 2;
+
+let arrayA = [1];
+
+let arrayB =
+    arrayA.map(double);

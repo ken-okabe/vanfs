@@ -130,3 +130,35 @@ let Tasks =
 
 add [document.body; Tasks()]
 |> ignore
+
+
+
+
+let double = fun a -> a * 2
+
+// initialize timelineA
+let timelineA = Timeline 1
+
+// confirm the lastVal of timelineA
+console.log timelineA.lastVal
+// 1
+
+// the binary operation
+let timelineB =
+    timelineA |> mapT double
+
+// confirm the lastVal of timelineB
+console.log timelineB.lastVal
+// 2
+
+//=====================================
+// now, update the lastVal of timelineA
+timelineA
+|> nextT 3
+|> ignore
+
+// confirm the lastVal of timelineA & timelineB
+console.log timelineA.lastVal
+// 3
+console.log timelineB.lastVal
+// 6

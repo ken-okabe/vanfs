@@ -55,3 +55,10 @@ module TimelineElement =
             log a
             Timeline a
 
+    let timelineA = Timeline 1
+
+    let double =
+        fun a -> a * 2
+
+    let timelineB =
+        timelineA |> mapT double

@@ -149,6 +149,8 @@ In reality, it is much more than that.
 
 The powerful F# compiler  **automatically generates type annotations**  in  **VSCode**  editor, eliminating the need for manual typing that TypeScript demands.
 
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
 While programmers may want to define fundamental object types that form the backbone of their code, in other places, if the F# compiler warns for a demand of manual type annotations, usually,  **something is wrong** .
 
 In F#, if the compiler cannot infer the type, it often suggests that there may be mathematical inconsistencies.
@@ -156,6 +158,8 @@ In F#, if the compiler cannot infer the type, it often suggests that there may b
 In TypeScript, if the compiler cannot infer the type, it often suggests limitations in its type inference capabilities. This makes it hard to determine the precise cause of the problem.
 
 As a result, F# programmers are naturally led to write mathematically consistent and rigorous code; unfortunately, this benefit **rarely** happens in TypeScript.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
 ## F# as an AltJS: A Comparison with TypeScript
 
@@ -167,12 +171,12 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**
-⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)
+>  **TypeScirpt**  
+⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
  **JavaScript**  running in the browser
 
->  **F#**
-⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)
+>  **F#**  
+⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
  **JavaScript**  running in the browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
@@ -304,7 +308,7 @@ body {
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# 🌐Web Components
+# 🌐 Web Components
 
 **VanFS** can leverage custom HTML tags provided by  **Web Components** with  **design systems** : [Microsoft Fluent](https://fluent2.microsoft.design/), [Google Material Design](https://m3.material.io/), etc. .
 
@@ -509,7 +513,7 @@ export let cssURLs = [
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# ⏱️Functional Reactive Programming (FRP)
+# ⚡️ Functional Reactive Programming (FRP)
 
 ## (1:1 bindings for composing UIs) + FRP
 
@@ -555,7 +559,7 @@ This is an extremely important topic, so I have isolated the article.
 
 ### [What is Functional Programming?](./README-whatisFP.md)
 
-## VanFS provides binary operations
+## VanFS provides binary operations to utilize the state management
 
 In Functional Programming, everything is an expression ([What is Functional Programming?](./README-whatisFP.md)). Accordingly, VanFS provides  **binary operations for the reactive state management** .
 
@@ -563,12 +567,215 @@ $$
 TimelineA ~ ~ * ~ ~ Function ~ \rightarrow ~ TimelineB
 $$
 
-## Timeline
+This is the identical structure of:
 
-| **Field** | **Description**       | Van.state |
+$$
+ListA ~ ~ * ~ ~ Function ~ \rightarrow ~ ListB
+$$
+
+So, this is FRP.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# ⏱️ Timeline
+
+## 🔍 Type
+
+###  `Timeline<'a>` 
+
+```fsharp
+record Timeline<'a>
+  val mutable lastVal: 'a
+  val el: StateElement<'a>
+```
+
+| Field | Description       | Van.state |
 |--------------|------------------------|-------------|
-| lastVal      | Last value of the Timeline | `State.val` |
-| el           | Reactive DOM element of the Timeline | `State` |
+| `lastVal`  | Last value of the Timeline | `State.val` |
+| `el`           | Reactive DOM element of the Timeline | `State` |
+
+---
+
+
+## 🔍 Functions
+
+---
+
+## 1️⃣ Function to initialize `Timeline<'a>`
+
+### `Timeline`
+
+```fsharp
+'a -> Timeline<'a>
+```
+
+#### VanJS
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
+
+```js
+let counter = van.state(0);
+
+console.log counter.val;
+// 0
+```
+
+#### VanFS
+
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let counter = Timeline 0
+
+console.log counter.lastVal
+// 0
+```
+
+---
+
+## 2️⃣ Functions for the binary operations
+
+$$
+TimelineA ~ ~ * ~ ~ Function ~ ~ \rightarrow ~ ~ TimelineB
+$$
+
+### `mapT` 
+
+```fsharp('a -> 'b) -> (Timeline<'a> -> Timeline<'b>)```
+
+### `bindT` 
+
+```fsharp
+('a -> Timeline<'b>) -> (Timeline<'a> -> Timeline<'b>)
+```
+
+#### VanFS
+
+When the binary operator: * is `mapT`, 
+
+$$
+TimelineB ~ ~ = ~ ~ TimelineA ~ ~ mapT ~ ~ double
+$$
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharplet double = fun a -> a * 2let timelineA = Timeline 1let timelineB =    timelineA |> mapT double
+
+console.log timelineB.lastVal
+// 2```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+This is the identical structure of:
+
+$$
+ArrayB ~ ~ = ~ ~ ArrayA ~ ~ ~ Array.map ~ ~ ~ double
+$$
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
+
+```js
+let double = a => a * 2;
+
+let arrayA = [1];
+
+let arrayB =
+    arrayA.map(double);
+
+console.log(arrayB);
+// [2]
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
+
+---
+
+## 3️⃣ Function to update `Timeline<'a>`
+
+$$
+TimelineA ~ ~ nextT ~ ~ newValue ~ ~ \rightarrow ~ ~ TimelineB
+$$
+
+### `nextT` 
+
+```fsharp
+'a -> Timeline<'a> -> Timeline<'a>
+```
+
+$$
+TimelineB ~ ~ = ~ ~ TimelineA ~ ~ nextT ~ ~ newValue
+$$
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let timelineA' =
+    timelineA |> nextT 3
+```
+
+or, in most cases, we don’t need another  `timelineA'`  and want to discard it, so simply `ignore` the returned value.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let timelineA = Timeline 1
+
+timelineA
+|> nextT 3
+|> ignore
+
+console.log timelineA.lastVal
+// 3
+```
+
+---
+
+## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
+
+An update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.
+
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let double = fun a -> a * 2
+
+// 1️⃣ initialize timelineA
+let timelineA = Timeline 1
+
+// confirm the lastVal of timelineA
+console.log timelineA.lastVal
+// 1
+
+// 2️⃣ the binary operation
+let timelineB =
+    timelineA |> mapT double
+
+// confirm the lastVal of timelineB
+console.log timelineB.lastVal
+// 2
+
+//=====================================
+// 3️⃣ update the lastVal of timelineA
+timelineA
+|> nextT 3
+|> ignore
+// update to timelineA will trigger 
+//   a reactive update of timelineB
+
+// confirm the lastVal of timelineA & timelineB
+console.log timelineA.lastVal
+// 3
+console.log timelineB.lastVal
+// 6
+```
+
+---
+
+## Counter app
+
+#### VanJS
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
@@ -604,6 +811,8 @@ const Counter =
 van.add(document.body, Counter())
 ```
 
+#### VanFS
+
 #### Program.fs
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
@@ -625,25 +834,25 @@ let iconButton: Tag = tags?``md-icon-button``
 
 let Counter =
     fun _ ->
-        let counter = Timeline 0
+        let counter = Timeline 0 // 👈 initialize an Timeline
 
-        counter
+        counter // 👈 the binary operation of the Timeline
         |> mapT (fun value ->
                      console.log $"Counter: {value}")
-        |> ignore
+        |> ignore // ignore the return value of `console.log`
 
         div [
-            h2 ["❤️ "; counter.el]
-            iconButton [
+            h2 ["❤️ "; counter.el] // 👈 `counter.el` 
+            iconButton [           // for Reactive DOM element 
                 {|onclick = fun _ ->
-                                counter
+                                counter // 👈 update the Timeline
                                 |> nextT (counter.lastVal + 1)
                 |}
                 icon ["thumb_up"]
             ]
             iconButton [
                 {|onclick = fun _ ->
-                                counter
+                                counter // 👈 update the Timeline
                                 |> nextT (counter.lastVal - 1)
                 |}
                 icon ["thumb_down"]
@@ -702,7 +911,7 @@ let Number =
                             if e?target?value=""
                             then Null
                             else Nullable e?target?value
-
+                            
                         if value=Null // clear the output textField
                         then numberX2
                              |> nextTN Null
@@ -837,20 +1046,20 @@ let Tasks =
                 setTimeout f 2500
                 timelineResult
 
-        let timelineStarter = Timeline Null //tasks disabled initially
+        let taskStarter = Timeline Null //tasks disabled initially
 
         let task123 =
             task1 +>
             task2 +>
             task3
 
-        timelineStarter
+        taskStarter
         |> taskT task123
         |> ignore
 
         let start =
-            fun _ -> // timeline will start
-                timelineStarter
+            fun _ -> // taskes enabled
+                taskStarter
                 |> nextTN (Nullable 0)
                 |> ignore
 
