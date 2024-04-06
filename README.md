@@ -1061,20 +1061,20 @@ let Tasks =
                 setTimeout f 2500
                 timelineResult
 
-        let taskStarter = Timeline Null //tasks disabled initially
+        let timelineStarter = Timeline Null //tasks disabled initially
 
         let task123 =
             task1 +>
             task2 +>
             task3
 
-        taskStarter
+        timelineStarter
         |> taskT task123
         |> ignore
 
         let start =
-            fun _ -> // taskes enabled
-                taskStarter
+            fun _ -> // timeline will start
+                timelineStarter
                 |> nextTN (Nullable 0)
                 |> ignore
 
