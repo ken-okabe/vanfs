@@ -1,14 +1,16 @@
+| Contents |
+|--------------|
+| [🍦 VanFS](#vanfs) |
+| [🚀 Getting Started](#getting-started) |
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp) |
+| [⏱️ Timeline](#timeline)   | 
+
+###### vanfs
+
 # 🍦 VanFS
 
 **VanFS is a project template** for 1:1 bindings from [F#](https://fsharp.org/) to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP ([Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming))
-
-| Contents |
-|--------------|
-| [🍦 VanFS](#top) |
-| [🚀 Getting Started](#1) |
-| [🌐 Web Components](#2) |
-| [⚡️ Functional Reactive Programming (FRP)](#3) |
-| [⏱️ Timeline](#4)         | 
 
 ## What is VanJS?
 
@@ -205,7 +207,15 @@ I've created a separate article on this topic since it's part of the larger fron
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-###### 1
+| Contents |
+|--------------|
+| [🍦 VanFS](#vanfs) |
+| [🚀 Getting Started](#getting-started) |
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp) |
+| [⏱️ Timeline](#timeline)   | 
+
+###### getting-started
 
 # 🚀 Getting Started
 
@@ -318,7 +328,15 @@ body {
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-###### 2
+| Contents |
+|--------------|
+| [🍦 VanFS](#vanfs) |
+| [🚀 Getting Started](#getting-started) |
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp) |
+| [⏱️ Timeline](#timeline)   | 
+
+###### web-components
 
 # 🌐 Web Components
 
@@ -525,7 +543,15 @@ export let cssURLs = [
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-###### 3
+| Contents |
+|--------------|
+| [🍦 VanFS](#vanfs) |
+| [🚀 Getting Started](#getting-started) |
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp) |
+| [⏱️ Timeline](#timeline)   | 
+
+###### frp
 
 # ⚡️ Functional Reactive Programming (FRP)
 
@@ -597,7 +623,15 @@ So, this is FRP.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-###### 4
+| Contents |
+|--------------|
+| [🍦 VanFS](#vanfs) |
+| [🚀 Getting Started](#getting-started) |
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp) |
+| [⏱️ Timeline](#timeline)   | 
+
+###### timeline
 
 # ⏱️ Timeline
 
