@@ -642,7 +642,9 @@ $$
 
 ### `mapT` 
 
-```fsharp('a -> 'b) -> (Timeline<'a> -> Timeline<'b>)```
+```fsharp
+('a -> 'b) -> (Timeline<'a> -> Timeline<'b>)
+```
 
 ### `bindT` 
 
