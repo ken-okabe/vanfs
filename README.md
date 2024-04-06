@@ -4,7 +4,6 @@
 
 | Contents |
 |--------------|
-| [🍦 VanFS](#vanfs)  |
 | [🚀 Getting Started](#getting-started) |
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#%EF%B8%8F-functional-reactive-programming-frp) |
@@ -204,6 +203,8 @@ I've created a separate article on this topic since it's part of the larger fron
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712154361707.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+##### 1
 
 # 🚀 Getting Started
 
