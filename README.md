@@ -579,7 +579,7 @@ $$
 
 So, this is FRP.
 
-FRP is the principles of functional programming and its applications in real-world scenarios.
+ **Functional Reactive Programming (FRP)**  is a programming paradigm that uses mathematical expressions, specifically  **binary operations** , as a means of implementing  **Reactive Programming** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
