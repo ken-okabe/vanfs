@@ -7,10 +7,10 @@ module TimelineElementTask =
 
     let taskT =
         fun task ->
-            fun taskStarter ->
+            fun timelineStarter ->
                 let timelineResult = Timeline Null
                 let coreTask = task timelineResult
-                taskStarter
+                timelineStarter
                 |> bindTN coreTask
                 |> ignore
                 timelineResult
