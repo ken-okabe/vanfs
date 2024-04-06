@@ -4,10 +4,10 @@
 
 | Contents |
 |--------------|
-| [🚀 Getting Started](#getting-started) |
-| [🌐 Web Components](#web-components) |
-| [⚡️ Functional Reactive Programming (FRP)](#%EF%B8%8F-functional-reactive-programming-frp) |
-| [⏱️ Timeline](#%EF%B8%8F-timeline)         | 
+| [🚀 Getting Started](#1) |
+| [🌐 Web Components](#2) |
+| [⚡️ Functional Reactive Programming (FRP)](#3) |
+| [⏱️ Timeline](#4)         | 
 
 ## What is VanJS?
 
@@ -204,7 +204,7 @@ I've created a separate article on this topic since it's part of the larger fron
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-##### 1
+###### 1
 
 # 🚀 Getting Started
 
@@ -316,6 +316,8 @@ body {
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754561732.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+###### 2
 
 # 🌐 Web Components
 
@@ -522,6 +524,8 @@ export let cssURLs = [
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+###### 3
+
 # ⚡️ Functional Reactive Programming (FRP)
 
 ## (1:1 bindings for composing UIs) + FRP
@@ -591,6 +595,8 @@ So, this is FRP.
 **Functional Reactive Programming (FRP)**  is a programming paradigm that uses mathematical expressions, specifically  **binary operations** , as a means of implementing  **Reactive Programming** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+###### 4
 
 # ⏱️ Timeline
 
