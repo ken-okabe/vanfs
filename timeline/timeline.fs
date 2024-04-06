@@ -3,15 +3,17 @@ module Timeline =
 
     type Timeline<'a> =
         { mutable lastVal: 'a
-          mutable lastFns: list<'a -> unit> }
+          mutable _fns: list<'a -> unit> }
 
     let Timeline =
-        fun a -> { lastVal = a; lastFns = [] }
+        fun a ->
+            { lastVal = a
+              _fns = [] }
 
     let nextT =
         fun a timeline ->
             timeline.lastVal <- a // mutable
-            timeline.lastFns
+            timeline._fns
             |> List.iter (fun f -> f a) //perform all fns in the list
             timeline // return the modified timeline
 
@@ -23,13 +25,13 @@ module Timeline =
                     timelineB
                     |> nextT (a |> monadf).lastVal
                     |> ignore
-            timelineA.lastFns <- timelineA.lastFns @ [ newFn ] // mutable
+            timelineA._fns <- timelineA._fns @ [ newFn ] // mutable
             timelineB
     //----------------------------------------------
     let mapT =
         fun f -> (f >> Timeline) |> bindT
 
-    //==============================================================
+//==============================================================
     let log = // 'a -> unit
         fun a -> printfn "%A" a
 
@@ -37,4 +39,3 @@ module Timeline =
         fun a ->
             log a
             Timeline a
-

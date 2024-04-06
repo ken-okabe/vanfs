@@ -13,19 +13,19 @@ module TimelineElement =
 
     type Timeline<'a> =
         { mutable lastVal: 'a
-          mutable lastFns: list<'a -> unit>
-          mutable el: StateElement<'a>} // <== add native VanJS state object
+          mutable _fns: list<'a -> unit>
+          el: StateElement<'a> } // <== add native VanJS state object
 
     let Timeline =
         fun a ->
-            { lastVal = a;
-              lastFns = [];
-              el = state a} // <== add native VanJS state object
+            { lastVal = a
+              _fns = []
+              el = state a } // <== add native VanJS state object
 
     let nextT =
         fun a timeline ->
             timeline.lastVal <- a // mutable
-            timeline.lastFns
+            timeline._fns
             |> List.iter (fun f -> f a) //perform all fns in the list
             // Update the native VanJS state object simultaneously.
             timeline.el?``val`` <- a // <======================= add
@@ -40,7 +40,7 @@ module TimelineElement =
                     timelineB
                     |> nextT (a |> monadf).lastVal
                     |> ignore
-            timelineA.lastFns <- timelineA.lastFns @ [ newFn ]
+            timelineA._fns <- timelineA._fns @ [ newFn ]
             timelineB
     //----------------------------------------------
     let mapT =

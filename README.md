@@ -151,7 +151,7 @@ The powerful F# compiler  **automatically generates type annotations**  in  **VS
 
 While programmers may want to define fundamental object types that form the backbone of their code, in other places, if the F# compiler warns for a demand of manual type annotations, usually,  **something is wrong** .
 
-In F#, if the compiler cannot infer the type, in most cases, it suggests that there may be mathematical inconsistencies.
+In F#, if the compiler cannot infer the type, it often suggests that there may be mathematical inconsistencies.
 
 In TypeScript, if the compiler cannot infer the type, it often suggests limitations in its type inference capabilities. This makes it hard to determine the precise cause of the problem.
 
@@ -167,12 +167,12 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**  
-⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
+>  **TypeScirpt**
+⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)
  **JavaScript**  running in the browser
 
->  **F#**  
-⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
+>  **F#**
+⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)
  **JavaScript**  running in the browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
@@ -187,7 +187,7 @@ There are a lot of **Why** s here!
 
 Since this is related to the big topic of frontend app development, including my personal opinions, I have isolated the article.
 
-[Versatility of Web Technology for Cross-Platform App Development](./README-why.md)
+### [Versatility of Web Technology for Cross-Platform App Development](./README-why.md)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712154361707.png)
 
@@ -525,7 +525,7 @@ or
 
 ---
 
-**1:1 bindings is absolutely true within the scope of the basic features for composing UIs, but not true for its state management.**
+**1:1 bindings is absolutely true within the scope of the basic features for composing UIs, but not a case for its state management.**
 
 ## VanJS is a framework that embraces Reactive Programming
 
@@ -547,59 +547,30 @@ In order to utilize the state management, VanJS provides two APIs: `van.state` a
 
 **VanJS**  is **Reactive**.
 
-**VanFS**  is  **Functional Reactive** .
+**VanFS**  is  **Functional Reactive**.
 
 ## What is Functional Programming?
 
-What is  **Functional Programming** ? It's a programming a programming paradigm that uses **Expression** as the building blocks of the code .
+This is an extremely important topic, so I have isolated the article.
 
-What is Expression? 
+### [What is Functional Programming?](./README-whatisFP.md)
 
-$1 + 2$
+## VanFS provides binary operations
 
-$5 - 3$
+In Functional Programming, everything is an expression ([What is Functional Programming?](./README-whatisFP.md)). Accordingly, VanFS provides  **binary operations for the reactive state management** .
 
-$2 \times 3$
-
-$8 \div 4$
-
-These are familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation) called **four arithmetic operations** , which is a type of expression.
-
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712224131411.png)
-
-or
-
-$a  \triangleright function$
-
-`a |> function`
-
-This is a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation) called  **[Pipeline (operation)](https://learn.microsoft.com/en-us/dotnet/fsharp/tour#pipelines)** , which is a type of expression.
-
-$list \quad \triangleright  map \quad function$
-
-`list |> map function`
-
-This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Endo-functor** , which is a type of expression.
-
-$list \quad \triangleright  bind \quad monadicFunction$
-
-`list |> bind monadicFunction`
-
-This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Monad** , which is a type of expression.
-
-## It's not strictly an API (Application Programming Interface), but simply Expressions of Math (Algebra) 
-
-
+$$
+TimelineA ~ ~ * ~ ~ Function ~ \rightarrow ~ TimelineB
+$$
 
 ## Timeline
 
-| **Field** | **Description**       |
-|--------------|------------------------|
-| lastVal      | Previous value         |
-| el           | Equivalent to `van.state.a` |
+| **Field** | **Description**       | Van.state |
+|--------------|------------------------|-------------|
+| lastVal      | Last value of the Timeline | `State.val` |
+| el           | Reactive DOM element of the Timeline | `State` |
 
-
-<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
 ```ts
 import van from "vanjs-core"
@@ -731,7 +702,7 @@ let Number =
                             if e?target?value=""
                             then Null
                             else Nullable e?target?value
-                            
+
                         if value=Null // clear the output textField
                         then numberX2
                              |> nextTN Null
@@ -866,20 +837,20 @@ let Tasks =
                 setTimeout f 2500
                 timelineResult
 
-        let taskStarter = Timeline Null //tasks disabled initially
+        let timelineStarter = Timeline Null //tasks disabled initially
 
         let task123 =
             task1 +>
             task2 +>
             task3
 
-        taskStarter
+        timelineStarter
         |> taskT task123
         |> ignore
 
         let start =
-            fun _ -> // taskes enabled
-                taskStarter
+            fun _ -> // timeline will start
+                timelineStarter
                 |> nextTN (Nullable 0)
                 |> ignore
 

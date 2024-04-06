@@ -11,7 +11,7 @@ module TimelineNullable =
             timeline.lastVal <- nullable // mutable
             if nullable = Null
             then () // do nothing
-            else timeline.lastFns
+            else timeline._fns
                  |> List.iter (fun nullableFn -> nullableFn nullable)
                  //perform all fns in the list
             timeline // return the modified timeline
@@ -29,7 +29,7 @@ module TimelineNullable =
                     else timelineB
                             |> nextTN (nullable.Value |> monadf).lastVal
                             |> ignore
-            timelineA.lastFns <- timelineA.lastFns @ [ newFn ] // mutable
+            timelineA._fns <- timelineA._fns @ [ newFn ] // mutable
             timelineB
     //----------------------------------------------
     let mapTN =
