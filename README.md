@@ -654,7 +654,7 @@ $$
 
 #### VanFS
 
-When the binary operator: * is `mapT`, 
+When the binary operator:  $*$  is `mapT`, 
 
 $$
 TimelineB ~ ~ = ~ ~ TimelineA ~ ~ mapT ~ ~ double
