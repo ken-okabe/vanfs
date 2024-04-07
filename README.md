@@ -814,11 +814,7 @@ let timelineA' =
 
 or, in most cases, we don’t need another  `timelineA'`  and want to discard it, so simply `ignore` the returned value.
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
-
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
-
-
 
 ```fsharp
 let timelineA = Timeline 1
@@ -830,6 +826,8 @@ timelineA
 console.log timelineA.lastVal
 // 3
 ```
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
 
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
