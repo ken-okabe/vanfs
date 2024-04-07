@@ -922,25 +922,26 @@ let iconButton: Tag = tags?``md-icon-button``
 
 let Counter =
     fun _ ->
-        let counter = Timeline 0 // 👈 initialize an Timeline
+        let counter = Timeline 0 // 1️⃣ initialize an Timeline
 
-        counter // 👈 the binary operation of the Timeline
+        counter // 2️⃣ the binary operation of the Timeline
         |> mapT (fun value ->
                      console.log $"Counter: {value}")
-        |> ignore // ignore the return value of `console.log`
+        |> ignore 
+        // ignore the return value of `console.log`
 
         div [
             h2 ["❤️ "; counter.el] // 👈 `counter.el` 
             iconButton [           // for Reactive DOM element 
                 {|onclick = fun _ ->
-                                counter // 👈 update the Timeline
+                                counter // 3️⃣ update the Timeline
                                 |> nextT (counter.lastVal + 1)
                 |}
                 icon ["thumb_up"]
             ]
             iconButton [
                 {|onclick = fun _ ->
-                                counter // 👈 update the Timeline
+                                counter // 3️⃣ update the Timeline
                                 |> nextT (counter.lastVal - 1)
                 |}
                 icon ["thumb_down"]
