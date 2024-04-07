@@ -742,6 +742,10 @@ console.log timelineB.lastVal
 // 2
 ```
 
+**This code for the binary operation simply corresponds to the basic usage of spreadsheet apps**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453265841.png)
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
 This is the identical structure of:
@@ -763,6 +767,8 @@ let arrayB =
 console.log(arrayB);
 // [2]
 ```
+
+We could recognize the array `[2]` is identical to the  **Cell**  and  **Value** `2` of a spreadsheet; however, the spreadsheet and **Timeline** maintain a `double` relationship  **as values change over the timeline** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
@@ -804,11 +810,20 @@ console.log timelineA.lastVal
 // 3
 ```
 
+The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453321296.png)
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+console.log timelineB.lastVal
+// 6
+```
+
 ---
 
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
-
-An update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
