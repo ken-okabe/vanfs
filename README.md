@@ -619,12 +619,14 @@ $$
 
 This binary operation corresponds to an operation in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712461813235.png)
+
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453265841.png)
 
--  $TimelineA \quad = \quad$ **A**
+-  $TimelineA \quad = \quad$ **A1**
 
 
--  $TimelineB \quad = \quad$ **B**
+-  $TimelineB \quad = \quad$ **B1**
 
 -  $Function \quad = \quad$ ***fx***   
 
