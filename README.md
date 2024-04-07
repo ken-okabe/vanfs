@@ -248,6 +248,8 @@ npm i
 
 #### or Create a project from scratch
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711729299132.png)
+
 ```sh
 mkdir my-project
 cd my-project
@@ -268,7 +270,7 @@ npm i -D vite
 #  </ItemGroup>
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711729299132.png)
+#### /my-project.fsproj
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
