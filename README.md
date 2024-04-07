@@ -805,11 +805,18 @@ or, in most cases, we don’t need another  `timelineA'`  and want to discard it
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
+
+
 ```fsharp
-let timelineA = Timeline 1timelineA|> nextT 3|> ignoreconsole.log timelineA.lastVal// 3
+let timelineA = Timeline 1
+
+timelineA
+|> nextT 3
+|> ignore
+
+console.log timelineA.lastVal
+// 3
 ```
-
-
 
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
