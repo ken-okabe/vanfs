@@ -613,6 +613,17 @@ $$
 TimelineA ~ ~ * ~ ~ Function ~ \rightarrow ~ TimelineB
 $$
 
+This binary operation corresponds to an operation in spreadsheet apps.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453265841.png)
+
+-  $TimelineA \quad = \quad$ **A**
+
+
+-  $TimelineB \quad = \quad$ **B**
+
+-  $Function \quad = \quad$ ***fx***   
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
 This is the identical structure of:
