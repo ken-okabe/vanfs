@@ -829,6 +829,8 @@ console.log timelineA.lastVal
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
 
+---
+
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
 The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.
