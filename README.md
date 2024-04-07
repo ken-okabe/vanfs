@@ -617,7 +617,7 @@ $$
 TimelineB \quad = \quad TimelineA ~ ~ * ~ ~ Function
 $$
 
-This binary operation corresponds to an operation in spreadsheet apps.
+This binary operation corresponds to an operation in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453265841.png)
 
@@ -725,7 +725,7 @@ console.log counter.lastVal
 // 0
 ```
 
-Consider the `Timeline` as a specific container for a value, similar to a  **Cell**  in spreadsheet applications.
+ **Consider the `Timeline` as a specific container for a value, similar to a  **Cell**  in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).** 
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712455522726.png)
 
@@ -845,7 +845,7 @@ console.log timelineA.lastVal
 
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
-The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.
+ **The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.** 
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453321296.png)
 
