@@ -1,9 +1,9 @@
 | Contents | 
 |--------------| 
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) | 
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) | 
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
@@ -210,10 +210,10 @@ I've created a separate article on this topic since it's part of the larger fron
 
 | Contents | 
 |--------------| 
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
-| [🚀 Getting Started](#getting-started)|
+| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀  **Getting Started** ](#getting-started)|
 | [🌐 Web Components](#web-components) | 
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) | 
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
@@ -332,10 +332,10 @@ body {
 
 | Contents | 
 |--------------| 
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
-| [🌐 Web Components](#web-components) | 
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [🌐  **Web Components** ](#web-components) | 
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) | 
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
@@ -548,10 +548,10 @@ export let cssURLs = [
 
 | Contents | 
 |--------------| 
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) | 
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️  **Functional Reactive Programming (FRP)** ](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) | 
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
@@ -629,11 +629,11 @@ So, this is FRP.
 
 | Contents | 
 |--------------| 
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) | 
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>What is Functional Programming?</sub>](./README-whatisFP.md)||
-| [⏱️ Timeline](#timeline) | 
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⏱️  **Timeline** ](#timeline) | 
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### timeline
