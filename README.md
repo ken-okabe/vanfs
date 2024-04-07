@@ -613,6 +613,10 @@ $$
 TimelineA ~ ~ * ~ ~ Function ~ \rightarrow ~ TimelineB
 $$
 
+$$
+TimelineB \quad = \quad TimelineA ~ ~ * ~ ~ Function
+$$
+
 This binary operation corresponds to an operation in spreadsheet apps.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453265841.png)
@@ -631,6 +635,14 @@ This is the identical structure of:
 $$
 ListA ~ ~ * ~ ~ Function ~ \rightarrow ~ ListB
 $$
+
+$$
+ListB \quad = \quad ListA ~ ~ * ~ ~ Function
+$$
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694006796227.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694901961984.png#gh-light-mode-only)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
