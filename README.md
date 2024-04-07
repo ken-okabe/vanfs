@@ -700,6 +700,10 @@ console.log counter.lastVal
 // 0
 ```
 
+Consider the `Timeline` as a specific container for a value, similar to a  **Cell**  in spreadsheet applications.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712455522726.png)
+
 ---
 
 ## 2️⃣ Functions for the binary operations
@@ -797,33 +801,17 @@ let timelineA' =
 
 or, in most cases, we don’t need another  `timelineA'`  and want to discard it, so simply `ignore` the returned value.
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
-```fsharp
-let timelineA = Timeline 1
+```fsharplet timelineA = Timeline 1timelineA|> nextT 3|> ignoreconsole.log timelineA.lastVal// 3```
 
-timelineA
-|> nextT 3
-|> ignore
-
-console.log timelineA.lastVal
-// 3
-```
+## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
 The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453321296.png)
-
-<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
-
-```fsharp
-console.log timelineB.lastVal
-// 6
-```
-
----
-
-## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
