@@ -725,7 +725,7 @@ $$
 When the binary operator:  $*$  is `mapT`,
 
 $$
-TimelineB ~ ~ = ~ ~ TimelineA ~ ~ mapT ~ ~ double
+TimelineB \quad = \quad TimelineA \quad \triangleright mapT \quad double
 $$
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
@@ -747,7 +747,7 @@ console.log timelineB.lastVal
 This is the identical structure of:
 
 $$
-ArrayB ~ ~ = ~ ~ ArrayA ~ ~ ~ Array.map ~ ~ ~ double
+ArrayB \quad = \quad ArrayA \quad \triangleright Array.map \quad double
 $$
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
@@ -770,9 +770,7 @@ console.log(arrayB);
 
 ## 3️⃣ Function to update `Timeline<'a>`
 
-$$
-TimelineA ~ ~ nextT ~ ~ newValue ~ ~ \rightarrow ~ ~ TimelineA'
-$$
+$$TimelineA \quad \triangleright nextT \quad newValue \quad \rightarrow \quad TimelineA'$$
 
 ### `nextT`
 
@@ -781,7 +779,7 @@ $$
 ```
 
 $$
-TimelineA' ~ ~ = ~ ~ TimelineA ~ ~ nextT ~ ~ newValue
+TimelineA'  \quad =  \quad TimelineA \quad \triangleright nextT \quad newValue
 $$
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
