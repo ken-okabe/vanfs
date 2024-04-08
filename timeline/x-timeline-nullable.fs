@@ -2,9 +2,7 @@ namespace Timeline
 module TimelineNullable =
 
     open Timeline.Timeline
-    open System
-
-    let Null = Nullable ()
+    open Nullable
 
     let nextTN =
         fun nullable timeline ->

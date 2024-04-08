@@ -2,10 +2,8 @@ namespace Van
 module TimelineElementNullable =
 
     open Van.TimelineElement
+    open Van.Nullable
     open Fable.Core.JsInterop
-    open System
-
-    let Null = Nullable ()
 
     let nextTN =
         fun nullable timeline ->
@@ -39,12 +37,10 @@ module TimelineElementNullable =
         fun f -> (f >> Timeline) |> bindTN
 
     //==============================================================
-    let taskT =
-        fun coreTask ->
-            fun taskStart ->
-                let taskResult = Timeline Null
-                let task = coreTask taskResult
-                taskStart
-                |> bindTN task
-                |> ignore
-                taskResult
+    let hasValue =
+        fun timeline ->
+            if timeline.lastVal = Null
+                then
+                    false
+                else
+                    true

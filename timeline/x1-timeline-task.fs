@@ -2,8 +2,8 @@ namespace Timeline
 module TimelineTask =
 
     open Timeline.Timeline
+    open Timeline.Nullable
     open Timeline.TimelineNullable
-    open System
 
     let taskT =
         fun task ->

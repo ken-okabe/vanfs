@@ -1,10 +1,10 @@
-| Contents | 
-|--------------| 
+| Contents |
+|--------------|
 | [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
-| [🌐 Web Components](#web-components) | 
+| [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
-| [⏱️ Timeline](#timeline) | 
+| [⏱️ Timeline](#timeline) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### vanfs
@@ -182,12 +182,12 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**  
-⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
+>  **TypeScirpt**
+⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)
  **JavaScript**  running in the browser
 
->  **F#**  
-⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
+>  **F#**
+⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)
  **JavaScript**  running in the browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
@@ -208,13 +208,13 @@ I've created a separate article on this topic since it's part of the larger fron
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-| Contents | 
-|--------------| 
+| Contents |
+|--------------|
 | [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀  **Getting Started** ](#getting-started)|
-| [🌐 Web Components](#web-components) | 
+| [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
-| [⏱️ Timeline](#timeline) | 
+| [⏱️ Timeline](#timeline) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### getting-started
@@ -332,13 +332,13 @@ body {
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-| Contents | 
-|--------------| 
+| Contents |
+|--------------|
 | [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
-| [🌐  **Web Components** ](#web-components) | 
+| [🌐  **Web Components** ](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
-| [⏱️ Timeline](#timeline) | 
+| [⏱️ Timeline](#timeline) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### web-components
@@ -548,13 +548,13 @@ export let cssURLs = [
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-| Contents | 
-|--------------| 
+| Contents |
+|--------------|
 | [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
-| [🌐 Web Components](#web-components) | 
+| [🌐 Web Components](#web-components) |
 | [⚡️  **Functional Reactive Programming (FRP)** ](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
-| [⏱️ Timeline](#timeline) | 
+| [⏱️ Timeline](#timeline) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### frp
@@ -628,7 +628,7 @@ This binary operation corresponds to an operation in [spreadsheet apps](https://
 
 -  $TimelineB \quad = \quad$ **B1**
 
--  $Function \quad = \quad$ ***fx***   
+-  $Function \quad = \quad$ ***fx***
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
@@ -654,13 +654,13 @@ So, this is FRP.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-| Contents | 
-|--------------| 
+| Contents |
+|--------------|
 | [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
-| [🌐 Web Components](#web-components) | 
+| [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
-| [⏱️  **Timeline** ](#timeline) | 
+| [⏱️  **Timeline** ](#timeline) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### timeline
@@ -727,7 +727,7 @@ console.log counter.lastVal
 // 0
 ```
 
- **Consider the `Timeline` as a specific container for a value, similar to a  **Cell**  in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).** 
+ **Consider the `Timeline` as a specific container for a value, similar to a  **Cell**  in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712455522726.png)
 
@@ -841,13 +841,15 @@ console.log timelineA.lastVal
 // 3
 ```
 
+
+
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
 
 ---
 
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
- **The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.** 
+ **The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453321296.png)
 
@@ -876,7 +878,7 @@ console.log timelineB.lastVal
 timelineA
 |> nextT 3
 |> ignore
-// update to timelineA will trigger 
+// update to timelineA will trigger
 //   a reactive update of timelineB
 
 // confirm the lastVal of timelineA & timelineB
@@ -954,12 +956,12 @@ let Counter =
         counter // 2️⃣ the binary operation of the Timeline
         |> mapT (fun value ->
                      console.log $"Counter: {value}")
-        |> ignore 
+        |> ignore
         // ignore the return value of `console.log`
 
         div [
-            h2 ["❤️ "; counter.el] // 👈 `counter.el` 
-            iconButton [           // for Reactive DOM element 
+            h2 ["❤️ "; counter.el] // 👈 `counter.el`
+            iconButton [           // for Reactive DOM element
                 {|onclick = fun _ ->
                                 counter // 3️⃣ update the Timeline
                                 |> nextT (counter.lastVal + 1)
@@ -981,7 +983,9 @@ add [document.body; Counter()]
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712107993450.png)
 
-## Timeline Nullable
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# ⏱️ Timeline Nullable
 
 #### Program.fs
 
@@ -1027,7 +1031,7 @@ let Number =
                             if e?target?value=""
                             then Null
                             else Nullable e?target?value
-                            
+
                         if value=Null // clear the output textField
                         then numberX2
                              |> nextTN Null
@@ -1063,7 +1067,9 @@ add [document.body; Number()]
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712011575293.png)
 
-## Timeline Task
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# ⏱️ Timeline Task
 
 #### Program.fs
 
