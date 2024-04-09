@@ -11,14 +11,14 @@ module TimelineElementTaskOr=
             fun timelineResult12 previousResult12 ->
                 let task12 =
                     fun timelineResult previousResult ->
-                        if timelineResult12.lastVal = Null
-                        then
+                        match hasValue timelineResult12 with
+                        | true ->
+                            ()
+                        | false ->
                             timelineResult12
-                            |> nextTN (NullableT previousResult)
+                            |> nextTN previousResult
                             |> ignore
-                        else
-                            ()  // do nothing
-                        timelineResult
+
 
                 let timelineStarter =
                     Timeline (NullableT true)
@@ -33,9 +33,5 @@ module TimelineElementTaskOr=
                 |> taskT task12
                 |> ignore
 
-                timelineResult12
 
-    let (+|) =
-        fun task1 task2 ->
-            taskOr task1 task2
-
+    let (+|) = taskOr

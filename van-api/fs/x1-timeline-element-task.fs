@@ -5,7 +5,6 @@ module TimelineElementTask =
     open Van.Nullable
     open Van.TimelineElementNullable
 
-
     let taskT =
         fun task ->
             fun timelineStarter ->
@@ -24,23 +23,25 @@ module TimelineElementTask =
                 // Initially passed to the next task
                 // as its timelineStarter with the value of Timeline Null
 
-
-    let composeTask =
+    let taskComposed =
         fun task1 task2 ->
-            fun timelineResult previousResult ->
+            fun timelineResult12 previousResult12 ->
                 //log "-----------task12 started..."
-                let completeTask =
-                    fun _timelineResult _previousResult ->
+                let taskComplete =
+                    fun timelineResult previousResult ->
                         //log "--------task12 done.."
-                        timelineResult // need to inform to the parent timelineResult
-                        |> nextTN (NullableT _previousResult)
+                        timelineResult12 // need to inform to the parent timelineResult
+                        |> nextTN previousResult
                         |> ignore
 
-                Timeline (NullableT true) // start now
+                let timelineStarter =
+                    Timeline (NullableT true)
+                // start the task immediately
+                timelineStarter
                 |> taskT task1
                 |> taskT task2
-                |> taskT completeTask
+                |> taskT taskComplete
                 |> ignore
 
-    let (+>) = composeTask
+    let (+>) = taskComposed
 

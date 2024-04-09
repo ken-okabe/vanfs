@@ -4,7 +4,8 @@ import { tags } from "./van-api/fs/basic.fs.js";
 import { Timeline, log } from "./van-api/fs/timeline-element.fs.js";
 import { nextTN } from "./van-api/fs/x-timeline-element-nullable.fs.js";
 import { NullableT$1 } from "./van-api/fs/x-nullable.fs.js";
-import { taskT, op_PlusGreater } from "./van-api/fs/x1-timeline-element-task.fs.js";
+import { op_PlusBar } from "./van-api/fs/x2-timeline-element-task-or.fs.js";
+import { taskT } from "./van-api/fs/x1-timeline-element-task.fs.js";
 import { uncurry2 } from "./fable_modules/fable-library-js.4.16.0/Util.js";
 
 export function setTimeout(f, delay) {
@@ -38,7 +39,7 @@ export function task1(timelineResult, previousResult) {
         log("...task1 done");
         nextTN(new NullableT$1(1, [1]), timelineResult);
     };
-    setTimeout(f, 1500);
+    setTimeout(f, 2500);
 }
 
 export function task2(timelineResult, previousResult) {
@@ -48,7 +49,7 @@ export function task2(timelineResult, previousResult) {
         log("...task2 done");
         nextTN(new NullableT$1(1, [2]), timelineResult);
     };
-    setTimeout(f, 1500);
+    setTimeout(f, 500);
 }
 
 export function task3(timelineResult, previousResult) {
@@ -68,7 +69,7 @@ export function taskLog(timelineResult, previousResult) {
 
 export const timelineStarter = Timeline(new NullableT$1(0, []));
 
-export const task123 = op_PlusGreater()(op_PlusGreater()((timelineResult) => ((previousResult) => {
+export const task123 = op_PlusBar()(op_PlusBar()((timelineResult) => ((previousResult) => {
     task1(timelineResult, previousResult);
 }))((timelineResult_1) => ((previousResult_1) => {
     task2(timelineResult_1, previousResult_1);
@@ -78,11 +79,9 @@ export const task123 = op_PlusGreater()(op_PlusGreater()((timelineResult) => ((p
 
 log("test");
 
-taskT((timelineResult_1, previousResult_1) => {
-    taskLog(timelineResult_1, previousResult_1);
-}, taskT(uncurry2(task123), taskT((timelineResult, previousResult) => {
-    task1(timelineResult, previousResult);
-}, taskT(uncurry2(task123), timelineStarter))));
+taskT((timelineResult, previousResult) => {
+    taskLog(timelineResult, previousResult);
+}, taskT(uncurry2(task123), timelineStarter));
 
 export function start(_arg) {
     log("start");

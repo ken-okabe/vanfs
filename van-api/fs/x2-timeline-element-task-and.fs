@@ -29,7 +29,6 @@ module TimelineElementTaskAnd=
 
                         | false -> () // do nothing
 
-                        timelineResult
 
                 let task2_ =
                     fun timelineResult previousResult ->
@@ -47,8 +46,6 @@ module TimelineElementTaskAnd=
 
                         | false -> () // do nothing
 
-                        timelineResult
-
 
                 let timelineStarter =
                     Timeline (NullableT true)
@@ -63,7 +60,6 @@ module TimelineElementTaskAnd=
                 |> taskT task2_
                 |> ignore
 
-                timelineResult12
 
     let (+&) =
         fun task1 task2 ->

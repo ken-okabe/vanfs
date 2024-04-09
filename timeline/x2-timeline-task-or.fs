@@ -18,7 +18,6 @@ module TimelineTaskOr =
                             |> ignore
                         else
                             ()  // do nothing
-                        timelineResult
 
                 let timelineStarter =
                     Timeline (NullableT true)
@@ -32,8 +31,6 @@ module TimelineTaskOr =
                 |> taskT task2
                 |> taskT task12
                 |> ignore
-
-                timelineResult12
 
     let (+|) =
         fun task1 task2 ->

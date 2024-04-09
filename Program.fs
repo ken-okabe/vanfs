@@ -32,7 +32,7 @@ let task1 =
             timelineResult
             |> nextTN (NullableT 1)
             |> ignore
-        setTimeout f 1500
+        setTimeout f 2500
 
 let task2 =
     fun timelineResult previousResult ->
@@ -44,7 +44,7 @@ let task2 =
             timelineResult
             |> nextTN (NullableT 2)
             |> ignore
-        setTimeout f 1500
+        setTimeout f 500
 
 let task3 =
     fun timelineResult previousResult ->
@@ -66,7 +66,7 @@ let taskLog =
 let timelineStarter = Timeline Null //tasks disabled initially
 
 let task123 =
-    task1 +> task2 +> task3
+    task1 +| task2 +| task3
 
 
 log "test"
@@ -76,9 +76,9 @@ timelineStarter
 //|> taskT task2
 //|> taskT task3
 //|> taskT task3
-|> taskT task1
+//|> taskT task1
 
-|> taskT task123
+//|> taskT task123
 |> taskT taskLog
 |> ignore
 

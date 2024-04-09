@@ -13,16 +13,17 @@ export function taskT(task, timelineStarter) {
     return timelineResult;
 }
 
-export function composeTask(task1, task2, timelineResult, previousResult) {
-    const completeTask = (_timelineResult, _previousResult) => {
-        nextTN(new NullableT$1(1, [_previousResult]), timelineResult);
+export function taskComposed(task1, task2, timelineResult12, previousResult12) {
+    const taskComplete = (timelineResult, previousResult) => {
+        nextTN(previousResult, timelineResult12);
     };
-    taskT(completeTask, taskT(task2, taskT(task1, Timeline(new NullableT$1(1, [true])))));
+    const timelineStarter = Timeline(new NullableT$1(1, [true]));
+    taskT(taskComplete, taskT(task2, taskT(task1, timelineStarter)));
 }
 
 export function op_PlusGreater() {
     return (task) => ((task_1) => ((timelineResult) => ((previousResult) => {
-        composeTask(uncurry2(task), uncurry2(task_1), timelineResult, previousResult);
+        taskComposed(uncurry2(task), uncurry2(task_1), timelineResult, previousResult);
     })));
 }
 
