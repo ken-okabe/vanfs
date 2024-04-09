@@ -1,7 +1,6 @@
 import Timer from "./fable_modules/fable-library-js.4.16.0/Timer.js";
 import { add } from "./fable_modules/fable-library-js.4.16.0/Observable.js";
 import { tags } from "./van-api/fs/basic.fs.js";
-import { printf, toConsole } from "./fable_modules/fable-library-js.4.16.0/String.js";
 import { Timeline, log } from "./van-api/fs/timeline-element.fs.js";
 import { nextTN } from "./van-api/fs/x-timeline-element-nullable.fs.js";
 import { NullableT$1 } from "./van-api/fs/x-nullable.fs.js";
@@ -33,39 +32,38 @@ export const linerProgress = (() => {
 })();
 
 export function task1(timelineResult, previousResult) {
-    toConsole(printf("-----------task1 started..."));
+    log("-----------task1 started...");
     log(previousResult);
     const f = (_arg) => {
-        toConsole(printf("...task1 done"));
+        log("...task1 done");
         nextTN(new NullableT$1(1, [1]), timelineResult);
     };
     setTimeout(f, 1500);
 }
 
 export function task2(timelineResult, previousResult) {
-    toConsole(printf("-----------task2 started..."));
+    log("-----------task2 started...");
     log(previousResult);
     const f = (_arg) => {
-        toConsole(printf("...task2 done"));
+        log("...task2 done");
         nextTN(new NullableT$1(1, [2]), timelineResult);
     };
     setTimeout(f, 1500);
 }
 
 export function task3(timelineResult, previousResult) {
-    toConsole(printf("-----------task3 started..."));
+    log("-----------task3 started...");
     log(previousResult);
     const f = (_arg) => {
-        toConsole(printf("...task3 done"));
+        log("...task3 done");
         nextTN(new NullableT$1(1, [3]), timelineResult);
     };
     setTimeout(f, 1500);
 }
 
-export function taskLog(timelineResult) {
-    toConsole(printf("-----------taskLog started..."));
-    log(timelineResult.lastVal);
-    return timelineResult;
+export function taskLog(timelineResult, previousResult) {
+    log("-----------taskLog started...");
+    log(previousResult);
 }
 
 export const timelineStarter = Timeline(new NullableT$1(0, []));
@@ -80,13 +78,15 @@ export const task123 = op_PlusGreater()(op_PlusGreater()((timelineResult) => ((p
 
 log("test");
 
-taskT((timelineResult, previousResult) => {
+taskT((timelineResult_1, previousResult_1) => {
+    taskLog(timelineResult_1, previousResult_1);
+}, taskT(uncurry2(task123), taskT((timelineResult, previousResult) => {
     task1(timelineResult, previousResult);
-}, taskT(uncurry2(task123), timelineStarter));
+}, taskT(uncurry2(task123), timelineStarter))));
 
 export function start(_arg) {
     log("start");
-    nextTN(new NullableT$1(1, [true]), timelineStarter);
+    nextTN(new NullableT$1(1, [0]), timelineStarter);
 }
 
 setTimeout(() => {

@@ -24,11 +24,11 @@ let linerProgress: Tag = tags?``md-linear-progress``
 
 let task1 =
     fun timelineResult previousResult ->
-        printfn "-----------task1 started..."
+        log "-----------task1 started..."
         log previousResult
         // delay-------------------------------
         let f = fun _ ->
-            printfn "...task1 done"
+            log "...task1 done"
             timelineResult
             |> nextTN (NullableT 1)
             |> ignore
@@ -36,11 +36,11 @@ let task1 =
 
 let task2 =
     fun timelineResult previousResult ->
-        printfn "-----------task2 started..."
+        log "-----------task2 started..."
         log previousResult
         // delay-------------------------------
         let f = fun _ ->
-            printfn "...task2 done"
+            log "...task2 done"
             timelineResult
             |> nextTN (NullableT 2)
             |> ignore
@@ -48,21 +48,20 @@ let task2 =
 
 let task3 =
     fun timelineResult previousResult ->
-        printfn "-----------task3 started..."
+        log "-----------task3 started..."
         log previousResult
         // delay-------------------------------
         let f = fun _ ->
-            printfn "...task3 done"
+            log "...task3 done"
             timelineResult
             |> nextTN (NullableT 3)
             |> ignore
         setTimeout f 1500
 
 let taskLog =
-    fun timelineResult ->
-        printfn "-----------taskLog started..."
-        log timelineResult.lastVal
-        timelineResult
+    fun timelineResult previousResult ->
+        log "-----------taskLog started..."
+        log previousResult
 
 let timelineStarter = Timeline Null //tasks disabled initially
 
@@ -79,14 +78,15 @@ timelineStarter
 //|> taskT task3
 |> taskT task1
 
-//|> taskT taskLog
+|> taskT task123
+|> taskT taskLog
 |> ignore
 
 let start =
     fun _ ->
         log "start" // timeline will start
         timelineStarter
-        |> nextTN (NullableT true)
+        |> nextTN (NullableT 0)
         |> ignore
 
 setTimeout start 2000
