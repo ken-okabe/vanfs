@@ -12,8 +12,8 @@ module TimelineElementTask =
                 let monadF =
                     (fun _ ->
                         task timelineResult timelineStarter.lastVal)
-                    >> (fun _  ->
-                            timelineResult) // dummy to make this function monadic
+                    >> (fun _  -> // dummy to make this function monadic
+                            Timeline Null)
 
                 timelineStarter
                 |> bindTN monadF
@@ -44,4 +44,3 @@ module TimelineElementTask =
                 |> ignore
 
     let (+>) = taskComposed
-
