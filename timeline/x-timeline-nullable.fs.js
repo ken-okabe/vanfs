@@ -17,13 +17,14 @@ export function nextTN(nullable, timeline) {
 
 export function bindTN(monadf, timelineA) {
     const timelineB = equals(timelineA.lastVal, new NullableT$1(0, [])) ? Timeline(new NullableT$1(0, [])) : monadf(NullableT$1__get_Value(timelineA.lastVal));
-    timelineA._fns = append(timelineA._fns, singleton((nullable) => {
+    const newFn = (nullable) => {
         if (equals(nullable, new NullableT$1(0, []))) {
         }
         else {
             nextTN(monadf(NullableT$1__get_Value(nullable)).lastVal, timelineB);
         }
-    }));
+    };
+    timelineA._fns = append(timelineA._fns, singleton(newFn));
     return timelineB;
 }
 

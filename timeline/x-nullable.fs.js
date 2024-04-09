@@ -3,7 +3,8 @@ import { Union } from "../fable_modules/fable-library-js.4.16.0/Types.js";
 import { union_type } from "../fable_modules/fable-library-js.4.16.0/Reflection.js";
 
 export function isNullableT(obj) {
-    if (equals(null, defaultOf())) {
+    const check = null;
+    if (equals(check, defaultOf())) {
         return false;
     }
     else {

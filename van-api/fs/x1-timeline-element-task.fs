@@ -17,8 +17,12 @@ module TimelineElementTask =
                 |> ignore
                 timelineResult
     //--------------------------
-    let (+>) =
+    let composeTask =
         fun task1 task2 ->
             fun timelineResult previousResult ->
+
                 task1 timelineResult previousResult
                 |> taskT task2
+
+
+    let (+>) = composeTask
