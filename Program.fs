@@ -12,7 +12,6 @@ open Van.TimelineElementTask
 open Van.TimelineElementTaskOr
 open Van.TimelineElementTaskAnd
 
-
 open System.Timers
 let setTimeout f delay =
     let timer = new Timer(float delay)
@@ -23,20 +22,17 @@ let br: Tag = tags?``br``
 let fluentCard: Tag = tags?``fluent-card``
 let linerProgress: Tag = tags?``md-linear-progress``
 
-
 let task1 =
     fun timelineResult previousResult ->
         printfn "-----------task1 started..."
         log previousResult
         // delay-------------------------------
         let f = fun _ ->
-            //printfn "task1 %s" (timelineThis.ToString())
             printfn "...task1 done"
             timelineResult
             |> nextTN (NullableT 1)
             |> ignore
         setTimeout f 1500
-        timelineResult
 
 let task2 =
     fun timelineResult previousResult ->
@@ -44,13 +40,11 @@ let task2 =
         log previousResult
         // delay-------------------------------
         let f = fun _ ->
-            //printfn "task1 %s" (timelineThis.ToString())
             printfn "...task2 done"
             timelineResult
             |> nextTN (NullableT 2)
             |> ignore
-        setTimeout f 1000
-        timelineResult
+        setTimeout f 1500
 
 let task3 =
     fun timelineResult previousResult ->
@@ -58,43 +52,41 @@ let task3 =
         log previousResult
         // delay-------------------------------
         let f = fun _ ->
-            //printfn "task1 %s" (timelineThis.ToString())
             printfn "...task3 done"
             timelineResult
             |> nextTN (NullableT 3)
             |> ignore
         setTimeout f 1500
-        timelineResult
 
 let taskLog =
-    fun timelineResult previousResult ->
+    fun timelineResult ->
         printfn "-----------taskLog started..."
-        log previousResult
+        log timelineResult.lastVal
         timelineResult
 
 let timelineStarter = Timeline Null //tasks disabled initially
 
 let task123 =
-    task1 +> task1 +> task1
- // taskAnd task1 task2
+    task1 +> task2 +> task3
+
 
 log "test"
 
 timelineStarter
 |> taskT task123
 //|> taskT task2
-//|> taskT task2
 //|> taskT task3
 //|> taskT task3
+|> taskT task1
 
-|> taskT taskLog
+//|> taskT taskLog
 |> ignore
 
 let start =
     fun _ ->
         log "start" // timeline will start
         timelineStarter
-        |> nextTN (NullableT 0)
+        |> nextTN (NullableT true)
         |> ignore
 
 setTimeout start 2000
