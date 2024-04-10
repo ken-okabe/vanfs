@@ -1,10 +1,10 @@
-namespace Van
-module TimelineElementTaskAnd=
+namespace Timeline
+module TimelineTaskOr =
 
-    open Van.TimelineElement
-    open Van.Nullable
-    open Van.TimelineElementNullable
-    open Van.TimelineElementTask
+    open Timeline.Timeline
+    open Timeline.Nullable
+    open Timeline.TimelineNullable
+    open Timeline.TimelineTask
 
     type ListResult<'a> =
         { results: List<'a> }

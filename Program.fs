@@ -68,15 +68,18 @@ let timelineStarter = Timeline Null //tasks disabled initially
 let task123 =
     task1 +| task2 +| task3
 
+let task21 = task2 +& task1
+
+let task12321 = task123 +& task21
 
 log "test"
 
 timelineStarter
-|> taskT task123
+|> taskT task12321
 //|> taskT task2
 //|> taskT task3
 //|> taskT task3
-//|> taskT task1
+|> taskT task1
 
 //|> taskT task123
 |> taskT taskLog
@@ -90,3 +93,5 @@ let start =
         |> ignore
 
 setTimeout start 2000
+
+

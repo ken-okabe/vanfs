@@ -32,3 +32,12 @@ module TimelineNullable =
     //----------------------------------------------
     let mapTN =
         fun f -> (f >> Timeline) |> bindTN
+
+    //==============================================================
+    let hasValue =
+        fun timeline ->
+            if timeline.lastVal = Null
+                then
+                    false
+                else
+                    true

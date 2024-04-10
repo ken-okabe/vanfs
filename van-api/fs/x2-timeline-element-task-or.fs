@@ -34,4 +34,5 @@ module TimelineElementTaskOr=
                 |> ignore
 
 
-    let (+|) = taskOr
+    let (+|) task1 task2 =
+        taskOr task1 task2
