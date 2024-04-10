@@ -63,5 +63,4 @@ module TimelineTaskOr =
                 |> ignore
 
 
-    let (+&) task1 task2 =
-        taskAnd task1 task2
+    let (+&) = taskAnd

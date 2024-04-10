@@ -76,11 +76,9 @@ log "test"
 
 timelineStarter
 |> taskT task12321
-//|> taskT task2
-//|> taskT task3
-//|> taskT task3
 |> taskT task1
-
+//|> taskT task3
+//|> taskT task3
 //|> taskT task123
 |> taskT taskLog
 |> ignore
