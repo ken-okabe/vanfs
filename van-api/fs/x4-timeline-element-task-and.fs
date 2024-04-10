@@ -1,5 +1,5 @@
 namespace Van
-module TimelineElementTaskAnd=
+module TimelineElementTaskAnd =
 
     open Van.TimelineElement
     open Van.Nullable

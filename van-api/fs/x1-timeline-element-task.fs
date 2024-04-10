@@ -22,23 +22,3 @@ module TimelineElementTask =
                 timelineResult
                 // Initially passed to the next task
                 // as its timelineStarter with the value of Timeline Null
-
-    let taskConcat =
-        fun task1 task2 ->
-            fun timelineResult12 previousResult12 ->
-                let taskComplete =
-                    fun timelineResult previousResult ->
-                        timelineResult12 // need to inform to the parent timelineResult
-                        |> nextTN previousResult
-                        |> ignore
-
-                let timelineStarter =
-                    Timeline (NullableT previousResult12)
-                // start the task immediately
-                timelineStarter
-                |> taskT task1
-                |> taskT task2
-                |> taskT taskComplete
-                |> ignore
-
-    let (+>) = taskConcat

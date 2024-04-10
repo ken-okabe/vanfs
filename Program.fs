@@ -9,6 +9,7 @@ open Van.TimelineElement // import Timeline'
 open Van.Nullable // import Null etc.
 open Van.TimelineElementNullable // import Null etc.
 open Van.TimelineElementTask
+open Van.TimelineElementTaskConcat
 open Van.TimelineElementTaskOr
 open Van.TimelineElementTaskAnd
 

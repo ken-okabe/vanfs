@@ -1,5 +1,5 @@
 namespace Timeline
-module TimelineTaskOr =
+module TimelineTaskAnd =
 
     open Timeline.Timeline
     open Timeline.Nullable
