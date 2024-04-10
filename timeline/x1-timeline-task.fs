@@ -23,7 +23,7 @@ module TimelineTask =
                 // Initially passed to the next task
                 // as its timelineStarter with the value of Timeline Null
 
-    let taskComposed =
+    let taskConcat =
         fun task1 task2 ->
             fun timelineResult12 previousResult12 ->
                 let taskComplete =
@@ -33,7 +33,7 @@ module TimelineTask =
                         |> ignore
 
                 let timelineStarter =
-                    Timeline (NullableT true)
+                    Timeline (NullableT previousResult12)
                 // start the task immediately
                 timelineStarter
                 |> taskT task1
@@ -41,4 +41,4 @@ module TimelineTask =
                 |> taskT taskComplete
                 |> ignore
 
-    let (+>) = taskComposed
+    let (+>) = taskConcat
