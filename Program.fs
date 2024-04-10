@@ -96,7 +96,8 @@ setTimeout start 2000
 
 
 let x = NullableT 1
-log x
+log x // T 1
 
 let y = NullableT x
-log y
+log y // T 1
+// auto flatten

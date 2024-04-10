@@ -26,10 +26,8 @@ module TimelineTask =
     let taskComposed =
         fun task1 task2 ->
             fun timelineResult12 previousResult12 ->
-                //log "-----------task12 started..."
                 let taskComplete =
                     fun timelineResult previousResult ->
-                        //log "--------task12 done.."
                         timelineResult12 // need to inform to the parent timelineResult
                         |> nextTN previousResult
                         |> ignore
