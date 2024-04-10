@@ -95,3 +95,8 @@ let start =
 setTimeout start 2000
 
 
+let x = NullableT 1
+log x
+
+let y = NullableT x
+log y
