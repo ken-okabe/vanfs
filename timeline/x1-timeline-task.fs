@@ -12,8 +12,8 @@ module TimelineTask =
                 let monadF =
                     (fun _ ->
                         task timelineResult timelineStarter.lastVal)
-                    >> (fun _  ->
-                            timelineResult) // dummy to make this function monadic
+                    >> (fun _  -> // dummy to make this function monadic
+                            Timeline Null)
 
                 timelineStarter
                 |> bindTN monadF
@@ -31,7 +31,7 @@ module TimelineTask =
                     fun timelineResult previousResult ->
                         //log "--------task12 done.."
                         timelineResult12 // need to inform to the parent timelineResult
-                        |> nextTN (NullableT previousResult)
+                        |> nextTN previousResult
                         |> ignore
 
                 let timelineStarter =
@@ -44,4 +44,3 @@ module TimelineTask =
                 |> ignore
 
     let (+>) = taskComposed
-

@@ -19,7 +19,6 @@ module TimelineTaskOr =
                             |> nextTN previousResult
                             |> ignore
 
-
                 let timelineStarter =
                     Timeline (NullableT true)
                 // start task1 and task2 immediately
