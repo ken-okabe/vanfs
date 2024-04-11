@@ -182,12 +182,12 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**
-⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)
+>  **TypeScirpt**  
+⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
  **JavaScript**  running in the browser
 
->  **F#**
-⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)
+>  **F#**  
+⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
  **JavaScript**  running in the browser
 
 Therefore, the backbone of **VanFS**  is [Fable](https://github.com/fable-compiler/Fable).
@@ -727,7 +727,7 @@ console.log counter.lastVal
 // 0
 ```
 
- **Consider the `Timeline` as a specific container for a value, similar to a  **Cell**  in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).**
+**Consider the `Timeline` as a specific container for a value, similar to a  **Cell**  in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712455522726.png)
 
@@ -841,15 +841,13 @@ console.log timelineA.lastVal
 // 3
 ```
 
-
-
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
 
 ---
 
 ## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
- **The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.**
+**The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712453321296.png)
 
