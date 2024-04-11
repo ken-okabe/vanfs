@@ -983,7 +983,179 @@ add [document.body; Counter()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+# ⏱️ Nullable
+
+###  [Nullable value types](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types) in F#
+
+>A _nullable value type_ `Nullable<'T>` represents any [struct](structs.md) type that could also be `null`. This is helpful when interacting with libraries and components that may choose to represent these kinds of types, like integers, with a `null` value for efficiency reasons. The underlying type that backs this construct is [System.Nullable<T>](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types).
+
+has a problem.
+
+[Using Nullable Reference Types in F#](https://stackoverflow.com/questions/63605221/using-nullable-reference-types-in-f)
+
+[F#: How do I convert Option<'a> to Nullable, also when 'a can be System.String?](https://stackoverflow.com/questions/73497807/f-how-do-i-convert-optiona-to-nullable-also-when-a-can-be-system-string)
+
+Therefore, here's the alternative implementation:
+
+### `NullableT`
+
+```fsharp
+type NullableT<'a> =
+    | Null
+    | T of 'a
+    member this.Value
+            = match this with
+            | Null -> failwith "Value is null"
+            | T a -> a
+
+let NullableT a =
+    match box a with
+    | :? NullableT<'a> as nullable -> nullable
+    | _ -> T a
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let nullable1 =
+    Null
+
+let nullable2 =
+    NullableT 1
+
+log nullable1
+// Null
+log nullable2
+// T 1
+log nullable2.Value
+// 1
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
 # ⏱️ Timeline Nullable
+
+By utilizing the  **Nullable type** , we can provide new operators that pair with  **Timeline** .
+
+By initializing a **Timeline**  with `Null` value, the provided function remains unexecuted and waits in a pending state. Once the **Timeline** value is updated to a non   `Null`   value by a valid event, the function is then triggered and executed.
+
+## 1️⃣ Function to initialize `Timeline<NullableT<'a>>`
+
+### `Timeline`
+
+```fsharp
+NullableT<'a> -> Timeline<NullableT<'a>>
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let timelineNullable = Timeline Null
+
+log timelineNullable.lastVal // use `log` of Timeline
+// Null
+```
+
+**Consider this  **Timeline**  as an empty **Cell**  in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
+
+## 2️⃣ Functions for the binary operations
+
+$$
+TimelineA ~ ~ * ~ ~ Function ~ ~ \rightarrow ~ ~ TimelineB
+$$
+
+### `mapTN`
+
+```fsharp
+(NullableT<'a> -> NullableT<'b>) -> (Timeline<NullableT<'a>> -> Timeline<NullableT<'b>>)
+```
+
+### `bindTN`
+
+```fsharp
+(NullableT<'a> ->  Timeline<NullableT<'b>>) -> (Timeline<NullableT<'a>> -> Timeline<NullableT<'b>>)
+```
+
+When the binary operator:  $*$  is `mapT`,
+
+$$
+TimelineB \quad = \quad TimelineA \quad \triangleright mapTN \quad double
+$$
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let double =
+    fun a -> NullableT (a * 2)
+
+let timelineA = Timeline Null
+
+let timelineB =
+    timelineA |> mapTN double
+
+timelineA
+|> nextTN (NullableT 3)
+|> ignore
+
+log timelineB.lastVal
+T 6
+```
+
+**This code for the binary operation simply corresponds to the basic usage of spreadsheet apps**
+
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816540787.png)
+
+This means this operator behaves similarly to JavaScript's Promise or its syntactic sugar, async-await.
+
+## 3️⃣ Function to update `Timeline<NullableT<'a>>`
+
+$$TimelineA \quad \triangleright nextTN \quad newNullableValue \quad \rightarrow \quad TimelineA'$$
+
+### `nextTN`
+
+```fsharp
+NullableT<'a> -> Timeline<NullableT<'a>> -> Timeline<NullableT<'a>>
+```
+
+$$
+TimelineA'  \quad =  \quad TimelineA \quad \triangleright nextTN \quad newNullableValue
+$$
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let timelineA' =
+    timelineA |> nextTN (NullableT 3)
+```
+
+or, in most cases, we don’t need another  `timelineA'`  and want to discard it, so simply `ignore` the returned value.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let timelineNullable = Timeline Null
+
+timelineNullable
+|> nextTN (NullableT 3)
+|> ignore
+
+log timelineNullable.lastVal // use `log` of Timeline
+// T 3
+log timelineNullable.lastVal // use `log` of Timeline
+```
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712818474514.png)
+
+---
+
+## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
+
+**The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.**
 
 #### Program.fs
 
@@ -1068,6 +1240,52 @@ add [document.body; Number()]
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 # ⏱️ Timeline Task
+
+While  **Timeline Nullable**  operators offer a basic principle similar to JavaScript's [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), they are not capable of managing Task chaining, such as [Promie.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then).
+
+Based on **Timeline Nullable** , we can obtain  **Timeline Task** which is capable of Task chaining.
+
+### `Task`
+
+```fsharp
+Timeline<NullableT<'a>> -> 'b -> unit
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+ let task =
+    fun timelineResult previousResult ->
+        log "-----------task1 started..."
+        log previousResult
+        // delay-------------------------------
+        let f = fun _ ->
+            log ".......task1 done"
+            timelineResult
+            |> nextTN (NullableT 1)
+            |> ignore
+        setTimeout f 2000
+```
+
+### `taskT`
+
+```fsharp
+Task<'a, NullableT<'a0>> -> Timeline<NullableT<'a>> -> Timeline<NullableT<'a>>
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let timelineStarter =
+    Timeline (NullableT 0)
+    // tasks start immediately
+
+timelineStarter
+|> taskT task1
+|> taskT task2
+|> taskT task3
+|> ignore
+```
 
 #### Program.fs
 
@@ -1211,3 +1429,74 @@ add [document.body; Tasks()]
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712038600017.png)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712038609796.png)
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# ⏱️ Timeline Task Concat
+
+### `taskConcat` or `(+>)`
+
+```fsharp
+(Task -> Task) -> Task
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let task12 =
+    task1 +> task2
+
+let task123 =
+    task1 +> task2 +> task3
+
+let task1234 =
+    task123 +> task4
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# ⏱️ Timeline Task Or
+
+### `taskOr` or `(+|)`
+
+### 
+
+```fsharp
+(Task -> Task) -> Task
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let task12 =
+    task1 +| task2
+
+let task123 =
+    task1 +| task2 +| task3
+
+let task1234 =
+    task123 +| task4
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+# ⏱️ Timeline Task And
+
+### `taskAnd` or `(+&)`
+
+```fsharp
+(Task -> Task) -> Task
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let task12 =
+    task1 +& task2
+
+let task123 =
+    task1 +& task2 +& task3
+
+let task1234 =
+    task123 +& task4
+```

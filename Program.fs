@@ -23,6 +23,10 @@ let br: Tag = tags?``br``
 let fluentCard: Tag = tags?``fluent-card``
 let linerProgress: Tag = tags?``md-linear-progress``
 
+
+type Task<'a, 'b> =
+    Timeline<NullableT<'a>> -> 'b -> unit
+
 let task1 =
     fun timelineResult previousResult ->
         log "-----------task1 started..."
@@ -64,24 +68,15 @@ let taskLog =
         log "-----------taskLog started..."
         log previousResult
 
-let timelineStarter = Timeline Null //tasks disabled initially
-
-let task123 =
-    task1 +| task2 +| task3
-
-let task21 = task2 +& task1
-
-let task12321 = task123 +& task21
+let timelineStarter =
+    Timeline Null //tasks disabled initially
 
 log "test"
 
 timelineStarter
-|> taskT task12321
 |> taskT task1
-//|> taskT task3
-//|> taskT task3
-//|> taskT task123
-|> taskT taskLog
+|> taskT task2
+|> taskT task3
 |> ignore
 
 let start =
@@ -100,3 +95,32 @@ log x // T 1
 let y = NullableT x
 log y // T 1
 // auto flatten
+
+
+let double =
+    fun a -> NullableT (a * 2)
+
+let timelineA = Timeline Null
+
+let timelineB =
+    timelineA |> mapTN double
+
+timelineA
+|> nextTN (NullableT 3)
+|> ignore
+
+log timelineB.lastVal
+
+
+let nullable1 =
+    Null
+
+let nullable2 =
+    NullableT 1
+
+log nullable1
+// Null
+log nullable2
+// T 1
+log nullable2.Value
+// 1
