@@ -1040,14 +1040,14 @@ let nullable1 =
     Null
 
 let nullable2 =
-    NullableT 1
+    NullableT "hello"
 
 log nullable1
 // Null
 log nullable2
-// T 1
+// T hello
 log nullable2.Value
-// 1
+// hello
 ```
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
@@ -1057,6 +1057,10 @@ log nullable2.Value
 By utilizing the  **Nullable type** , we can provide new operators that pair with  **Timeline** .
 
 Initializing a **Timeline**  with `Null` value, the provided function remains unexecuted and waits in a pending state. Once the **Timeline** value is updated to a non   `Null`   value by a valid event, the function is then triggered and executed.
+
+## 🔍 Functions
+
+---
 
 ## 1️⃣ Function to initialize `Timeline<NullableT<'a>>`
 
@@ -1080,6 +1084,8 @@ log timelineNullable.lastVal // use `log` of Timeline
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+## 🔍 Type
 
 `Timeline` type and the function:
 
@@ -1125,16 +1131,20 @@ $$
 let double =
     fun a -> NullableT (a * 2)
 
+// 1️⃣ initialize timelineA
 let timelineA = Timeline Null
 
 log timelineA.lastVal // use `log` of Timeline
 // Null
 
+// 2️⃣ the binary operation
 let timelineB =
     timelineA |> mapTN double
 // currently, `timelineA = Timeline Null`
-// so, `double` function is ignored 
+// so, `double` function is ignored
 // and `timelineB` value becomes `Null`
+log timelineB.lastVal // use `log` of Timeline
+// Null
 ```
 
 **This code for the binary operation simply corresponds to the basic usage of spreadsheet apps.**
@@ -1194,6 +1204,8 @@ let timelineB =
 // currently, `timelineA = Timeline Null`
 // so, `double` function is ignored
 // and `timelineB` value becomes `Null`
+log timelineB.lastVal // use `log` of Timeline
+// Null
 
 // 3️⃣ update the lastVal of timelineA
 timelineA
@@ -1204,7 +1216,7 @@ log timelineA.lastVal // use `log` of Timeline
 // T 3
 
 // Now, `timelineA` value is updated to non `Null` value
-// Accordingly, `timelineB` reactively becomes `double`
+// Accordingly, `timelineB` reactively becomes `double` of it
 log timelineB.lastVal
 // T 6
 ```

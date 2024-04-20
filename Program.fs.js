@@ -2,7 +2,7 @@ import Timer from "./fable_modules/fable-library-js.4.16.0/Timer.js";
 import { add } from "./fable_modules/fable-library-js.4.16.0/Observable.js";
 import { add as add_1, tags } from "./van-api/fs/basic.fs.js";
 import { log, nextT, Timeline } from "./van-api/fs/timeline-element.fs.js";
-import { nextTN } from "./van-api/fs/x-timeline-element-nullable.fs.js";
+import { mapTN, nextTN } from "./van-api/fs/x-timeline-element-nullable.fs.js";
 import { NullableT$1, NullableT } from "./van-api/fs/x-nullable.fs.js";
 import { op_PlusGreater } from "./van-api/fs/x2-timeline-element-task-concat.fs.js";
 import { uncurry2, curry2 } from "./fable_modules/fable-library-js.4.16.0/Util.js";
@@ -107,4 +107,22 @@ export function Tasks(_arg) {
 }
 
 add_1(ofArray([document.body, Tasks(void 0)]));
+
+export function double(a) {
+    return NullableT(a * 2);
+}
+
+export const timelineA = Timeline(new NullableT$1(0, []));
+
+log(timelineA.lastVal);
+
+export const timelineB = mapTN(double)(timelineA);
+
+log(timelineB.lastVal);
+
+nextTN(NullableT(3), timelineA);
+
+log(timelineA.lastVal);
+
+log(timelineB.lastVal);
 
