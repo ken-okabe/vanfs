@@ -46,8 +46,7 @@ module TimelineElementTaskAnd =
                                 |> nextTN (NullableT listResult12)
                                 |> ignore
 
-                            | false ->
-                            ()
+                            | false -> ()
 
                 let timelineStarter =
                     Timeline (NullableT previousResult12)

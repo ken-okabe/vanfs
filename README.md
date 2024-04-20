@@ -99,7 +99,7 @@ VanJS is a library based on Vanilla JavaScript for the well-established reasons.
 
 However, to take full advantage of  **VanJS** , we should consider using  **alternative languages instead of JavaScript** , which are commonly referred to as  **AltJS** .
 
-One of the critical reasons is that  **JavaScript is not a type-safe language** , which can lead to runtime errors and bugs.
+One of the critical reasons is that  **JavaScript is not a [type-safe language](https://en.wikipedia.org/wiki/Type_safety)** , which can lead to runtime errors and bugs.
 
 In fact, in modern web development, JavaScript has increasingly become  **a compile target**  from other languages, such as [TypeScript](https://www.typescriptlang.org/).
 
@@ -182,9 +182,7 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**  
-⬇ TypeScript Compiler running on [Node.js](https://nodejs.org/)  (`npx tsc`)  
- **JavaScript**  running in the browser
+>  **TypeScirpt**  ⬇ [TypeScript Compiler](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#tsc-the-typescript-compiler) running on [Node.js](https://nodejs.org/)  (`npx tsc`)   **JavaScript**  running in the browser
 
 >  **F#**  
 ⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
@@ -240,8 +238,8 @@ See [Fable Setup Documentaion](https://fable.io/docs/getting-started/setup.html)
 ```sh
 git clone https://github.com/ken-okabe/vanfs
 cd vanfs
-dotnet restore
-npm i
+dotnet restore # .NET project setup
+npm i          #  npm project setup
 ```
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711727772764.png)
@@ -799,6 +797,21 @@ console.log(arrayB);
 // [2]
 ```
 
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let double =
+    fun a -> a * 2
+
+let listA = [1]
+
+let listB =
+    listA |> List.map double
+
+console.log listB
+// [2]
+```
+
 We could recognize the array `[2]` is identical to the  **Cell**  and  **Value** `2` of a spreadsheet; however, the spreadsheet and **Timeline** maintain a `double` relationship  **as values change over the timeline** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
@@ -985,15 +998,21 @@ add [document.body; Counter()]
 
 # ⏱️ Nullable
 
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
+
 ###  [Nullable value types](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types) in F#
 
 >A _nullable value type_ `Nullable<'T>` represents any [struct](structs.md) type that could also be `null`. This is helpful when interacting with libraries and components that may choose to represent these kinds of types, like integers, with a `null` value for efficiency reasons. The underlying type that backs this construct is [System.Nullable<T>](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types).
 
-has a problem.
+**is problematic.**
 
 [Using Nullable Reference Types in F#](https://stackoverflow.com/questions/63605221/using-nullable-reference-types-in-f)
 
 [F#: How do I convert Option<'a> to Nullable, also when 'a can be System.String?](https://stackoverflow.com/questions/73497807/f-how-do-i-convert-optiona-to-nullable-also-when-a-can-be-system-string)
+
+[F# RFC FS-1060 - Nullable Reference Types](https://github.com/fsharp/fslang-design/blob/main/RFCs/FS-1060-nullable-reference-types.md)
 
 Therefore, here's the alternative implementation:
 
@@ -1037,7 +1056,7 @@ log nullable2.Value
 
 By utilizing the  **Nullable type** , we can provide new operators that pair with  **Timeline** .
 
-By initializing a **Timeline**  with `Null` value, the provided function remains unexecuted and waits in a pending state. Once the **Timeline** value is updated to a non   `Null`   value by a valid event, the function is then triggered and executed.
+Initializing a **Timeline**  with `Null` value, the provided function remains unexecuted and waits in a pending state. Once the **Timeline** value is updated to a non   `Null`   value by a valid event, the function is then triggered and executed.
 
 ## 1️⃣ Function to initialize `Timeline<NullableT<'a>>`
 
@@ -1059,6 +1078,22 @@ log timelineNullable.lastVal // use `log` of Timeline
 **Consider this  **Timeline**  as an empty **Cell**  in [spreadsheet apps](https://www.google.com/intl/en/sheets/about/).**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+`Timeline` type and the function:
+
+1️⃣ Function to initialize `Timeline<'a>`
+
+1️⃣ Function to initialize `Timeline<NullableT<'a>>`
+
+is the  *same entity* .
+
+Consider `Timeline` can accept any generic types of `'a` including `NullableT<'a>`.
+
+On the other hand, in the case of  `Timeline<NullableT<'a>>`  where the parameter value is a nullable type, if we need the  `Timeline`  behavior to ignore the provided function and simply pass through the  `Null`  value when the parameter is  `Null` , we can use specific operators as shown below.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
 ## 2️⃣ Functions for the binary operations
 
@@ -1094,21 +1129,24 @@ let timelineA = Timeline Null
 
 let timelineB =
     timelineA |> mapTN double
+// currently, `timelineA = Timeline Null`
+// so, `double` function is ignored 
+// and `timelineB` value becomes `Null`
 
 timelineA
 |> nextTN (NullableT 3)
 |> ignore
-
+// Now, `timelineA` value is updated to non `Null` value
+// Accordingly, `timelineB` reactively becomes `double`
 log timelineB.lastVal
 T 6
 ```
 
-**This code for the binary operation simply corresponds to the basic usage of spreadsheet apps**
-
+**This code for the binary operation simply corresponds to the basic usage of spreadsheet apps.**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816540787.png)
 
-This means this operator behaves similarly to JavaScript's Promise or its syntactic sugar, async-await.
+The operator behaves similarly to JavaScript's Promise or its syntactic sugar, async-await.
 
 ## 3️⃣ Function to update `Timeline<NullableT<'a>>`
 
@@ -1138,13 +1176,15 @@ or, in most cases, we don’t need another  `timelineA'`  and want to discard it
 ```fsharp
 let timelineNullable = Timeline Null
 
+log timelineNullable.lastVal // use `log` of Timeline
+// Null
+
 timelineNullable
 |> nextTN (NullableT 3)
 |> ignore
 
 log timelineNullable.lastVal // use `log` of Timeline
 // T 3
-log timelineNullable.lastVal // use `log` of Timeline
 ```
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
@@ -1286,6 +1326,29 @@ timelineStarter
 |> taskT task3
 |> ignore
 ```
+
+# ⏱️ Timeline Task Concat
+
+### `taskConcat` or `(+>)`
+
+```fsharp
+(Task -> Task) -> Task
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let task12 =
+    task1 +> task2
+
+let task123 =
+    task1 +> task2 +> task3
+
+let task1234 =
+    task123 +> task4
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 #### Program.fs
 
@@ -1432,34 +1495,11 @@ add [document.body; Tasks()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# ⏱️ Timeline Task Concat
-
-### `taskConcat` or `(+>)`
-
-```fsharp
-(Task -> Task) -> Task
-```
-
-<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
-
-```fsharp
-let task12 =
-    task1 +> task2
-
-let task123 =
-    task1 +> task2 +> task3
-
-let task1234 =
-    task123 +> task4
-```
-
-<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
-
 # ⏱️ Timeline Task Or
 
 ### `taskOr` or `(+|)`
 
-### 
+###
 
 ```fsharp
 (Task -> Task) -> Task

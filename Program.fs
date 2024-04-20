@@ -96,6 +96,7 @@ let y = NullableT x
 log y // T 1
 // auto flatten
 
+(*
 
 let double =
     fun a -> NullableT (a * 2)
@@ -124,3 +125,21 @@ log nullable2
 // T 1
 log nullable2.Value
 // 1
+
+*)
+
+let double =
+    fun a -> a * 2
+
+let listA =
+    [1]
+
+let listB =
+    listA |> List.map double
+
+console.log listB
+// [2]
+
+
+let ns1: string | null = "hello"
+let ns2: string | null = null
