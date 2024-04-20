@@ -1127,19 +1127,14 @@ let double =
 
 let timelineA = Timeline Null
 
+log timelineA.lastVal // use `log` of Timeline
+// Null
+
 let timelineB =
     timelineA |> mapTN double
 // currently, `timelineA = Timeline Null`
 // so, `double` function is ignored 
 // and `timelineB` value becomes `Null`
-
-timelineA
-|> nextTN (NullableT 3)
-|> ignore
-// Now, `timelineA` value is updated to non `Null` value
-// Accordingly, `timelineB` reactively becomes `double`
-log timelineB.lastVal
-T 6
 ```
 
 **This code for the binary operation simply corresponds to the basic usage of spreadsheet apps.**
@@ -1162,6 +1157,10 @@ $$
 TimelineA'  \quad =  \quad TimelineA \quad \triangleright nextTN \quad newNullableValue
 $$
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
 ```fsharp
@@ -1171,31 +1170,46 @@ let timelineA' =
 
 or, in most cases, we don’t need another  `timelineA'`  and want to discard it, so simply `ignore` the returned value.
 
-<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
-
-```fsharp
-let timelineNullable = Timeline Null
-
-log timelineNullable.lastVal // use `log` of Timeline
-// Null
-
-timelineNullable
-|> nextTN (NullableT 3)
-|> ignore
-
-log timelineNullable.lastVal // use `log` of Timeline
-// T 3
-```
-
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712456400282.png)
+## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712818474514.png)
 
----
-
-## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
-
 **The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.**
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let double =
+    fun a -> NullableT (a * 2)
+
+// 1️⃣ initialize timelineA
+let timelineA = Timeline Null
+
+log timelineA.lastVal // use `log` of Timeline
+// Null
+
+// 2️⃣ the binary operation
+let timelineB =
+    timelineA |> mapTN double
+// currently, `timelineA = Timeline Null`
+// so, `double` function is ignored
+// and `timelineB` value becomes `Null`
+
+// 3️⃣ update the lastVal of timelineA
+timelineA
+|> nextTN (NullableT 3)
+|> ignore
+
+log timelineA.lastVal // use `log` of Timeline
+// T 3
+
+// Now, `timelineA` value is updated to non `Null` value
+// Accordingly, `timelineB` reactively becomes `double`
+log timelineB.lastVal
+// T 6
+```
+
+---
 
 #### Program.fs
 
@@ -1363,9 +1377,10 @@ open Fable.Core.JsInterop
 
 open Van.Basic // import tags, add
 open Van.TimelineElement // import Timeline
-open Van.TimelineElementNullable // import Null etc.
+open Van.TimelineElementNullable // import Timelinetc.
+open Van.Nullable // import NullableT
 open Van.TimelineElementTask
-open System
+open Van.TimelineElementTaskConcat
 
 open System.Timers
 let setTimeout f delay =
@@ -1411,7 +1426,7 @@ let Tasks =
                 |> nextT percentDone
                 |> ignore
                 timelineResult
-                |> nextTN (Nullable 999)
+                |> nextTN (NullableT 999)
                 |> ignore
 
         let task1 =
@@ -1461,7 +1476,7 @@ let Tasks =
         let start =
             fun _ -> // timeline will start
                 timelineStarter
-                |> nextTN (Nullable 0)
+                |> nextTN (NullableT 0)
                 |> ignore
 
         setTimeout start 2000

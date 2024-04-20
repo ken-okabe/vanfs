@@ -5,13 +5,11 @@ open Browser.Types
 open Fable.Core.JsInterop
 
 open Van.Basic // import tags, add
-open Van.TimelineElement // import Timeline'
-open Van.Nullable // import Null etc.
-open Van.TimelineElementNullable // import Null etc.
+open Van.TimelineElement // import Timeline
+open Van.TimelineElementNullable // import Timelinetc.
+open Van.Nullable // import NullableT
 open Van.TimelineElementTask
 open Van.TimelineElementTaskConcat
-open Van.TimelineElementTaskOr
-open Van.TimelineElementTaskAnd
 
 open System.Timers
 let setTimeout f delay =
@@ -23,123 +21,113 @@ let br: Tag = tags?``br``
 let fluentCard: Tag = tags?``fluent-card``
 let linerProgress: Tag = tags?``md-linear-progress``
 
-
-type Task<'a, 'b> =
-    Timeline<NullableT<'a>> -> 'b -> unit
-
-let task1 =
-    fun timelineResult previousResult ->
-        log "-----------task1 started..."
-        log previousResult
-        // delay-------------------------------
-        let f = fun _ ->
-            log "...task1 done"
-            timelineResult
-            |> nextTN (NullableT 1)
-            |> ignore
-        setTimeout f 2500
-
-let task2 =
-    fun timelineResult previousResult ->
-        log "-----------task2 started..."
-        log previousResult
-        // delay-------------------------------
-        let f = fun _ ->
-            log "...task2 done"
-            timelineResult
-            |> nextTN (NullableT 2)
-            |> ignore
-        setTimeout f 500
-
-let task3 =
-    fun timelineResult previousResult ->
-        log "-----------task3 started..."
-        log previousResult
-        // delay-------------------------------
-        let f = fun _ ->
-            log "...task3 done"
-            timelineResult
-            |> nextTN (NullableT 3)
-            |> ignore
-        setTimeout f 1500
-
-let taskLog =
-    fun timelineResult previousResult ->
-        log "-----------taskLog started..."
-        log previousResult
-
-let timelineStarter =
-    Timeline Null //tasks disabled initially
-
-log "test"
-
-timelineStarter
-|> taskT task1
-|> taskT task2
-|> taskT task3
-|> ignore
-
-let start =
+let Tasks =
     fun _ ->
-        log "start" // timeline will start
+        let progressInit = false
+        let progressStart = true
+        let progressDone = false
+        let percentInit = 0.0
+        let percentStart = 0.0
+        let percentDone = 1.0
+
+        let timelineProgress1 = Timeline progressInit
+        let timelineProgress2 = Timeline progressInit
+        let timelineProgress3 = Timeline progressInit
+        let timelinePercent1 = Timeline percentInit
+        let timelinePercent2 = Timeline percentInit
+        let timelinePercent3 = Timeline percentInit
+
+        let taskStart =
+            fun timelineProgress timelinePercent ->
+                timelineProgress
+                |> nextT progressStart
+                |> ignore
+                timelinePercent
+                |> nextT percentStart
+                |> ignore
+
+        let taskDone =
+            fun timelineProgress timelinePercent timelineResult->
+                timelineProgress
+                |> nextT progressDone
+                |> ignore
+                timelinePercent
+                |> nextT percentDone
+                |> ignore
+                timelineResult
+                |> nextTN (NullableT 999)
+                |> ignore
+
+        let task1 =
+            fun timelineResult previousResult ->
+                log "-----------task1 started..."
+                taskStart timelineProgress1 timelinePercent1
+                // delay-------------------------------
+                let f = fun _ ->
+                    log "...task1 done"
+                    taskDone timelineProgress1 timelinePercent1 timelineResult
+                setTimeout f 2500
+                timelineResult
+
+        let task2 =
+            fun timelineResult previousResult ->
+                log "-----------task2 started..."
+                taskStart timelineProgress2 timelinePercent2
+                // delay-------------------------------
+                let f = fun _ ->
+                    log "...task2 done"
+                    taskDone timelineProgress2 timelinePercent2 timelineResult
+                setTimeout f 2500
+                timelineResult
+
+        let task3 =
+            fun timelineResult previousResult ->
+                log "-----------task3 started..."
+                taskStart timelineProgress3 timelinePercent3
+                // delay-------------------------------
+                let f = fun _ ->
+                    log "...task3 done"
+                    taskDone timelineProgress3 timelinePercent3 timelineResult
+                setTimeout f 2500
+                timelineResult
+
+        let timelineStarter = Timeline Null //tasks disabled initially
+
+        let task123 =
+            task1 +>
+            task2 +>
+            task3
+
         timelineStarter
-        |> nextTN (NullableT 0)
+        |> taskT task123
         |> ignore
 
-setTimeout start 2000
+        let start =
+            fun _ -> // timeline will start
+                timelineStarter
+                |> nextTN (NullableT 0)
+                |> ignore
 
+        setTimeout start 2000
 
-let x = NullableT 1
-log x // T 1
+        fluentCard [
+            {|``class``="custom2"|}
+            br []
+            linerProgress [
+                {|indeterminate=timelineProgress1.el
+                  value=timelinePercent1.el|}
+            ]
+            br []
+            linerProgress [
+                {|indeterminate=timelineProgress2.el
+                  value=timelinePercent2.el|}
+            ]
+            br []
+            linerProgress [
+                {|indeterminate=timelineProgress3.el
+                  value=timelinePercent3.el|}
+            ]
+        ]
 
-let y = NullableT x
-log y // T 1
-// auto flatten
-
-(*
-
-let double =
-    fun a -> NullableT (a * 2)
-
-let timelineA = Timeline Null
-
-let timelineB =
-    timelineA |> mapTN double
-
-timelineA
-|> nextTN (NullableT 3)
+add [document.body; Tasks()]
 |> ignore
-
-log timelineB.lastVal
-
-
-let nullable1 =
-    Null
-
-let nullable2 =
-    NullableT 1
-
-log nullable1
-// Null
-log nullable2
-// T 1
-log nullable2.Value
-// 1
-
-*)
-
-let double =
-    fun a -> a * 2
-
-let listA =
-    [1]
-
-let listB =
-    listA |> List.map double
-
-console.log listB
-// [2]
-
-
-let ns1: string | null = "hello"
-let ns2: string | null = null
