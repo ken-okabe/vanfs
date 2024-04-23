@@ -182,7 +182,9 @@ F# is generally recognized as running on the [.NET Framework](https://dotnet.mic
 
 More precisely,
 
->  **TypeScirpt**  ⬇ [TypeScript Compiler](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#tsc-the-typescript-compiler) running on [Node.js](https://nodejs.org/)  (`npx tsc`)   **JavaScript**  running in the browser
+>  **TypeScirpt**  
+⬇ [TypeScript Compiler](https://www.typescriptlang.org/docs/handbook/2/basic-types.html#tsc-the-typescript-compiler) running on [Node.js](https://nodejs.org/)  (`npx tsc`)   
+**JavaScript**  running in the browser
 
 >  **F#**  
 ⬇ [Fable Compiler](https://github.com/fable-compiler/Fable) running on [.NET](https://dotnet.microsoft.com/)  (`dotnet fable`)  
