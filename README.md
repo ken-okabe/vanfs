@@ -216,11 +216,17 @@ I've created a separate article on this topic since it's part of the larger fron
 
 | Contents |
 |--------------|
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
-| [🚀  **Getting Started** ](#getting-started)|
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### getting-started
@@ -340,11 +346,17 @@ body {
 
 | Contents |
 |--------------|
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
-| [🌐  **Web Components** ](#web-components) |
+| [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### web-components
@@ -556,11 +568,17 @@ export let cssURLs = [
 
 | Contents |
 |--------------|
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) |
-| [⚡️  **Functional Reactive Programming (FRP)** ](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### frp
@@ -662,11 +680,17 @@ So, this is FRP.
 
 | Contents |
 |--------------|
-| [🍦 VanFS](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
-| [⏱️  **Timeline** ](#timeline) |
+| [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### timeline
@@ -1004,6 +1028,21 @@ add [document.body; Counter()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+| Contents |
+|--------------|
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀 Getting Started](#getting-started)|
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
+| [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
+
 ###### nullable
 
 # ⏱️ Nullable Types
@@ -1230,6 +1269,21 @@ log nullable2.Value
 This specification resembles F#'s native [nullable value types](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types), but unlike it, `NullableT`  can represent any reference types.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+| Contents |
+|--------------|
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀 Getting Started](#getting-started)|
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
+| [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### timeline-nullable
 
@@ -1486,6 +1540,21 @@ add [document.body; Number()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+| Contents |
+|--------------|
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀 Getting Started](#getting-started)|
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
+| [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
+
 ###### timeline-task
 
 # ⏱️ Timeline Task
@@ -1537,6 +1606,21 @@ timelineStarter
 ```
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+| Contents |
+|--------------|
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀 Getting Started](#getting-started)|
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
+| [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### timeline-task-concat
 
@@ -1709,6 +1793,21 @@ add [document.body; Tasks()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+| Contents |
+|--------------|
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀 Getting Started](#getting-started)|
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
+| [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
+
 ###### timeline-task-or
 
 # ⏱️ Timeline Task Or
@@ -1735,6 +1834,21 @@ let task1234 =
 ```
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+| Contents |
+|--------------|
+| [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
+| [🚀 Getting Started](#getting-started)|
+| [🌐 Web Components](#web-components) |
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
+| [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### timeline-task-and
 
