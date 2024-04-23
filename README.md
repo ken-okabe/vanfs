@@ -1172,7 +1172,7 @@ In Functional Programming, everything is an expression or operation ([What is Fu
 
 When constructing expressions for mathematically consistent algebraic structures, it is essential to employ the  **correct types**  and their  **corresponding operators** .
 
-The concept of ***null reference being referred to as a "billion dollar mistake"*** stems from the error that occurs when  **the appropriate combination of null and its corresponding operators is not correctly implemented.**
+The concept of  ***null references being a "billion-dollar mistake"***  stems from the  **lack of a well-designed null type and corresponding operators**  for programmers to use effectively.
 
 In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) operator**  in JavaScript/TypeScript
 
