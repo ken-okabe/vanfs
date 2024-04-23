@@ -1094,7 +1094,7 @@ In 2009,  [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare")  s
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
 
-This can rbe represented by
+This can be represented by
 
 -  `[]` 
 
