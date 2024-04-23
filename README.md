@@ -607,10 +607,10 @@ Given the critical significance of functional programming in modern software dev
 
 ## VanFS provides binary operations to utilize the state management
 
-In Functional Programming, everything is an expression ([What is Functional Programming?](./README-whatisFP.md)). Accordingly, VanFS provides  **binary operations for the reactive state management** .
+In Functional Programming, everything is an expression or operation ([What is Functional Programming?](./README-whatisFP.md)). Accordingly, VanFS provides  **binary operations for the reactive state management** .
 
 $$
-TimelineA ~ ~ * ~ ~ Function ~ \rightarrow ~ TimelineB
+TimelineA ~ ~ * ~ ~ Function \quad  \rightarrow \quad  TimelineB
 $$
 
 $$
@@ -635,7 +635,7 @@ This binary operation corresponds to an operation in [spreadsheet apps](https://
 This is the identical structure of:
 
 $$
-ListA ~ ~ * ~ ~ Function ~ \rightarrow ~ ListB
+ListA ~ ~ * ~ ~ Function \quad  \rightarrow \quad  ListB
 $$
 
 $$
@@ -736,7 +736,7 @@ console.log counter.lastVal
 ## 2️⃣ Functions for the binary operations
 
 $$
-TimelineA ~ ~ * ~ ~ Function ~ ~ \rightarrow ~ ~ TimelineB
+TimelineA ~ ~ * ~ ~ Function \quad  \rightarrow \quad  TimelineB
 $$
 
 ### `mapT`
@@ -998,9 +998,176 @@ add [document.body; Counter()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
-# ⏱️ Nullable
+# ⏱️ Nullable Types
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+### [Null pointer](https://en.wikipedia.org/wiki/Null_pointer)
+
+> Because a null pointer does not point to a meaningful object, an attempt to access the data stored at that (invalid) memory location may cause a run-time error or immediate program crash. This is the **null pointer error**. It is one of the most common types of software weaknesses,[[1]](https://en.wikipedia.org/wiki/Null_pointer#cite_note-1) and [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare"), who introduced the concept, has referred to it as a "billion dollar mistake".
+
+#### [History](https://en.wikipedia.org/wiki/Null_pointer#History)
+
+> In 2009,  [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare")  stated[[15]](https://en.wikipedia.org/wiki/Null_pointer#cite_note-15)  that he invented the null reference in 1965 as part of the  [ALGOL W](https://en.wikipedia.org/wiki/ALGOL_W "ALGOL W")  language. In that 2009 reference Hoare describes his invention as a "billion-dollar mistake":
+
+>> I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.
+
+---
+
+Null values have a notorious reputation in the programming world, often leading to runtime errors and unexpected behavior. In response, functional programming languages like Haskell, OCaml, and F# have adopted a different approach to value representation, favoring the [Option types](https://en.wikipedia.org/wiki/Option_type), represented as  `None | Some a`  in these languages, over traditional null values.
+
+The [Option types](https://en.wikipedia.org/wiki/Option_type), while often perceived as complex for beginners, can be conceptualized using  **the analogy of lists or arrays** . Consider a container structure that can either be  **empty, represented by  `[]`**  , or  **contain a value, represented by  `[a]`**  .The Option types introduce an extended concept: 
+
+| Lists/Arrays | Option Types  | 
+|--------------|------------------------|
+| `[]`  |  `None`  | 
+| `[a]` |  `Some a` | 
+
+---
+
+---
+
+--
+
+Appearently, the Option types can be useful, but they can also lead to unnecessarily complex structures.
+
+
+---
+
+-
+
+Consider a  **Cell** .
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712455522726.png)
+
+This can be represented by 
+
+-  `[0]` 
+
+-  `Some 0` 
+
+In a case the cell is empty,  **which happens!** 
+
+In 2009,  [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare")  stated[[15]](https://en.wikipedia.org/wiki/Null_pointer#cite_note-15)  that he invented the null reference in 1965 as part of the  [ALGOL W](https://en.wikipedia.org/wiki/ALGOL_W "ALGOL W")  language. In that 2009 reference Hoare describes his invention as a "billion-dollar mistake":
+
+> I call it my billion-dollar mistake. It was the invention of the null reference in 1965. At that time, I was designing the first comprehensive type system for references in an object oriented language (ALGOL W). My goal was to ensure that all use of references should be absolutely safe, with checking performed automatically by the compiler. But I couldn't resist the temptation to put in a null reference, simply because it was so easy to implement. This has led to innumerable errors, vulnerabilities, and system crashes, which have probably caused a billion dollars of pain and damage in the last forty years.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
+
+This can rbe represented by 
+
+-  `[]` 
+
+-  `None` 
+
+---
+
+This system works so far.
+
+However, the List or Option type can be easily nested such as:
+
+
+
+-  `[[0]]` 
+
+-  `Some (Some 0)` 
+
+or
+
+-  `[[]]` 
+
+-  `Some None` 
+
+These structures correspond to:
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713849900596.png)
+
+or
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713849984060.png)
+
+---
+
+
+What we need is  **not nested Cells**  that is weired and meaningless but simply  **empty Cells** .
+
+---
+
+
+TypeScript cleverly avoids the  **complexity of nested Option types**  by employing the [Nullable types](https://en.wikipedia.org/wiki/Nullable_type) instead.
+
+ **Let's explore an example of a VSCode Extension that requires extracting the text from the active text editor.** 
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713851148106.png)
+
+`vscode.window.activeTextEditor.document.getText()` is the adequate API, in TypeScript.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713851518058.png)
+
+The TypeScript compiler is issuing errors and warnings.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713851695486.png)
+
+The problem is:
+
+ `'vscode.window.activeTextEditor' is possibly 'undefined'.` 
+
+In JavaScript,  `undefined`  signifies a variable that has been declared but not yet assigned a value. While both  `undefined`  and  `null`  exist in the language with slight differences, we won't delve into those details here. For our purposes, we can consider  `undefined`  to be similar to  `null` in a general sense.
+
+ **To visualize, it's like this!** 
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713852091388.png)
+
+Since a VS Code user can close all tabs in the editor,  `vscode.window.activeTextEditor`  might become  `undefined` .
+
+The situation with  `vscode.window.activeTextEditor`  becoming  `undefined` is analogous to having  **an empty cell in a spreadsheet** . Both represent the absence of a value we might expect to be present.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
+
+So, the proper type should be as below:
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713853524090.png)
+
+This is the [Nullable type](https://en.wikipedia.org/wiki/Nullable_type) and what we really need.
+
+---
+
+In Functional Programming, everything is an expression or operation ([What is Functional Programming?](./README-whatisFP.md)).
+
+When constructing expressions for mathematically consistent algebraic structures, it is essential to employ the  **correct types**  and their  **corresponding operators** .
+
+The concept of ***null reference being referred to as a "billion dollar mistake"*** stems from the error that occurs when  **the appropriate combination of null and its corresponding operators is not correctly implemented.** 
+
+In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) operator**  in JavaScript/TypeScript
+
+
+> The **optional chaining (`?.`)** operator accesses an object's property or calls a function. If the object accessed or function called using this operator is [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) or [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null), the expression short circuits and evaluates to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) instead of throwing an error.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713854747266.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713854832322.png)
+
+ *While the naming convention "optional chaining" evokes Option types, its actual behavior differs from nested Option types. Unlike Option types, which allow values to be either Some(value) or None, nullable chaining deals with values that can either be valid values or null. Therefore, "nullable chaining" might be a more accurate and descriptive name.* 
+
+Th
+
+'vscode.window.activeTextEditor' is possibly 'undefined'.
+
+vscode.window.activeTextEditor.document.getText()
+
+vscode.window.activeTextEditor.document.getText()
+
+o
+
+--
+
+-  `Some 0` 
+
+-  `Some 0` 
+
+-  `[0]` 
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
@@ -1008,13 +1175,19 @@ add [document.body; Counter()]
 
 >A _nullable value type_ `Nullable<'T>` represents any [struct](structs.md) type that could also be `null`. This is helpful when interacting with libraries and components that may choose to represent these kinds of types, like integers, with a `null` value for efficiency reasons. The underlying type that backs this construct is [System.Nullable<T>](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types).
 
-**is problematic.**
+ **can only represents `struct` type, which limitation is problematic.** 
 
 [Using Nullable Reference Types in F#](https://stackoverflow.com/questions/63605221/using-nullable-reference-types-in-f)
 
 [F#: How do I convert Option<'a> to Nullable, also when 'a can be System.String?](https://stackoverflow.com/questions/73497807/f-how-do-i-convert-optiona-to-nullable-also-when-a-can-be-system-string)
 
+It would be nice if we could write  **any Nullable types including reference types**  in F#.
+
 [F# RFC FS-1060 - Nullable Reference Types](https://github.com/fsharp/fslang-design/blob/main/RFCs/FS-1060-nullable-reference-types.md)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713855675109.png)
+
+Currently, this syntax will generate an error.
 
 Therefore, here's the alternative implementation:
 
@@ -1051,6 +1224,8 @@ log nullable2
 log nullable2.Value
 // hello
 ```
+
+This specification resembles F#'s native [nullable value types](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types), but unlike it, `NullableT`  can represent any reference types.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
@@ -1106,7 +1281,7 @@ On the other hand, in the case of  `Timeline<NullableT<'a>>`  where the paramete
 ## 2️⃣ Functions for the binary operations
 
 $$
-TimelineA ~ ~ * ~ ~ Function ~ ~ \rightarrow ~ ~ TimelineB
+TimelineA ~ ~ * ~ ~ Function \quad  \rightarrow \quad  TimelineB
 $$
 
 ### `mapTN`
