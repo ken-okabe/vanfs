@@ -1006,8 +1006,6 @@ add [document.body; Counter()]
 
 ###### nullable
 
-###### timeline
-
 # ⏱️ Nullable Types
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
@@ -1026,12 +1024,12 @@ add [document.body; Counter()]
 
 Null values have a notorious reputation in the programming world, often leading to runtime errors and unexpected behavior. In response, functional programming languages like Haskell, OCaml, and F# have adopted a different approach to value representation, favoring the [Option types](https://en.wikipedia.org/wiki/Option_type), represented as  `None | Some a`  in these languages, over traditional null values.
 
-The [Option types](https://en.wikipedia.org/wiki/Option_type), while often perceived as complex for beginners, can be conceptualized using  **the analogy of lists or arrays** . Consider a container structure that can either be  **empty, represented by  `[]`**  , or  **contain a value, represented by  `[a]`**  .The Option types introduce an extended concept: 
+The [Option types](https://en.wikipedia.org/wiki/Option_type), while often perceived as complex for beginners, can be conceptualized using  **the analogy of lists or arrays** . Consider a container structure that can either be  **empty, represented by  `[]`**  , or  **contain a value, represented by  `[a]`**  .The Option types introduce an extended concept:
 
 | Lists/Arrays | Option Types  | 
 |--------------|------------------------|
 | `[]`  |  `None`  | 
-| `[a]` |  `Some a` | 
+| `[a]` |  `Some a` |
 
 ---
 
@@ -1041,7 +1039,6 @@ The [Option types](https://en.wikipedia.org/wiki/Option_type), while often perce
 
 Appearently, the Option types can be useful, but they can also lead to unnecessarily complex structures.
 
-
 ---
 
 -
@@ -1050,13 +1047,13 @@ Consider a  **Cell** .
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712455522726.png)
 
-This can be represented by 
+This can be represented by
 
 -  `[0]` 
 
--  `Some 0` 
+-  `Some 0`
 
-In a case the cell is empty,  **which happens!** 
+In a case the cell is empty,  **which happens!**
 
 In 2009,  [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare")  stated[[15]](https://en.wikipedia.org/wiki/Null_pointer#cite_note-15)  that he invented the null reference in 1965 as part of the  [ALGOL W](https://en.wikipedia.org/wiki/ALGOL_W "ALGOL W")  language. In that 2009 reference Hoare describes his invention as a "billion-dollar mistake":
 
@@ -1064,11 +1061,11 @@ In 2009,  [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare")  s
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
 
-This can rbe represented by 
+This can rbe represented by
 
 -  `[]` 
 
--  `None` 
+-  `None`
 
 ---
 
@@ -1076,17 +1073,15 @@ This system works so far.
 
 However, the List or Option type can be easily nested such as:
 
-
-
 -  `[[0]]` 
 
--  `Some (Some 0)` 
+-  `Some (Some 0)`
 
 or
 
 -  `[[]]` 
 
--  `Some None` 
+-  `Some None`
 
 These structures correspond to:
 
@@ -1098,15 +1093,13 @@ or
 
 ---
 
-
 What we need is  **not nested Cells**  that is weired and meaningless but simply  **empty Cells** .
 
 ---
 
-
 TypeScript cleverly avoids the  **complexity of nested Option types**  by employing the [Nullable types](https://en.wikipedia.org/wiki/Nullable_type) instead.
 
- **Let's explore an example of a VSCode Extension that requires extracting the text from the active text editor.** 
+**Let's explore an example of a VSCode Extension that requires extracting the text from the active text editor.**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713851148106.png)
 
@@ -1122,11 +1115,11 @@ The TypeScript compiler is issuing errors and warnings.
 
 The problem is:
 
- `'vscode.window.activeTextEditor' is possibly 'undefined'.` 
+`'vscode.window.activeTextEditor' is possibly 'undefined'.`
 
 In JavaScript,  `undefined`  signifies a variable that has been declared but not yet assigned a value. While both  `undefined`  and  `null`  exist in the language with slight differences, we won't delve into those details here. For our purposes, we can consider  `undefined`  to be similar to  `null` in a general sense.
 
- **To visualize, it's like this!** 
+**To visualize, it's like this!**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713852091388.png)
 
@@ -1148,10 +1141,9 @@ In Functional Programming, everything is an expression or operation ([What is Fu
 
 When constructing expressions for mathematically consistent algebraic structures, it is essential to employ the  **correct types**  and their  **corresponding operators** .
 
-The concept of ***null reference being referred to as a "billion dollar mistake"*** stems from the error that occurs when  **the appropriate combination of null and its corresponding operators is not correctly implemented.** 
+The concept of ***null reference being referred to as a "billion dollar mistake"*** stems from the error that occurs when  **the appropriate combination of null and its corresponding operators is not correctly implemented.**
 
 In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) operator**  in JavaScript/TypeScript
-
 
 > The **optional chaining (`?.`)** operator accesses an object's property or calls a function. If the object accessed or function called using this operator is [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) or [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null), the expression short circuits and evaluates to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) instead of throwing an error.
 
@@ -1159,7 +1151,7 @@ In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mo
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713854832322.png)
 
- *While the naming convention "optional chaining" evokes Option types, its actual behavior differs from nested Option types. Unlike Option types, which allow values to be either Some(value) or None, nullable chaining deals with values that can either be valid values or null. Therefore, "nullable chaining" might be a more accurate and descriptive name.* 
+*While the naming convention "optional chaining" evokes Option types, its actual behavior differs from nested Option types. Unlike Option types, which allow values to be either Some(value) or None, nullable chaining deals with values that can either be valid values or null. Therefore, "nullable chaining" might be a more accurate and descriptive name.*
 
 Th
 
@@ -1177,7 +1169,7 @@ o
 
 -  `Some 0` 
 
--  `[0]` 
+-  `[0]`
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
@@ -1185,7 +1177,7 @@ o
 
 >A _nullable value type_ `Nullable<'T>` represents any [struct](structs.md) type that could also be `null`. This is helpful when interacting with libraries and components that may choose to represent these kinds of types, like integers, with a `null` value for efficiency reasons. The underlying type that backs this construct is [System.Nullable<T>](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types).
 
- **can only represents `struct` type, which limitation is problematic.** 
+**can only represents `struct` type, which limitation is problematic.**
 
 [Using Nullable Reference Types in F#](https://stackoverflow.com/questions/63605221/using-nullable-reference-types-in-f)
 
