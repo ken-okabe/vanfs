@@ -5,6 +5,12 @@
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
 | [⏱️ Timeline](#timeline) |
+| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Timeline Nullable](#timeline-nullable) |
+| [⏱️ Timeline Task](#timeline-task) |
+| [⏱️ Timeline Task Concat](#timeline-task-concat) |
+| [⏱️ Timeline Task Or](#timeline-task-or) |
+| [⏱️ Timeline Task And](#timeline-task-and) |
 | [💬 Discussions](https://github.com/ken-okabe/vanfs/discussions) |
 
 ###### vanfs
@@ -998,6 +1004,10 @@ add [document.body; Counter()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+###### nullable
+
+###### timeline
+
 # ⏱️ Nullable Types
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
@@ -1228,6 +1238,8 @@ log nullable2.Value
 This specification resembles F#'s native [nullable value types](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types), but unlike it, `NullableT`  can represent any reference types.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+###### timeline-nullable
 
 # ⏱️ Timeline Nullable
 
@@ -1482,6 +1494,10 @@ add [document.body; Number()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+###### timeline-task
+
+###### timeline-nullable
+
 # ⏱️ Timeline Task
 
 While  **Timeline Nullable**  operators offer a basic principle similar to JavaScript's [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), they are not capable of managing Task chaining, such as [Promie.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then).
@@ -1529,6 +1545,10 @@ timelineStarter
 |> taskT task3
 |> ignore
 ```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+###### timeline-task-concat
 
 # ⏱️ Timeline Task Concat
 
@@ -1699,6 +1719,10 @@ add [document.body; Tasks()]
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
+###### timeline-task-or
+
+###### timeline-task-concat
+
 # ⏱️ Timeline Task Or
 
 ### `taskOr` or `(+|)`
@@ -1723,6 +1747,10 @@ let task1234 =
 ```
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+
+###### timeline-task-and
+
+###### timeline-task-or
 
 # ⏱️ Timeline Task And
 
