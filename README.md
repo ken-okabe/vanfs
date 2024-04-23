@@ -1088,7 +1088,7 @@ This can be represented by
 
 ---
 
-In a case the cell is empty, 
+In a case the cell is empty,
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
 
