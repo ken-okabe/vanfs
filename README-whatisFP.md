@@ -84,8 +84,72 @@ $\triangleright$, in F# code, `|>`
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694896818758.png#gh-light-mode-only)
 
-- Monadic function
+- Monadic function (Kleisli arrow)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694893107522.png#gh-dark-mode-only)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694896881397.png#gh-light-mode-only)
+
+---
+
+-  **(Endo)Functor and Monad are two sides of the same mathematical structure**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695095978458.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694896962933.png#gh-light-mode-only)
+
+---
+
+- (Endo)Functor / Monad with $id$ / $ID$
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images3/main/img_1701330728879.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images3/main/img_1701161800128.png#gh-light-mode-only)
+
+---
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images3/main/img_1701307589866.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images3/main/img_1701161868242.png#gh-light-mode-only)
+
+---
+
+-  **Pipelineされた関数はリンクできる（関数合成）**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695097345386.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695097372602.png#gh-light-mode-only)
+
+---
+
+-  **(Endo)Functorでは、関数はコンテナの中身も殻もPipelineでリンクされ合成される**
+
+-  **Monadでは、Monad関数のためのリンク＝クライスリ合成される**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694899246669.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694899301196.png#gh-light-mode-only)
+
+---
+
+-  **(Endo)Functorでは、関数はコンテナの中身も殻もPipelineでリンクされ合成される**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images1/main/img_1690336840842.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694937849906.png#gh-light-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images1/main/img_1690269193145.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694937772302.png#gh-light-mode-only)
+
+---
+
+-  **Monadでは、Monad関数のためのリンク＝クライスリ合成される**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images1/main/img_1690269442642.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694937402098.png#gh-light-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695101910856.png#gh-dark-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695101924426.png#gh-light-mode-only)
