@@ -1,4 +1,4 @@
-# What is Functional Programming?
+# 💡 What is Functional Programming?
 
 What is  **Functional Programming** ? It's a programming paradigm that uses **Expressions** as the building blocks of the code.
 

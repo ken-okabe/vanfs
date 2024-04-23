@@ -627,11 +627,11 @@ In order to utilize the state management, VanJS provides two APIs: `van.state` a
 
 Given the critical significance of functional programming in modern software development, I have dedicated a separate article to exploring its key concepts and benefits.
 
-### [What is Functional Programming?](./README-whatisFP.md)
+### [💡 What is Functional Programming?](./README-whatisFP.md)
 
 ## VanFS provides binary operations to utilize the state management
 
-In Functional Programming, everything is an expression or operation ([What is Functional Programming?](./README-whatisFP.md)). Accordingly, VanFS provides  **binary operations for the reactive state management** .
+In Functional Programming, everything is an expression or operation ([💡 What is Functional Programming?](./README-whatisFP.md)). Accordingly, VanFS provides  **binary operations for the reactive state management** .
 
 $$
 TimelineA ~ ~ * ~ ~ Function \quad  \rightarrow \quad  TimelineB
@@ -1168,7 +1168,7 @@ This is the [Nullable type](https://en.wikipedia.org/wiki/Nullable_type) and wha
 
 ---
 
-In Functional Programming, everything is an expression or operation ([What is Functional Programming?](./README-whatisFP.md)).
+In Functional Programming, everything is an expression or operation ([💡 What is Functional Programming?](./README-whatisFP.md)).
 
 When constructing expressions for mathematically consistent algebraic structures, it is essential to employ the  **correct types**  and their  **corresponding operators** .
 
