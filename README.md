@@ -1072,15 +1072,9 @@ The [Option types](https://en.wikipedia.org/wiki/Option_type), while often perce
 
 ---
 
----
-
---
-
 Appearently, the Option types can be useful, but they can also lead to unnecessarily complex structures.
 
 ---
-
--
 
 Consider a  **Cell** .
 
@@ -1116,23 +1110,23 @@ However, the List or Option type can be easily nested such as:
 
 -  `Some (Some 0)`
 
+correspond to:
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713849900596.png)
+
 or
 
 -  `[[]]` 
 
 -  `Some None`
 
-These structures correspond to:
-
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713849900596.png)
-
-or
+correspond to:
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713849984060.png)
 
 ---
 
-What we need is  **not nested Cells**  that is weired and meaningless but simply  **empty Cells** .
+What we need is  **not a nested Cell**  that is weired and meaningless but simply  **an empty Cell** .
 
 ---
 
@@ -1191,24 +1185,6 @@ In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mo
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713854832322.png)
 
 *While the naming convention "optional chaining" evokes Option types, its actual behavior differs from nested Option types. Unlike Option types, which allow values to be either Some(value) or None, nullable chaining deals with values that can either be valid values or null. Therefore, "nullable chaining" might be a more accurate and descriptive name.*
-
-Th
-
-'vscode.window.activeTextEditor' is possibly 'undefined'.
-
-vscode.window.activeTextEditor.document.getText()
-
-vscode.window.activeTextEditor.document.getText()
-
-o
-
---
-
--  `Some 0` 
-
--  `Some 0` 
-
--  `[0]`
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
