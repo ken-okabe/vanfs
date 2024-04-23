@@ -1110,7 +1110,7 @@ However, the List or Option type can be easily nested such as:
 
 -  `Some (Some 0)`
 
-correspond to:
+corresponds to:
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713849900596.png)
 
@@ -1120,7 +1120,7 @@ or
 
 -  `Some None`
 
-correspond to:
+corresponds to:
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713849984060.png)
 
