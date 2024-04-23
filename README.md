@@ -1488,8 +1488,6 @@ add [document.body; Number()]
 
 ###### timeline-task
 
-###### timeline-nullable
-
 # ⏱️ Timeline Task
 
 While  **Timeline Nullable**  operators offer a basic principle similar to JavaScript's [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), they are not capable of managing Task chaining, such as [Promie.then](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then).
@@ -1713,8 +1711,6 @@ add [document.body; Tasks()]
 
 ###### timeline-task-or
 
-###### timeline-task-concat
-
 # ⏱️ Timeline Task Or
 
 ### `taskOr` or `(+|)`
@@ -1741,8 +1737,6 @@ let task1234 =
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 ###### timeline-task-and
-
-###### timeline-task-or
 
 # ⏱️ Timeline Task And
 
