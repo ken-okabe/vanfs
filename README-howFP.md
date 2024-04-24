@@ -100,13 +100,13 @@ In mathematics, the order of operations, also known as  **operator precedence** 
 
 ## Know the operators in functional programming
 
-Knowing how to use operators is essential for functional programming because the operators itself knows the order to perform the evaluations.
+Knowing how to use operators is essential for functional programming because the  **operators itself knows the order to perform the evaluations** .
 
 ## Advanced operators
 
-[Fold (higher-order function)](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) is one of the most important operators in functional programming.
+#### What is the sum of the integers from  $0$  to  $5$ ?
 
-> In [functional programming](https://en.wikipedia.org/wiki/Functional_programming "Functional programming"), **fold** (also termed **reduce**, **accumulate**, **aggregate**, **compress**, or **inject**) refers to a family of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function "Higher-order function") that [analyze](https://en.wikipedia.org/wiki/Analysis "Analysis") a [recursive](https://en.wikipedia.org/wiki/Recursive_data_type "Recursive data type") data structure and through use of a given combining operation, recombine the results of [recursively](https://en.wikipedia.org/wiki/Recursion "Recursion") processing its constituent parts, building up a return value.
+Accustomed to the conventions of imperative programming, many programmers typically employ a  `for`  loop to solve this problem.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
@@ -117,6 +117,58 @@ for (let i = 0; i <= 5; i++) {
 }
 console.log(sum); // 15
 ```
+
+After all, Imperative programming is an approach to consider the flow of the code.
+
+[Flowchart](https://en.wikipedia.org/wiki/Flowchart)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713950299457.png)
+
+---
+
+On the other hand, Functional programming is an approach to consider the expressions of Mathematics.
+
+#### What is the sum of the integers from  $0$  to  $5$ ?
+
+
+This is a math problem, and probably, bright math students would replace the problem to:
+
+$$
+S = \sum_{n=0}^{5} n
+$$
+
+* **S** represents the sum we want to find
+* **Σ** denotes the summation symbol
+* **(n | n ∈ [0, 5])** represents the set of integers from 0 to 5, inclusive
+
+The most important thing to understand is that this is a  **straightforward calculation** . 
+
+However, in imperative programming, solving such problems often involves  **designing loops with ever-changing variables** . This can lead to complexities that obscure the problem's essence and increase the risk of introducing bugs.
+
+The calculation for this problem proceeds as follows.
+
+$$
+\begin{gather*}
+((((0 +1) + 2) + 3) + 4) + 5
+\\
+(((1 + 2) + 3) + 4) + 5
+\\
+((3 + 3) + 4) + 5
+\\
+(6 + 4) + 5
+\\
+10 + 5
+\\
+15
+\end{gather*}
+$$
+
+So, know the operators in functional programming.
+
+
+The adequate operator that is capable of calculating this is called [Fold (higher-order function)](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) 
+
+> In [functional programming](https://en.wikipedia.org/wiki/Functional_programming "Functional programming"), **fold** (also termed **reduce**, **accumulate**, **aggregate**, **compress**, or **inject**) refers to a family of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function "Higher-order function") that [analyze](https://en.wikipedia.org/wiki/Analysis "Analysis") a [recursive](https://en.wikipedia.org/wiki/Recursive_data_type "Recursive data type") data structure and through use of a given combining operation, recombine the results of [recursively](https://en.wikipedia.org/wiki/Recursion "Recursion") processing its constituent parts, building up a return value.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
@@ -132,6 +184,13 @@ console.log(sum); // 15
 let sum = [0;1;2;3;4;5] |> List.reduce (+)
 printfn "%d" sum // 15
 ```
+
+* **(n | n ∈ [0, 5])** represents the set of integers from 0 to 5, inclusive
+
+Here, we simply prepare the set of integers from 0 to 5 as   `[0,1,2,3,4,5]` or  `[0;1;2;3;4;5]` , but it's also possible to calculate such a list/array by using an adequate operator/function.
+
+
+Conceptually, it's known as [Unfold](https://en.wikipedia.org/wiki/Anamorphism).
 
 ```fsharp
 // Generate [0;1;2;3;4;5] using unfold
