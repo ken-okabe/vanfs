@@ -3,7 +3,7 @@
 | [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) |
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
 | [⏱️ Nullable Types](#nullable) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
@@ -219,7 +219,7 @@ I've created a separate article on this topic since it's part of the larger fron
 | [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) |
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
 | [⏱️ Nullable Types](#nullable) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
@@ -349,7 +349,7 @@ body {
 | [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) |
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
 | [⏱️ Nullable Types](#nullable) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
