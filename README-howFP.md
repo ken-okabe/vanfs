@@ -130,7 +130,6 @@ On the other hand, Functional programming is an approach to consider the express
 
 #### What is the sum of the integers from  $0$  to  $5$ ?
 
-
 This is a math problem, and probably, bright math students would replace the problem to:
 
 $$
@@ -141,7 +140,7 @@ $$
 * **Σ** denotes the summation symbol
 * **(n | n ∈ [0, 5])** represents the set of integers from 0 to 5, inclusive
 
-The most important thing to understand is that this is a  **straightforward calculation** . 
+The most important thing to understand is that this is a  **straightforward calculation** .
 
 However, in imperative programming, solving such problems often involves  **designing loops with ever-changing variables** . This can lead to complexities that obscure the problem's essence and increase the risk of introducing bugs.
 
@@ -165,8 +164,7 @@ $$
 
 So, know the operators in functional programming.
 
-
-The adequate operator that is capable of calculating this is called [Fold (higher-order function)](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) 
+The adequate operator that is capable of calculating this structure is called [Fold (higher-order function)](https://en.wikipedia.org/wiki/Fold_(higher-order_function))
 
 > In [functional programming](https://en.wikipedia.org/wiki/Functional_programming "Functional programming"), **fold** (also termed **reduce**, **accumulate**, **aggregate**, **compress**, or **inject**) refers to a family of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function "Higher-order function") that [analyze](https://en.wikipedia.org/wiki/Analysis "Analysis") a [recursive](https://en.wikipedia.org/wiki/Recursive_data_type "Recursive data type") data structure and through use of a given combining operation, recombine the results of [recursively](https://en.wikipedia.org/wiki/Recursion "Recursion") processing its constituent parts, building up a return value.
 
@@ -189,10 +187,27 @@ printfn "%d" sum // 15
 
 Here, we simply prepare the set of integers from 0 to 5 as   `[0,1,2,3,4,5]` or  `[0;1;2;3;4;5]` , but it's also possible to calculate such a list/array by using an adequate operator/function.
 
-
 Conceptually, it's known as [Unfold](https://en.wikipedia.org/wiki/Anamorphism).
 
 ```fsharp
 // Generate [0;1;2;3;4;5] using unfold
 let numbers = unfold (0, fun x -> x + 1) 6
 ```
+
+$$
+\begin{gather*}
+0
+\\
+0 ~ ~1
+\\
+0 ~ ~1 ~ ~ 2
+\\
+0 ~ ~ 1 ~ ~ 2 ~ ~ 3
+\\
+0 ~ ~ 1 ~ ~ 2 ~ ~ 3 ~ ~ 4
+\\
+0 ~ ~ 1 ~ ~ 2 ~ ~ 3 ~ ~ 4 ~ ~ 5
+\end{gather*}
+$$
+
+In functional programming, typically, every element is either an expression or an operation. This paradigm allows for computations to be performed without the need for traditional control flow structures such as  `for`  loops.
