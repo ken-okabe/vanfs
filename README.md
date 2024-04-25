@@ -324,6 +324,16 @@ npx vite
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711730144988.png)
 
+## Build with Vite
+
+```sh
+npx vite build
+```
+
+The production files will be under  `build` directory.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714047967751.png)
+
 ## CSS
 
 Everything we need to customize or import is located under `web-imports` directory.
@@ -558,9 +568,7 @@ Add the CSS URL to
 
 ```ts
 export let cssURLs = [
-    "../../web-imports/custom.css",
-
-    "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+ "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 ];
 ```
 
