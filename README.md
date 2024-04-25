@@ -629,6 +629,8 @@ Given the critical significance of functional programming in modern software dev
 
 ### [💡 What is Functional Programming?](./README-whatisFP.md)
 
+### [💡 How does Functional Programming Code Drive?](./README-howFP.md)
+
 ## VanFS provides binary operations to utilize the state management
 
 In Functional Programming, everything is an expression or operation ([💡 What is Functional Programming?](./README-whatisFP.md)). Accordingly, VanFS provides  **binary operations for the reactive state management** .
@@ -1154,7 +1156,7 @@ In JavaScript,  `undefined`  signifies a variable that has been declared but not
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713852091388.png)
 
-Since a VS Code user can close all tabs in the editor,  `vscode.window.activeTextEditor`  might become  `undefined` .
+Since *VS Code users can close all tabs in the editor,*   `vscode.window.activeTextEditor`  might become  `undefined` .
 
 The situation with  `vscode.window.activeTextEditor`  becoming  `undefined` is analogous to having  **an empty cell in a spreadsheet** . Both represent the absence of a value we might expect to be present.
 
@@ -1174,7 +1176,7 @@ When constructing expressions for mathematically consistent algebraic structures
 
 The concept of  ***null references being a "billion-dollar mistake"***  stems from the  **lack of a well-designed null type and corresponding operators**  for programmers to use effectively.
 
-In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) operator**  in JavaScript/TypeScript
+In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) operator**  in JavaScript(ES2020)/TypeScript
 
 > The **optional chaining (`?.`)** operator accesses an object's property or calls a function. If the object accessed or function called using this operator is [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) or [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null), the expression short circuits and evaluates to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) instead of throwing an error.
 

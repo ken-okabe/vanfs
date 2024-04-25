@@ -133,35 +133,3 @@ add [document.body; Tasks()]
 |> ignore
 
 
-
-//============
-let double =
-    fun a -> NullableT (a * 2)
-
-// 1️⃣ initialize timelineA
-let timelineA = Timeline Null
-
-log timelineA.lastVal // use `log` of Timeline
-// Null
-
-// 2️⃣ the binary operation
-let timelineB =
-    timelineA |> mapTN double
-// currently, `timelineA = Timeline Null`
-// so, `double` function is ignored
-// and `timelineB` value becomes `Null`
-log timelineB.lastVal // use `log` of Timeline
-// Null
-
-// 3️⃣ update the lastVal of timelineA
-timelineA
-|> nextTN (NullableT 3)
-|> ignore
-
-log timelineA.lastVal // use `log` of Timeline
-// T 3
-
-// Now, `timelineA` value is updated to non `Null` value
-// Accordingly, `timelineB` reactively becomes `double` of it
-log timelineB.lastVal
-// T 6
