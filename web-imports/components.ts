@@ -1,3 +1,5 @@
+import "./custom.css"
+
 //https://learn.microsoft.com/en-us/fluent-ui/web-components/components/card?pivots=typescript
 
 //https://learn.microsoft.com/en-us/fluent-ui/web-components/components/checkbox?pivots=typescript

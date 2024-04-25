@@ -252,7 +252,7 @@ See [Fable Setup Documentaion](https://fable.io/docs/getting-started/setup.html)
 ```sh
 git clone https://github.com/ken-okabe/vanfs
 cd vanfs
-dotnet restore # .NET project setup
+dotnet tool restore # .NET project setup
 npm i          #  npm project setup
 ```
 
@@ -1026,7 +1026,11 @@ add [document.body; Counter()]
 |> ignore
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712107993450.png)
+ **Demo** 
+
+https://codepen.io/kentechgeek/pen/gOyqNqb?editors=1111
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714045747403.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
@@ -1447,8 +1451,9 @@ open Fable.Core.JsInterop
 
 open Van.Basic // import tags, add
 open Van.TimelineElement // import Timeline
-open Van.TimelineElementNullable // import Null etc.
-open System
+open Van.TimelineElementNullable // import Timelinetc.
+open Van.Nullable // import NullableT
+open Van.TimelineElementTask
 
 let h4: Tag = tags?h4
 let fluentCard: Tag = tags?``fluent-card``
@@ -1460,7 +1465,7 @@ let Number =
 
         let numberX2 =
             number
-            |> mapTN (fun n -> Nullable(n * 2)) //System.Nullable
+            |> mapTN (fun n -> NullableT(n * 2)) //System.Nullable
 
         fluentCard [
             {|``class``="custom1"|}
@@ -1477,14 +1482,14 @@ let Number =
                         let value =
                             if e?target?value=""
                             then Null
-                            else Nullable e?target?value
+                            else NullableT e?target?value
 
                         if value=Null // clear the output textField
                         then numberX2
                              |> nextTN Null
                              |> ignore
                              document.getElementById("output-field")?value
-                                <- "" // clear the output textField
+                                <- "Null" // clear the output textField
                         else ()
 
                         number
@@ -1498,7 +1503,6 @@ let Number =
                 {|
                 appearance="outline"
                 readonly=true
-                placeholder="2"
                 value=numberX2.el
                 id="output-field"
                 |}
@@ -1510,9 +1514,7 @@ add [document.body; Number()]
 |> ignore
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712011529413.png)
-
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712011575293.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714047297731.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
@@ -1763,9 +1765,11 @@ add [document.body; Tasks()]
 |> ignore
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712038600017.png)
+ **Demo** 
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712038609796.png)
+https://codepen.io/kentechgeek/pen/jORdjvy?editors=1111
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714045356535.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 

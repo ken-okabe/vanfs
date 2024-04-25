@@ -11,6 +11,7 @@ cssURLs.forEach(url => {
     document.head.appendChild(stylesheet);
 });
 
+
 // unary function ([a,b,c,...]) in F#
 // -> n-ary function (a,b,c,...) in VanJS
 let n =

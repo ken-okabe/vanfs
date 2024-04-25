@@ -1,6 +1,6 @@
 {
   "name": "vanfs",
-  "version": "0.0.1",
+  "version": "0.9.0",
   "description": "Micro Reactive UI Framework in F# based on VanJS",
   "main": "index.js",
   "scripts": {
