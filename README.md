@@ -1514,6 +1514,10 @@ add [document.body; Number()]
 |> ignore
 ```
 
+ **Demo** 
+
+https://codepen.io/kentechgeek/pen/wvZNVzJ?editors=1111
+
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714047297731.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
