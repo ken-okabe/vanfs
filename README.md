@@ -221,7 +221,7 @@ I've created a separate article on this topic since it's part of the larger fron
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -363,7 +363,7 @@ body {
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -585,7 +585,7 @@ export let cssURLs = [
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -699,7 +699,7 @@ So, this is FRP.
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -1053,7 +1053,7 @@ https://codepen.io/kentechgeek/pen/gOyqNqb?editors=1111
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -1138,7 +1138,7 @@ This specification resembles F#'s native [nullable value types](https://learn.mi
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -1410,7 +1410,7 @@ https://codepen.io/kentechgeek/pen/wvZNVzJ?editors=1111
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -1475,9 +1475,9 @@ timelineStarter
 | [🍦  **VanFS** ](#vanfs) <br/>&nbsp;&nbsp;[<sub>📱 Versatility of Web Technology <br/>&nbsp;&nbsp;&nbsp;&nbsp;for Cross-Platform App Development<sub>](./README-why.md) |
 | [🚀 Getting Started](#getting-started)|
 | [🌐 Web Components](#web-components) |
-| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)||
+| [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -1665,7 +1665,7 @@ https://codepen.io/kentechgeek/pen/jORdjvy?editors=1111
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
@@ -1707,7 +1707,7 @@ let task1234 =
 | [🌐 Web Components](#web-components) |
 | [⚡️ Functional Reactive Programming (FRP)](#frp)<br/>&nbsp;&nbsp;[<sub>💡 What is Functional Programming?</sub>](./README-whatisFP.md)<br/>&nbsp;&nbsp;[<sub>💡 How does Functional Programming Code Drive?</sub>](./README-howFP.md)|
 | [⏱️ Timeline](#timeline) |
-| [⏱️ Nullable Types](#nullable) |
+| [⏱️ Nullable Types](#nullable)<br/>&nbsp;&nbsp;[<sub>💡 What is Null, Nullable and Option Types?</sub>](./README-whatisNull.md) |
 | [⏱️ Timeline Nullable](#timeline-nullable) |
 | [⏱️ Timeline Task](#timeline-task) |
 | [⏱️ Timeline Task Concat](#timeline-task-concat) |
