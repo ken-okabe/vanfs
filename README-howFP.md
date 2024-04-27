@@ -102,7 +102,7 @@ In mathematics, the order of operations, also known as  **operator precedence** 
 
 Knowing how to use operators is essential for functional programming because the  **operators itself knows the order to perform the evaluations** .
 
-## Advanced operators
+## Advanced operator for iteration
 
 #### What is the sum of the integers from  $0$  to  $5$ ?
 
@@ -123,6 +123,15 @@ After all, Imperative programming is an approach to consider the flow of the cod
 [Flowchart](https://en.wikipedia.org/wiki/Flowchart)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713950299457.png)
+
+[Iteration](https://en.wikipedia.org/wiki/Iteration)
+
+>In computing, iteration is the technique marking out of a block of statements within a  [computer program](https://en.wikipedia.org/wiki/Computer_program "Computer program")  for a defined number of repetitions. That block of statements is said to be  _iterated_; a computer scientist might also refer to that block of statements as  _an_  "iteration".
+>### Implementations
+>[Loops](https://en.wikipedia.org/wiki/Control_flow#Loops "Control flow")  constitute the most common language constructs for performing iterations. The following  [pseudocode](https://en.wikipedia.org/wiki/Pseudocode "Pseudocode")  "iterates" three times the line of code between begin & end through a  _for loop_, and uses the values of  _i_  as increments.  
+>It is permissible, and often necessary, to use values from other parts of the program outside the bracketed block of statements, to perform the desired function.  
+>[Iterators](https://en.wikipedia.org/wiki/Iterators "Iterators")  constitute alternative language constructs to loops, which ensure consistent iterations over specific data structures. They can eventually save time and effort in later coding attempts. In particular, an iterator allows one to repeat the same kind of operation at each node of such a data structure, often in some pre-defined order.  
+>[Iteratees](https://en.wikipedia.org/wiki/Iteratees "Iteratees")  are purely functional language constructs, which accept or reject data during the iterations.
 
 ---
 
@@ -211,3 +220,116 @@ $$
 $$
 
 In functional programming, typically, every element is either an expression or an operation. This paradigm allows for computations to be performed without the need for traditional control flow structures such as  `for`  loops.
+
+## Simple operator for conditional
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714222493215.png)
+
+[Conditional ](https://en.wikipedia.org/wiki/Conditional_(computer_programming))
+
+> ## Terminology
+> In  [imperative programming](https://en.wikipedia.org/wiki/Imperative_programming "Imperative programming")  languages, the term "conditional  [statement](https://en.wikipedia.org/wiki/Statement_(programming) "Statement (programming)")" is usually used, whereas in  [functional programming](https://en.wikipedia.org/wiki/Functional_programming "Functional programming"), the terms "conditional  [expression](https://en.wikipedia.org/wiki/Expression_(programming) "Expression (programming)")" or "conditional construct" are preferred, because these terms all have distinct meanings.
+
+In modern programming languages,  `if/else` is no longer a  **statement** but an  **expression** and  **operators** :
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714234809655.png)
+
+Rust takes advantage of  `if/else`  expression.
+
+---
+
+Older languages like JavaScript have  `if/else`  statements, but JavaScript also includes a [Conditional (ternary) operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator).
+
+>The **conditional (ternary) operator** is the only JavaScript operator that takes three operands: a condition followed by a question mark (`?`), then an expression to execute if the condition is [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) followed by a colon (`:`), and finally the expression to execute if the condition is [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy). This operator is frequently used as an alternative to an [`if...else`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) statement.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
+
+```js
+let age = 26;
+let beverage =
+    age >= 21 
+    ? "Beer" 
+    : "Juice";
+console.log(beverage); // "Beer"
+```
+
+---
+
+F# takes advantage of  `if/else`  expression.
+
+[Conditional Expressions: if...then...else](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/conditional-expressions-if-then-else)
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let age = 26
+let beverage =
+    if age >= 21 
+    then "Beer"
+    else "Juice"
+printfn "%s" beverage // "Beer"
+```
+
+---
+
+How about more complicated conditional pattern?
+
+JavaScript: [switch-case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) statements
+
+F#: [Pattern matching](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/pattern-matching) expressions
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let x = 2
+let result =
+    match x with
+    | 1 -> "one"
+    | 2 -> "two"
+    | _ -> "other"
+// "two"
+```
+
+## IO Monad for sequence
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714226994509.png)
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
+
+```js
+console.log "Hello";
+console.log "world!";
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+printfn "Hello"
+printfn "world!"
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images4/main/haskell.svg">
+
+```haskell
+main = do
+    putStrLn "Hello"
+    putStrLn "world!"
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images4/main/haskell.svg">
+
+```haskell
+main = putStrLn "Hello" >> putStrLn "world!"
+```
+
+Not too far code in JavaScript
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
+
+```js
+let main =
+    () => [undefined]
+        .map(() => console.log("Hello"))
+        .map(() => console.log("world!"));
+main();
+```
