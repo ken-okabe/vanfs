@@ -42,7 +42,7 @@ In functional programming languages, functions are expressions.
 
 In other words, functions are treated as first-class values. This means they can be assigned to variables, passed as arguments, and returned from other functions.
 
-**[First-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) is a fundamental requirement for a programming language to be considered a functional programming language.**
+**[First-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) is the fundamental requirement for a programming language to be considered a functional programming language.**
 
 In [C](https://en.wikipedia.org/wiki/C_(programming_language)), functions are not first-class values, which means they cannot be treated as expressions. This lack of first-class functions prevents C from being considered a functional programming language.
 
