@@ -116,7 +116,7 @@ $\triangleright$, in F# code, `|>`
 
 ---
 
--  **Pipelineされた関数はリンクできる（関数合成）**
+-  **Functions with Pipeline - Function composition**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695097345386.png#gh-dark-mode-only)
 
@@ -124,9 +124,9 @@ $\triangleright$, in F# code, `|>`
 
 ---
 
--  **(Endo)Functorでは、関数はコンテナの中身も殻もPipelineでリンクされ合成される**
+-  **(Endo)Functor- Functions are linked/composed with Pipeline, including both the contents and the shell of the container**
 
--  **Monadでは、Monad関数のためのリンク＝クライスリ合成される**
+-  **Monad - link/composition of Monadic functions ＝Kleisli composition**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694899246669.png#gh-dark-mode-only)
 
@@ -134,7 +134,7 @@ $\triangleright$, in F# code, `|>`
 
 ---
 
--  **(Endo)Functorでは、関数はコンテナの中身も殻もPipelineでリンクされ合成される**
+-  **(Endo)Functor- Functions are linked/composed with Pipeline, including both the contents and the shell of the container**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images1/main/img_1690336840842.png#gh-dark-mode-only)
 
@@ -146,7 +146,7 @@ $\triangleright$, in F# code, `|>`
 
 ---
 
--  **Monadでは、Monad関数のためのリンク＝クライスリ合成される**
+-  **Monad - link/composition of Monadic functions ＝Kleisli composition**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images1/main/img_1690269442642.png#gh-dark-mode-only)
 
