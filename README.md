@@ -239,7 +239,7 @@ I've created a separate article on this topic since it's part of the larger fron
 
 - [.NET SDK](https://dotnet.microsoft.com/download/dotnet)
 
-- [Node.js](https://nodejs.org/en/download) and npm CLI or Alternatives ([Bun](https://bun.sh/) / [Deno](https://deno.com/) / [yarn](https://yarnpkg.com/) etc.)
+- [Node.js](https://nodejs.org/en/download) and [npm](https://www.npmjs.com/) CLI or Alternatives ([Bun](https://bun.sh/) / [Deno](https://deno.com/) / [yarn](https://yarnpkg.com/) etc.)
 
 A **VanFS/Fable**  project is a hybrid of  **F#.NET project**  and  **npm project** .
 
@@ -826,7 +826,7 @@ console.log timelineB.lastVal
 This is the identical structure of:
 
 $$
-ArrayB \quad = \quad ArrayA \quad \triangleright Array.map \quad double
+ListB \quad = \quad ListA \quad \triangleright List.map \quad double
 $$
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">

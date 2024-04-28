@@ -4,7 +4,7 @@
 
 ### [Null pointer](https://en.wikipedia.org/wiki/Null_pointer)
 
-> Because a null pointer does not point to a meaningful object, an attempt to access the data stored at that (invalid) memory location may cause a run-time error or immediate program crash. This is the **null pointer error**. It is one of the most common types of software weaknesses,[[1]](https://en.wikipedia.org/wiki/Null_pointer#cite_note-1) and [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare"), who introduced the concept, has referred to it as a "billion dollar mistake".
+> Because a null pointer does not point to a meaningful object, an attempt to access the data stored at that (invalid) memory location may cause a run-time error or immediate program crash. This is the **null pointer error**. It is one of the most common types of software weaknesses,[[1]](https://en.wikipedia.org/wiki/Null_pointer#cite_note-1) and [Tony Hoare](https://en.wikipedia.org/wiki/Tony_Hoare "Tony Hoare"), who introduced the concept, has referred to it as a  **"billion dollar mistake"** .
 
 #### [History](https://en.wikipedia.org/wiki/Null_pointer#History)
 
@@ -109,7 +109,7 @@ In JavaScript,  `undefined`  signifies a variable that has been declared but not
 
 Since *VS Code users can close all tabs in the editor,*   `vscode.window.activeTextEditor`  might become  `undefined` .
 
-The situation with  `vscode.window.activeTextEditor`  becoming  `undefined` is analogous to having  **an empty cell in a spreadsheet** . Both represent the absence of a value we might expect to be present.
+The situation with  `vscode.window.activeTextEditor`  becoming  `undefined` is similar to having  **an empty cell in a spreadsheet** . Both represent the absence of a value we might expect to be present.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712816212511.png)
 
@@ -127,9 +127,11 @@ When constructing expressions for mathematically consistent algebraic structures
 
 The concept of  ***null references being a "billion-dollar mistake"***  stems from the  **lack of a well-designed null type and corresponding operators**  for programmers to use effectively.
 
-In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) operator**  in JavaScript(ES2020)/TypeScript
+In this case, we should use  **[Optional chaining ( `?.` )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) operator**  in JavaScript([ES2020](https://tc39.es/ecma262/2020/))/TypeScript
 
 > The **optional chaining (`?.`)** operator accesses an object's property or calls a function. If the object accessed or function called using this operator is [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) or [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null), the expression short circuits and evaluates to [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined) instead of throwing an error.
+
+Accordingly, the TypeScript code with the error should be fixed as below:
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713854747266.png)
 
