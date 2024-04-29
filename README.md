@@ -105,7 +105,7 @@ VanJS is a library based on Vanilla JavaScript for the well-established reasons.
 
 However, to take full advantage of  **VanJS** , we should consider using  **alternative languages instead of JavaScript** , which are commonly referred to as  **AltJS** .
 
-One of the critical reasons is that  **JavaScript is not a [type-safe language](https://en.wikipedia.org/wiki/Type_safety)** , which can lead to  **runtime errors and bugs.** 
+One of the critical reasons is that  **JavaScript is not a [type-safe language](https://en.wikipedia.org/wiki/Type_safety)** , which can lead to  **runtime errors and bugs.**
 
 [The Effect of Programming Language On Software Quality](https://developers.slashdot.org/story/14/11/05/0530228/the-effect-of-programming-language-on-software-quality)
 
@@ -247,11 +247,7 @@ I've created a separate article on this topic since it's part of the larger fron
 
 - [Node.js](https://nodejs.org/en/download) and [npm](https://www.npmjs.com/) CLI or Alternatives ([Bun](https://bun.sh/) / [Deno](https://deno.com/) / [yarn](https://yarnpkg.com/) etc.)
 
-If you use [VSCode](https://code.visualstudio.com/), the following extensions are recommended to install automatically by the editor:
-
-
-
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714363435870.png)
+If you are new to F# and using [VSCode](https://code.visualstudio.com/), read [F# Settings on VSCode](./README-fsharpVSCode.md).
 
 ---
 
