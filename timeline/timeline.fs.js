@@ -29,10 +29,9 @@ export function nextT(a, timeline) {
 
 export function bindT(monadf, timelineA) {
     const timelineB = monadf(timelineA.lastVal);
-    const newFn = (a) => {
+    timelineA._fns = append(timelineA._fns, singleton((a) => {
         nextT(monadf(a).lastVal, timelineB);
-    };
-    timelineA._fns = append(timelineA._fns, singleton(newFn));
+    }));
     return timelineB;
 }
 

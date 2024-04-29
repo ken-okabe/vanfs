@@ -247,24 +247,35 @@ I've created a separate article on this topic since it's part of the larger fron
 
 - [Node.js](https://nodejs.org/en/download) and [npm](https://www.npmjs.com/) CLI or Alternatives ([Bun](https://bun.sh/) / [Deno](https://deno.com/) / [yarn](https://yarnpkg.com/) etc.)
 
+If you use [VSCode](https://code.visualstudio.com/), the following extensions are recommended to install automatically by the editor:
+
+
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714363435870.png)
+
+---
+
 A **VanFS/Fable**  project is a hybrid of  **F#.NET project**  and  **npm project** .
 
 See [Fable Setup Documentaion](https://fable.io/docs/getting-started/setup.html)
 
 ---
 
-#### Quick Start
+### Quick Start
 
 ```sh
 git clone https://github.com/ken-okabe/vanfs
 cd vanfs
-dotnet tool restore # .NET project setup
-npm i          #  npm project setup
+dotnet restore  # .NET project setup
+dotnet tool restore
+npm i           #  npm project setup
 ```
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711727772764.png)
 
-#### or Create a project from scratch
+---
+
+### or Create a project from scratch
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711729299132.png)
 
