@@ -105,7 +105,13 @@ VanJS is a library based on Vanilla JavaScript for the well-established reasons.
 
 However, to take full advantage of  **VanJS** , we should consider using  **alternative languages instead of JavaScript** , which are commonly referred to as  **AltJS** .
 
-One of the critical reasons is that  **JavaScript is not a [type-safe language](https://en.wikipedia.org/wiki/Type_safety)** , which can lead to runtime errors and bugs.
+One of the critical reasons is that  **JavaScript is not a [type-safe language](https://en.wikipedia.org/wiki/Type_safety)** , which can lead to  **runtime errors and bugs.** 
+
+[The Effect of Programming Language On Software Quality](https://developers.slashdot.org/story/14/11/05/0530228/the-effect-of-programming-language-on-software-quality)
+
+>[An Experiment About Static and Dynamic Type Systems Doubts About the Positive Impact of Static Type Systems on Development Time](https://www.researchgate.net/publication/221321863_An_Experiment_About_Static_and_Dynamic_Type_Systems_Doubts_About_the_Positive_Impact_of_Static_Type_Systems_on_Development_Time)
+
+>Most notably, it does appear that strong typing is modestly better than weak typing, and among functional languages, static typing is also somewhat better than dynamic typing. We also find that functional languages are somewhat better than procedural languages. It is worth noting that these modest effects arising from language design are overwhelmingly dominated by the process factors such as project size, team size, and commit size. However, we hasten to caution the reader that even these modest effects might quite possibly be due to other, intangible process factors, e.g., the preference of certain personality types for functional, static and strongly typed languages.
 
 In fact, in modern web development, JavaScript has increasingly become  **a compile target**  from other languages, such as [TypeScript](https://www.typescriptlang.org/).
 
