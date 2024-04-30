@@ -145,7 +145,7 @@ let bindT = <A, B>
     };
 ```
 
-In TypeScript, compared with legacy JavaScript, an additional step is required to add type signatures to all variables, functions, and parameters.
+In TypeScript, compared with legacy JavaScript, an additional step is required to add type signatures to all variables, functions, and parameters. This is often overwhelming.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
@@ -162,7 +162,7 @@ let bindT =
         timelineB
 ```
 
-Such a clean code to write and read!
+**The F# code is much cleaner and more readable than TypeScript code.**
 
 In F#, we rarely need to add types manually thanks to its powerful type inference. This makes F# development feel similar to legacy JavaScript coding.
 
@@ -1759,6 +1759,15 @@ let Tasks =
         |> taskT task123
         |> ignore
 
+(* task123 can be written as below
+
+timelineStarter
+|> taskT task1
+|> taskT task2
+|> taskT task3
+|> ignore
+
+*)
         let start =
             fun _ -> // timeline will start
                 timelineStarter
