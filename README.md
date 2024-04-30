@@ -540,11 +540,139 @@ npm install @material/web
 
 ## Import the web components
 
+Let's use Material web **Text field**.
+
+https://material-web.dev/components/text-field/
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714462036427.png)
+
+https://material-web.dev/components/text-field/stories/
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714462362951.png)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
+
+#### /web-imports/components.ts
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+
+```ts
+import '@material/web/textfield/filled-text-field.js';
+import '@material/web/button/text-button.js';
+import '@material/web/button/outlined-button.js';
+```
+
+#### /web-imports/custom.css
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images4/main/css.svg">
+
+```css
+.custom3 {
+    --card-width: 460px;
+    --card-height: 150px;
+    padding: 20px;
+  }
+
+.row {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.buttons {
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+md-filled-text-field,
+md-outlined-text-field {
+  width: 200px;
+}
+```
+
+#### Program.fs
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+module MaterialUI
+open Browser
+open Browser.Types
+open Fable.Core.JsInterop
+open Van.Basic // import tags, add
+
+let div: Tag = tags?div
+let form: Tag = tags?form
+
+let fluentCard: Tag = tags?``fluent-card``
+let mdFilledTextField: Tag = tags?``md-filled-text-field``
+let mdTextButton: Tag = tags?``md-text-button``
+let mdOutlinedButton: Tag = tags?``md-outlined-button``
+
+let Form =
+    fun _ ->
+        fluentCard [
+            {|``class``="custom3"|}
+            form [
+                div [
+                    {|``class``="row"|}
+                    mdFilledTextField [
+                        {|
+                        label="First name"
+                        name="first-name"
+                        required=""
+                        autocomplete="given-name"
+                        |}
+                    ]
+                    mdFilledTextField [
+                        {|
+                        label="Last name"
+                        name="last-name"
+                        required=""
+                        autocomplete="family-name"
+                        |}
+                    ]
+                ]
+                div [
+                    {|``class``="row buttons"|}
+                    mdTextButton [
+                        {|``type``= "reset"|}
+                        "Reset"
+                    ]
+                    mdOutlinedButton [
+                        {|``type``= "submit"|}
+                        "Submit"
+                    ]
+                ]
+            ]
+        ]
+
+add [document.body; Form()]
+|> ignore
+```
+
+## Build with Vite
+
+```sh
+npx vite build
+```
+
+ **Demo** 
+
+https://codepen.io/kentechgeek/pen/KKYLwgN?editors=1111
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714465827447.png)
+
+---
+
+## Import the web components
+
 Let's use Material web **Icon Buttons**.
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711760987250.png)
-
 https://material-web.dev/components/icon-button/
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711760987250.png)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754186205.png)
 
@@ -556,6 +684,8 @@ https://material-web.dev/components/icon-button/
 import '@material/web/icon/icon.js';
 import '@material/web/iconbutton/icon-button.js';
 ```
+
+---
 
 ## Material Web Components use Google Fonts/Icons
 
@@ -1597,7 +1727,6 @@ let Tasks =
                     log "...task1 done"
                     taskDone timelineProgress1 timelinePercent1 timelineResult
                 setTimeout f 2500
-                timelineResult
 
         let task2 =
             fun timelineResult previousResult ->
@@ -1608,7 +1737,6 @@ let Tasks =
                     log "...task2 done"
                     taskDone timelineProgress2 timelinePercent2 timelineResult
                 setTimeout f 2500
-                timelineResult
 
         let task3 =
             fun timelineResult previousResult ->
@@ -1619,7 +1747,6 @@ let Tasks =
                     log "...task3 done"
                     taskDone timelineProgress3 timelinePercent3 timelineResult
                 setTimeout f 2500
-                timelineResult
 
         let timelineStarter = Timeline Null //tasks disabled initially
 

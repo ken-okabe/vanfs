@@ -4,7 +4,7 @@ If you are new to F# and using [VSCode](https://code.visualstudio.com/) , Create
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714364045993.png)
 
-This project includes a `.vscode/extensions.json`  file that recommends installing the following extensions:
+This project includes a  `.vscode/extensions.json`  file that prompts to install the following extensions.
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714363435870.png)
 

@@ -1,69 +1,54 @@
-﻿module Number
-
+﻿module MaterialUI
 open Browser
 open Browser.Types
 open Fable.Core.JsInterop
-
 open Van.Basic // import tags, add
-open Van.TimelineElement // import Timeline
-open Van.TimelineElementNullable // import Timelinetc.
-open Van.Nullable // import NullableT
-open Van.TimelineElementTask
 
-let h4: Tag = tags?h4
+let div: Tag = tags?div
+let form: Tag = tags?form
+
 let fluentCard: Tag = tags?``fluent-card``
-let fluentTextField: Tag = tags?``fluent-text-field``
+let mdFilledTextField: Tag = tags?``md-filled-text-field``
+let mdTextButton: Tag = tags?``md-text-button``
+let mdOutlinedButton: Tag = tags?``md-outlined-button``
 
-let Number =
+let Form =
     fun _ ->
-        let number = Timeline Null
-
-        let numberX2 =
-            number
-            |> mapTN (fun n -> NullableT(n * 2)) //System.Nullable
-
         fluentCard [
-            {|``class``="custom1"|}
-
-            h4 [ "Number" ]
-            fluentTextField [
-                {|
-                appearance="outline"
-                required=true
-                ``type``="number"
-                placeholder="1"
-                oninput=
-                    fun e ->
-                        let value =
-                            if e?target?value=""
-                            then Null
-                            else NullableT e?target?value
-
-                        if value=Null // clear the output textField
-                        then numberX2
-                             |> nextTN Null
-                             |> ignore
-                             document.getElementById("output-field")?value
-                                <- "Null" // clear the output textField
-                        else ()
-
-                        number
-                        |> nextTN value
-                        |> ignore
-                |}
+            {|``class``="custom3"|}
+            form [
+                div [
+                    {|``class``="row"|}
+                    mdFilledTextField [
+                        {|
+                        label="First name"
+                        name="first-name"
+                        required=""
+                        autocomplete="given-name"
+                        |}
+                    ]
+                    mdFilledTextField [
+                        {|
+                        label="Last name"
+                        name="last-name"
+                        required=""
+                        autocomplete="family-name"
+                        |}
+                    ]
+                ]
+                div [
+                    {|``class``="row buttons"|}
+                    mdTextButton [
+                        {|``type``= "reset"|}
+                        "Reset"
+                    ]
+                    mdOutlinedButton [
+                        {|``type``= "submit"|}
+                        "Submit"
+                    ]
+                ]
             ]
-
-            h4 [ "Number × 2" ]
-            fluentTextField [
-                {|
-                appearance="outline"
-                readonly=true
-                value=numberX2.el
-                id="output-field"
-                |}
-            ]
-
         ]
 
-add [document.body; Number()]
+add [document.body; Form()]
 |> ignore

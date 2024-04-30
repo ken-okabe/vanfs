@@ -5,17 +5,20 @@ import { uncurry2 } from "../fable_modules/fable-library-js.4.16.0/Util.js";
 
 export function taskT(task, timelineStarter) {
     const timelineResult = Timeline(new NullableT$1(0, []));
-    bindTN((arg) => {
+    const monadF = (arg) => {
         const _arg_1 = task(timelineResult, timelineStarter.lastVal);
         return Timeline(new NullableT$1(0, []));
-    }, timelineStarter);
+    };
+    bindTN(monadF, timelineStarter);
     return timelineResult;
 }
 
 export function taskConcat(task1, task2, timelineResult12, previousResult12) {
-    taskT((timelineResult, previousResult) => {
+    const taskComplete = (timelineResult, previousResult) => {
         nextTN(previousResult, timelineResult12);
-    }, taskT(task2, taskT(task1, Timeline(NullableT(previousResult12)))));
+    };
+    const timelineStarter = Timeline(NullableT(previousResult12));
+    taskT(taskComplete, taskT(task2, taskT(task1, timelineStarter)));
 }
 
 export function op_PlusGreater() {

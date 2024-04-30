@@ -40,7 +40,10 @@ export function taskAnd(task1, task2, timelineResult12, previousResult12) {
     const task_ = (timelineCurrent, timelineToCheck, timelineResult, previousResult) => {
         nextTN(previousResult, timelineCurrent);
         if (hasValue(timelineToCheck)) {
-            nextTN(NullableT(ListResult(append(toList(timelineResult1.lastVal), toList(timelineResult2.lastVal)))), timelineResult12);
+            const list1 = toList(timelineResult1.lastVal);
+            const list2 = toList(timelineResult2.lastVal);
+            const listResult12 = ListResult(append(list1, list2));
+            nextTN(NullableT(listResult12), timelineResult12);
         }
     };
     const timelineStarter = Timeline(NullableT(previousResult12));

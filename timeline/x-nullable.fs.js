@@ -18,7 +18,8 @@ export function NullableT$1_$reflection(gen0) {
 
 export function NullableT$1__get_Value(this$) {
     if (this$.tag === 1) {
-        return this$.fields[0];
+        const a = this$.fields[0];
+        return a;
     }
     else {
         throw new Error("Value is null");
