@@ -298,7 +298,6 @@ let result =
 
 In imperative programming, the order of statements in the code,  **from top to bottom** , determines the sequence of their execution  **without the need for explicit control structures** .
 
-
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
 ```js
@@ -306,7 +305,7 @@ console.log "Hello";
 console.log "world!";
 ```
 
-This style of imperative programming is also used in functional languages ​​like F# due to its simplicity and simplicity, which is good.
+This style of imperative programming is also used in functional languages ​​like F# due to its simplicity, which is good.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
@@ -315,8 +314,7 @@ printfn "Hello"
 printfn "world!"
 ```
 
-On the other hand,  **pure functional languages**  ​​like [Haskell](https://www.haskell.org/) do not allow this style for sequnece simply because there is a strict rule that  **the order of code execution is determined by the order of mathematical operations.** 
-
+On the other hand,  **pure functional languages**  ​​like [Haskell](https://www.haskell.org/) do not allow this style for sequnece simply because there is a strict rule that  **the order of code execution is determined by the order of mathematical operations.**
 
 However, the use of  `do`  notation allows programmers to write code in a similar style of imperative programming.
 
@@ -328,7 +326,7 @@ main = do
     putStrLn "world!"
 ```
 
- `do`  notation is a syntactic sugar in Haskell that offers a more concise and expressive way to write sequences of operations. The corresponding unadorned expression is as shown below:
+`do`  notation is a syntactic sugar in Haskell that offers a more concise and expressive way to write sequences of operations. The corresponding unadorned expression is as shown below:
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images4/main/haskell.svg">
 
