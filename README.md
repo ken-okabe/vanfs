@@ -125,6 +125,8 @@ In fact, in modern web development, JavaScript has increasingly become  **a comp
 
 ## Why we should avoid using TypeScript and migrate to F#
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714520217543.png)
+
 Undoubtedly, TypeScript is the most commonly used AltJS. It is a superset of JavaScript that adds type safety and other features.  **So why not use TypeScript?**
 
 There are many reasons, but chief among them is developer  **productivity** .
