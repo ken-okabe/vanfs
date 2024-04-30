@@ -1,11 +1,11 @@
-import { Record } from "../fable_modules/fable-library-js.4.16.0/Types.js";
-import { record_type, list_type } from "../fable_modules/fable-library-js.4.16.0/Reflection.js";
+import { Record } from "../fable_modules/fable-library-js.4.17.0/Types.js";
+import { record_type, list_type } from "../fable_modules/fable-library-js.4.17.0/Reflection.js";
 import { NullableT, NullableT$1, NullableT$1__get_Value } from "./x-nullable.fs.js";
-import { append, singleton } from "../fable_modules/fable-library-js.4.16.0/List.js";
+import { append, singleton } from "../fable_modules/fable-library-js.4.17.0/List.js";
 import { Timeline } from "./timeline.fs.js";
 import { hasValue, nextTN } from "./x-timeline-nullable.fs.js";
 import { taskT } from "./x1-timeline-task.fs.js";
-import { curry4, uncurry2 } from "../fable_modules/fable-library-js.4.16.0/Util.js";
+import { curry4, uncurry2 } from "../fable_modules/fable-library-js.4.17.0/Util.js";
 
 export class ListResult$1 extends Record {
     constructor(results) {

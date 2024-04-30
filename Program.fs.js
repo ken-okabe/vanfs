@@ -1,11 +1,11 @@
-import Timer from "./fable_modules/fable-library-js.4.16.0/Timer.js";
-import { add } from "./fable_modules/fable-library-js.4.16.0/Observable.js";
+import Timer from "./fable_modules/fable-library-js.4.17.0/Timer.js";
+import { add } from "./fable_modules/fable-library-js.4.17.0/Observable.js";
 import { NullableT$1__get_Value, NullableT$1, NullableT } from "./van-api/fs/x-nullable.fs.js";
 import { Timeline, log } from "./van-api/fs/timeline-element.fs.js";
 import { nextTN } from "./van-api/fs/x-timeline-element-nullable.fs.js";
 import { op_PlusAmp } from "./van-api/fs/x4-timeline-element-task-and.fs.js";
 import { taskT } from "./van-api/fs/x1-timeline-element-task.fs.js";
-import { uncurry2 } from "./fable_modules/fable-library-js.4.16.0/Util.js";
+import { uncurry2 } from "./fable_modules/fable-library-js.4.17.0/Util.js";
 
 export function setTimeout(f, delay) {
     const timer = new Timer(delay);
@@ -68,6 +68,6 @@ export function start(_arg) {
 }
 
 setTimeout(() => {
-    start(void 0);
+    start(undefined);
 }, 2000);
 

@@ -115,6 +115,8 @@ One of the critical reasons is that  **JavaScript is not a [type-safe language](
 
 In fact, in modern web development, JavaScript has increasingly become  **a compile target**  from other languages, such as [TypeScript](https://www.typescriptlang.org/).
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714519844346.png)
+
 **TypeScript -> JavaScript**
 
 ## VanJS can be regarded as a compile target from an AltJS

@@ -1,5 +1,5 @@
-import { Union } from "../../fable_modules/fable-library-js.4.16.0/Types.js";
-import { union_type } from "../../fable_modules/fable-library-js.4.16.0/Reflection.js";
+import { Union } from "../../fable_modules/fable-library-js.4.17.0/Types.js";
+import { union_type } from "../../fable_modules/fable-library-js.4.17.0/Reflection.js";
 
 export class NullableT$1 extends Union {
     constructor(tag, fields) {

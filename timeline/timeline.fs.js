@@ -1,7 +1,7 @@
-import { Record } from "../fable_modules/fable-library-js.4.16.0/Types.js";
-import { record_type, list_type, lambda_type, unit_type } from "../fable_modules/fable-library-js.4.16.0/Reflection.js";
-import { singleton, append, iterate, empty } from "../fable_modules/fable-library-js.4.16.0/List.js";
-import { printf, toConsole } from "../fable_modules/fable-library-js.4.16.0/String.js";
+import { Record } from "../fable_modules/fable-library-js.4.17.0/Types.js";
+import { record_type, list_type, lambda_type, unit_type } from "../fable_modules/fable-library-js.4.17.0/Reflection.js";
+import { singleton, append, iterate, empty } from "../fable_modules/fable-library-js.4.17.0/List.js";
+import { printf, toConsole } from "../fable_modules/fable-library-js.4.17.0/String.js";
 
 export class Timeline$1 extends Record {
     constructor(lastVal, _fns) {

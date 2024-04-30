@@ -1,7 +1,7 @@
 import { Timeline } from "./timeline.fs.js";
 import { NullableT, NullableT$1 } from "./x-nullable.fs.js";
 import { nextTN, bindTN } from "./x-timeline-nullable.fs.js";
-import { uncurry2 } from "../fable_modules/fable-library-js.4.16.0/Util.js";
+import { uncurry2 } from "../fable_modules/fable-library-js.4.17.0/Util.js";
 
 export function taskT(task, timelineStarter) {
     const timelineResult = Timeline(new NullableT$1(0, []));

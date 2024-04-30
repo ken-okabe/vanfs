@@ -1,6 +1,6 @@
-import { equals } from "../fable_modules/fable-library-js.4.16.0/Util.js";
+import { equals } from "../fable_modules/fable-library-js.4.17.0/Util.js";
 import { NullableT$1__get_Value, NullableT$1 } from "./x-nullable.fs.js";
-import { singleton, append, iterate } from "../fable_modules/fable-library-js.4.16.0/List.js";
+import { singleton, append, iterate } from "../fable_modules/fable-library-js.4.17.0/List.js";
 import { Timeline } from "./timeline.fs.js";
 
 export function nextTN(nullable, timeline) {
