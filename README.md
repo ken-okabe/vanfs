@@ -2145,7 +2145,7 @@ setTimeout start 2000
 
 ```
 
- **Demo** 
+**Demo**
 
 https://codepen.io/kentechgeek/pen/poBmJZq?editors=1111
 
