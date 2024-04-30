@@ -58,8 +58,8 @@ The web language is JavaScript, and thanks to  [Fable](https://github.com/fable-
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712047413143.png)
 
-https://vanjs.org/about
+[VanJS: About - the Story behind VanJS](https://vanjs.org/about#story)
 
->in a nutshell, the best way to describe it is:   ***VanJS**  is the  **scripting language**  for UI, just like `bash` is the scripting language for terminal*.
+>But I think, in a nutshell, the best way to describe it is:  ***VanJS**  is the scripting language for UI, just like bash is the  *scripting language*  for terminal.*
 
-> *Being the scripting language for UI* , is the fundamental principle that guides the design of  **VanJS**. It's based on JavaScript so that it can work in as many environments as possibles, not only for websites, but also for webviews which most major OSes support.
+> *Being the scripting language for UI* , is the fundamental principle that guides the design of  **VanJS** . It's based on JavaScript so that it can work in as many environments as possibles, not only for websites, but also for webviews which most major OSes support.
