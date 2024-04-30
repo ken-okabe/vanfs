@@ -59,11 +59,13 @@ The addition operator ( $+$ ) is a  **left-associative operator**  in most progr
 $$
 1 + 2 + 3 = (1 + 2) + 3 = 6
 $$
+
 In contrast, a  **right-associative operator**  is an operator that is evaluated from right to left. For example, the exponentiation operator ( $\textasciicircum$ ) is  **right-associative** in many languages, so the following expression is evaluated as follows:
 
 $$
 2 \textasciicircum 3 \textasciicircum 2 = 2 \textasciicircum (3 \textasciicircum 2) = 128
 $$
+
 It is important to understand the associativity of operators when writing expressions, as it can affect the order of operations and the final result.
 
 In programming context, it's often described as [Operator associativity](https://en.wikipedia.org/wiki/Operator_associativity)
