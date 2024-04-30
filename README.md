@@ -658,7 +658,7 @@ add [document.body; Form()]
 npx vite build
 ```
 
- **Demo** 
+**Demo**
 
 https://codepen.io/kentechgeek/pen/KKYLwgN?editors=1111
 
@@ -1651,7 +1651,7 @@ let task1234 =
     task123 +> task4
 ```
 
-<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
+---
 
 #### Program.fs
 
@@ -1796,6 +1796,102 @@ https://codepen.io/kentechgeek/pen/jORdjvy?editors=1111
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714045356535.png)
 
+---
+
+It's also possible to write a  **Console app**  without browserUIs.
+
+#### Program.fs
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+module Tasks
+
+open Van.TimelineElement // import Timeline
+open Van.TimelineElementNullable // import Timelinetc.
+open Van.Nullable // import NullableT
+open Van.TimelineElementTask
+open Van.TimelineElementTaskConcat
+
+open System.Timers
+let setTimeout f delay =
+    let timer = new Timer(float delay)
+    timer.AutoReset <- false
+    timer.Elapsed.Add(fun _ -> f())
+    timer.Start()
+
+let nonNull = NullableT true // some non-null value
+
+let task1 =
+    fun timelineResult previousResult ->
+        log "-----------task1 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task1 done"
+            timelineResult
+            |> nextTN nonNull
+            |> ignore
+        setTimeout f 2500
+
+let task2 =
+    fun timelineResult previousResult ->
+        log "-----------task2 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task2 done"
+            timelineResult
+            |> nextTN nonNull
+            |> ignore
+        setTimeout f 1000
+
+let task3 =
+    fun timelineResult previousResult ->
+        log "-----------task3 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task3 done"
+            timelineResult
+            |> nextTN nonNull
+            |> ignore
+        setTimeout f 3000
+
+let timelineStarter = Timeline Null //tasks disabled initially
+
+let task123 =
+    task1 +>
+    task2 +>
+    task3
+
+timelineStarter
+|> taskT task123
+|> ignore
+
+(* task123 can be written as below
+
+timelineStarter
+|> taskT task1
+|> taskT task2
+|> taskT task3
+|> ignore
+
+*)
+
+let start =
+    fun _ -> // timeline will start
+        timelineStarter
+        |> nextTN nonNull
+        |> ignore
+
+setTimeout start 2000
+
+```
+
+**Demo**
+
+https://codepen.io/kentechgeek/pen/BaEeyvL?editors=1111
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714468061916.png)
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 | Contents |
@@ -1838,6 +1934,95 @@ let task1234 =
     task123 +| task4
 ```
 
+---
+
+#### Program.fs
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+module TaskOr
+
+open Van.TimelineElement // import Timeline
+open Van.TimelineElementNullable // import Timelinetc.
+open Van.Nullable // import NullableT
+open Van.TimelineElementTask
+open Van.TimelineElementTaskOr
+
+open System.Timers
+let setTimeout f delay =
+    let timer = new Timer(float delay)
+    timer.AutoReset <- false
+    timer.Elapsed.Add(fun _ -> f())
+    timer.Start()
+
+let nonNull = NullableT true
+
+let task1 =
+    fun timelineResult previousResult ->
+        log "-----------task1 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task1 done"
+            timelineResult
+            |> nextTN (NullableT "task1")
+            |> ignore
+        setTimeout f 2500
+
+let task2 =
+    fun timelineResult previousResult ->
+        log "-----------task2 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task2 done"
+            timelineResult
+            |> nextTN (NullableT "task2")
+            |> ignore
+        setTimeout f 1000
+
+let task3 =
+    fun timelineResult previousResult ->
+        log "-----------task3 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task3 done"
+            timelineResult
+            |> nextTN (NullableT "task3")
+            |> ignore
+        setTimeout f 3000
+
+let timelineStarter = Timeline Null //tasks disabled initially
+
+let task123 =
+    task1 +| task2 +| task3
+
+let taskOutput =
+    fun timelineResult (previousResult: NullableT<string>)
+        ->  log ("The fastest result from: "
+                + previousResult.Value)
+
+timelineStarter
+|> taskT task123 // Run all tasks then return the fastest result 
+|> taskT taskOutput  // log the fastest result 
+|> ignore
+
+let start =
+    fun _ -> // timeline will start
+        timelineStarter
+        |> nextTN nonNull
+        |> ignore
+
+setTimeout start 2000
+
+
+```
+
+**Demo**
+
+https://codepen.io/kentechgeek/pen/zYXQGwQ?editors=1111
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714470766342.png)
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 | Contents |
@@ -1877,3 +2062,91 @@ let task123 =
 let task1234 =
     task123 +& task4
 ```
+
+---
+
+#### Program.fs
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+module TaskAnd
+
+open Van.TimelineElement // import Timeline
+open Van.TimelineElementNullable // import Timelinetc.
+open Van.Nullable // import NullableT
+open Van.TimelineElementTask
+open Van.TimelineElementTaskAnd
+
+open System.Timers
+let setTimeout f delay =
+    let timer = new Timer(float delay)
+    timer.AutoReset <- false
+    timer.Elapsed.Add(fun _ -> f())
+    timer.Start()
+
+let nonNull = NullableT true
+
+let task1 =
+    fun timelineResult previousResult ->
+        log "-----------task1 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task1 done"
+            timelineResult
+            |> nextTN (NullableT "task1")
+            |> ignore
+        setTimeout f 2500
+
+let task2 =
+    fun timelineResult previousResult ->
+        log "-----------task2 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task2 done"
+            timelineResult
+            |> nextTN (NullableT "task2")
+            |> ignore
+        setTimeout f 1000
+
+let task3 =
+    fun timelineResult previousResult ->
+        log "-----------task3 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task3 done"
+            timelineResult
+            |> nextTN (NullableT "task3")
+            |> ignore
+        setTimeout f 3000
+
+let timelineStarter = Timeline Null //tasks disabled initially
+
+let task123 =
+    task1 +& task2 +& task3
+
+let taskOutput =
+    fun timelineResult (previousResult: NullableT<ListResult<'a>>)
+        ->  log previousResult.Value.results
+
+timelineStarter
+|> taskT task123 // Run all tasks then return the list of results 
+|> taskT taskOutput  // log the list of results 
+|> ignore
+
+let start =
+    fun _ -> // timeline will start
+        timelineStarter
+        |> nextTN nonNull
+        |> ignore
+
+setTimeout start 2000
+
+
+```
+
+ **Demo** 
+
+https://codepen.io/kentechgeek/pen/poBmJZq?editors=1111
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714472322054.png)

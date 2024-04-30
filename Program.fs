@@ -1,54 +1,72 @@
-﻿module MaterialUI
-open Browser
-open Browser.Types
-open Fable.Core.JsInterop
-open Van.Basic // import tags, add
+﻿module TaskAnd
 
-let div: Tag = tags?div
-let form: Tag = tags?form
+open Van.TimelineElement // import Timeline
+open Van.TimelineElementNullable // import Timelinetc.
+open Van.Nullable // import NullableT
+open Van.TimelineElementTask
+open Van.TimelineElementTaskAnd
 
-let fluentCard: Tag = tags?``fluent-card``
-let mdFilledTextField: Tag = tags?``md-filled-text-field``
-let mdTextButton: Tag = tags?``md-text-button``
-let mdOutlinedButton: Tag = tags?``md-outlined-button``
+open System.Timers
+let setTimeout f delay =
+    let timer = new Timer(float delay)
+    timer.AutoReset <- false
+    timer.Elapsed.Add(fun _ -> f())
+    timer.Start()
 
-let Form =
-    fun _ ->
-        fluentCard [
-            {|``class``="custom3"|}
-            form [
-                div [
-                    {|``class``="row"|}
-                    mdFilledTextField [
-                        {|
-                        label="First name"
-                        name="first-name"
-                        required=""
-                        autocomplete="given-name"
-                        |}
-                    ]
-                    mdFilledTextField [
-                        {|
-                        label="Last name"
-                        name="last-name"
-                        required=""
-                        autocomplete="family-name"
-                        |}
-                    ]
-                ]
-                div [
-                    {|``class``="row buttons"|}
-                    mdTextButton [
-                        {|``type``= "reset"|}
-                        "Reset"
-                    ]
-                    mdOutlinedButton [
-                        {|``type``= "submit"|}
-                        "Submit"
-                    ]
-                ]
-            ]
-        ]
+let nonNull = NullableT true
 
-add [document.body; Form()]
+let task1 =
+    fun timelineResult previousResult ->
+        log "-----------task1 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task1 done"
+            timelineResult
+            |> nextTN (NullableT "task1")
+            |> ignore
+        setTimeout f 2500
+
+let task2 =
+    fun timelineResult previousResult ->
+        log "-----------task2 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task2 done"
+            timelineResult
+            |> nextTN (NullableT "task2")
+            |> ignore
+        setTimeout f 1000
+
+let task3 =
+    fun timelineResult previousResult ->
+        log "-----------task3 started..."
+        // delay-------------------------------
+        let f = fun _ ->
+            log "...task3 done"
+            timelineResult
+            |> nextTN (NullableT "task3")
+            |> ignore
+        setTimeout f 3000
+
+let timelineStarter = Timeline Null //tasks disabled initially
+
+let task123 =
+    task1 +& task2 +& task3
+
+let taskOutput =
+    fun timelineResult (previousResult: NullableT<ListResult<'a>>)
+        ->  log previousResult.Value.results
+
+timelineStarter
+|> taskT task123
+|> taskT taskOutput
 |> ignore
+
+let start =
+    fun _ -> // timeline will start
+        timelineStarter
+        |> nextTN nonNull
+        |> ignore
+
+setTimeout start 2000
+
