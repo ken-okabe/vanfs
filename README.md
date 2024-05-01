@@ -17,6 +17,8 @@
 
 # 🍦 VanFS
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714596612787.png)
+
 **VanFS is a project template** for 1:1 bindings from [F#](https://fsharp.org/) to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP ([Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming))
 
 ## What is VanJS?
@@ -127,9 +129,11 @@ In fact, in modern web development, JavaScript has increasingly become  **a comp
 
 **TypeScript -> JavaScript**
 
-## VanJS can be regarded as a compile target from an AltJS
+## VanJS can be regarded as a compile target from VanFS (AltJS) 
 
 **VanFS (AltJS) -> VanJS**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714597338717.png)
 
 ## Why we should avoid using TypeScript and migrate to F#
 
