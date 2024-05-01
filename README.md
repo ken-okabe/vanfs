@@ -220,7 +220,7 @@ There are a lot of **Why** s here!
 
 I've created a separate article on this topic since it's part of the larger frontend app development landscape and deserves a focused discussion with my own opinions.
 
-### [Versatility of Web Technology for Cross-Platform App Development](./README-why.md)
+### [📱 Versatility of Web Technology for Cross-Platform App Development](./README-why.md)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712154361707.png)
 
