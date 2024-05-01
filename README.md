@@ -111,7 +111,7 @@ https://codepen.io/kentechgeek/pen/VwNOVOx
 
 ## Why we should avoid using JavaScript
 
-VanJS is a library based on Vanilla JavaScript for the well-established reasons.
+ **VanJS is a library based on Vanilla JavaScript for the well-established reasons.** 
 
 However, to take full advantage of  **VanJS** , we should consider using  **alternative languages instead of JavaScript** , which are commonly referred to as  **AltJS** .
 
