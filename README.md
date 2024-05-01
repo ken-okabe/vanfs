@@ -865,6 +865,10 @@ So, this is FRP.
 **Timeline**  is a fundamentally standalone FRP library, with no dependencies on  **VanJS**  or  **F#**  asynchronous features. [The codebase is a compact pure function implementation of approximately 30-40 lines of code.
 ](./timeline/timeline.fs)
 
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714543169576.png)
+
 [**TimelineElement**](./van-api/fs/timeline-element.fs) is a modified version of **Timeline**, which wraps the `State` object of **VanJS** and serves as an additional module for utilizing the state management of **VanFS**.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
