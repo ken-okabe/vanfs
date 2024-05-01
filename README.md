@@ -54,6 +54,8 @@ const Hello =
 van.add(document.body, Hello())
 ```
 
+> [Try on jsfiddle](https://jsfiddle.net/gh/get/library/pure/vanjs-org/vanjs-org.github.io/tree/master/jsfiddle/home/hello)
+
 ## VanFS is a F# project template for one-to-one direct bindings of VanJS
 
 ### VanFS code in F#
@@ -86,6 +88,12 @@ let Hello =
 add [document.body; Hello()]
 |> ignore
 ```
+
+ **Demo** 
+
+https://codepen.io/kentechgeek/pen/VwNOVOx
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714590641481.png)
 
 ## Why VanJS is based on Vanilla JavaScript
 
@@ -371,7 +379,11 @@ body {
   }
 ```
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711754561732.png)
+ **Demo** 
+
+https://codepen.io/kentechgeek/pen/zYXQyxz
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714591131074.png)
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 

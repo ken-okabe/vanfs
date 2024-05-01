@@ -1,48 +1,5 @@
-/*
-https://learn.microsoft.com/en-us/fluent-ui/web-components/components/card?pivots=typescript
-*/
 body {
-    font-family: sans-serif;
-    padding: 1em;
-    background-color: beige;
-  }
-
-.custom {
-    --card-width: 200px;
-    --card-height: 150px;
-    padding: 22px;
-  }
-
-.custom1 {
-    --card-width: 200px;
-    --card-height: 250px;
-    padding: 22px;
-  }
-
-.custom2 {
-    --card-width: 300px;
-    --card-height: 90px;
-  }
-
-.custom3 {
-    --card-width: 460px;
-    --card-height: 150px;
-    padding: 20px;
-  }
-
-.row {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.buttons {
-  justify-content: flex-end;
-  padding: 16px;
-}
-
-md-filled-text-field,
-md-outlined-text-field {
-  width: 200px;
+  font-family: sans-serif;
+  padding: 1em;
+  background-color: beige;
 }
