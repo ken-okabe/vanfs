@@ -91,7 +91,7 @@ add [document.body; Hello()]
 |> ignore
 ```
 
- **Demo** 
+**Demo**
 
 https://codepen.io/kentechgeek/pen/VwNOVOx
 
@@ -111,7 +111,7 @@ https://codepen.io/kentechgeek/pen/VwNOVOx
 
 ## Why we should avoid using JavaScript
 
- **VanJS is a library based on Vanilla JavaScript for the well-established reasons.** 
+**VanJS is a library based on Vanilla JavaScript for the well-established reasons.**
 
 However, to take full advantage of  **VanJS** , we should consider using  **alternative languages instead of JavaScript** , which are commonly referred to as  **AltJS** .
 
@@ -129,7 +129,7 @@ In fact, in modern web development, JavaScript has increasingly become  **a comp
 
 **TypeScript -> JavaScript**
 
-## VanJS can be regarded as a compile target from VanFS (AltJS) 
+## VanJS can be regarded as a compile target from VanFS (AltJS)
 
 **VanFS (AltJS) -> VanJS**
 
@@ -383,7 +383,7 @@ body {
   }
 ```
 
- **Demo** 
+**Demo**
 
 https://codepen.io/kentechgeek/pen/zYXQyxz
 

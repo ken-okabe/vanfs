@@ -8,7 +8,7 @@ Both programming paradigms have expressions and statements, but in functional pr
 
 [💡 How does Functional Programming Code Drive?](./README-howFP.md)
 
-## What is Expressions?
+## What is Expression?
 
 $1 + 2$
 
@@ -24,6 +24,40 @@ These are familier [binary operations](https://en.wikipedia.org/wiki/Binary_oper
 
 Here  $+$   $-$   $\times$   $\div$ is called  **binary [operator](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/)** .
 
+## Operators are functions
+
+[binary functions](https://en.wikipedia.org/wiki/Function_(mathematics)#Definition)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714758580874.png)
+
+Therefore, fundamentally,  **operators are functions.**
+
+https://dev.epicgames.com/documentation/en-us/uefn/operators-in-verse
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714759944742.png)
+
+>Operators are special functions defined in the Verse programming language to perform actions such as the math operations for addition and multiplication.
+
+In F#, infix binary operators can also be written as prefix functions.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+1 + 2 // 3
+(+) 1 2 // 3
+```
+
+In essence, symbols like   $+$   and   $\times$   represent alternative notations (syntactic sugar) for functions. It is the function that plays the central role in connecting two expressions.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714761170610.png)
+
+```js
+1 + 2           // F#/Haskell/JavaScript
+(+) 1 2         // F#/Haskell
+plus 1 2        // F#/Haskell
+plus(1)(2)      // F#/Haskell/JavaScript
+```
+
 ## The building blocks of code, expressions, can simply be values
 
 Especially, in programming context, the building blocks of code, expressions, can simply be values.
@@ -38,25 +72,90 @@ For instance, `1` is resolved to a value: `1`, so `1` itself is an expression.
 
 ## Functions are expressions
 
-In functional programming languages, functions are expressions.
+In functional programming languages,  **functions are expressions.**
 
-In other words, functions are treated as first-class values. This means they can be assigned to variables, passed as arguments, and returned from other functions.
+In other words,  **functions are treated as [first-class values](https://en.wikipedia.org/wiki/First-class_citizen)** . This means  **they can be assigned to variables, passed as arguments, and returned from other functions.**
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
 **[First-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) is the fundamental requirement for a programming language to be considered a functional programming language.**
 
 In [C](https://en.wikipedia.org/wiki/C_(programming_language)), functions are not first-class values, which means they cannot be treated as expressions. This lack of first-class functions prevents C from being considered a functional programming language.
 
-Functions in JavaScript/TypeScript and F# are first-class values, which are expressions. Therefoe, both JavaScript/TypeScript and F# can be classified as functional programming languages.
+Functions in JavaScript/TypeScript and F# are first-class values, which are expressions. Therefore, both JavaScript/TypeScript and F# can be classified as functional programming languages.
 
-## Operators are functions and expressions
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
+
+## Higher-order function
+
+Let's investigate a case in which  **a function returns [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).** 
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714763653696.png)
+
+$3 \times 4 = 12$ .
+
+This can be written as
+
+```js
+3 * 4           // F#/Haskell/JavaScript
+(*) 3 4         // F#/Haskell
+times 3 4       // F#/Haskell
+times(3)(4)     // F#/Haskell/JavaScript
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
+
+```js
+let times =
+    a => b =>
+        a * b
+
+let times3 =
+    times(3)
+```
+
+`times(3)` returns another function: `times3`.
+
+ `times3`  is a function as the table:
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714764078204.png)
+
+```js
+let times34 =
+    times3(4) // 12
+
+times(3)(4) // 12
+```
+
+A function like this is called a [Higher-order_function](https://en.wikipedia.org/wiki/Higher-order_function).
 
 ---
+
+In  [mathematics](https://en.wikipedia.org/wiki/Mathematics "Mathematics")  and  [computer science](https://en.wikipedia.org/wiki/Computer_science "Computer science"), a  **higher-order function**  (**HOF**) is a  [function](https://en.wikipedia.org/wiki/Function_(mathematics) "Function (mathematics)")  that does at least one of the following:
+
+-   takes one or more functions as arguments (i.e. a  [procedural parameter](https://en.wikipedia.org/wiki/Procedural_parameter "Procedural parameter"), which is a  [parameter](https://en.wikipedia.org/wiki/Parameter_(computer_science) "Parameter (computer science)")  of a  [procedure](https://en.wikipedia.org/wiki/Subroutine "Subroutine")  that is itself a procedure),
+-   returns a function as its result.
+
+---
+
+In this case, `times(3)` returns another function: `times3`.
+
+So, this is a **higher-order function** which returns a function as it's result.
+
+## Operator that takes a function
+
+Let's investigate a case in which  **a function (operator) takes [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).** 
+
+$3 \times 4 = 12 ~ $ is a familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation).
+
+
+There is another type of binary operations that takes function as the operand.
 
 $a  \triangleright function$
 
 `a |> function`
 
-This is a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation) called  **[Pipeline (operation)](https://learn.microsoft.com/en-us/dotnet/fsharp/tour#pipelines)** , which is a type of Expression.
+This is a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation) called  **[Pipeline (operation)](https://learn.microsoft.com/en-us/dotnet/fsharp/tour#pipelines)**.
 
 ---
 
@@ -64,7 +163,7 @@ $list \quad \triangleright  map \quad function$
 
 `list |> map function`
 
-This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Endo-functor** , which is a type of Expression.
+This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Endo-functor**.
 
 ---
 
@@ -72,7 +171,7 @@ $list \quad \triangleright  bind \quad monadicFunction$
 
 `list |> bind monadicFunction`
 
-This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Monad** , which is a type of expression.
+This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Monad**.
 
 ---
 
