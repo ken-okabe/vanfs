@@ -146,7 +146,7 @@ So, this is a **higher-order function** which returns a function as it's result.
 
 Let's investigate a case in which  **a function (operator) takes [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).** 
 
-$3 \times 4 = 12 ~ $ is a familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation).
+$3 \times 4 = 12 ~$ is a familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation).
 
 
 There is another type of binary operations that takes function as the operand.
