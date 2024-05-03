@@ -88,9 +88,10 @@ Functions in JavaScript/TypeScript and F# are first-class values, which are expr
 
 ## Higher-order function
 
-Let's investigate a case in which  **a function returns [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).** 
+[First-class functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) naturally lead us to the concept of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function), which become incredibly powerful tools in functional programming.
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714763653696.png)
+
+Let's investigate a case in which  **a function returns [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).** 
 
 $3 \times 4 = 12$ .
 
@@ -254,3 +255,5 @@ $\triangleright$, in F# code, `|>`
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695101910856.png#gh-dark-mode-only)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695101924426.png#gh-light-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714763653696.png)
