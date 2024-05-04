@@ -762,13 +762,13 @@ export let cssURLs = [
 
 # ⚡️ Functional Reactive Programming (FRP)
 
-## (1:1 bindings for composing UIs) + FRP
+## (1:1 bindings for composing UIs) + micro FRP
 
 **VanFS**  is described as
 
 ---
 
-1:1 bindings from F# to  **VanJS**  (A tiny Reactive UI Framework without React/JSX) + WebComponents + FRP
+1:1 bindings from F# to  **VanJS**  (A tiny Reactive UI Framework without React/JSX) + WebComponents + micro FRP
 
 or
 
