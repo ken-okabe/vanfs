@@ -22,31 +22,3 @@ let Hello =
 
 add [document.body; Hello()]
 |> ignore
-
-let double x = x * 2
-
-let result1 =
-    double(1)
-
-let result1' =
-    1 |> double
-
-let result2 =
-    double(double(1))
-
-let result2' =
-    1 |> double |> double
-
-
-let reducer =
-    List.reduce (+)
-
-let sum =
-    [0;1;2;3;4;5]
-    |> reducer
-
-//15
-
-let sum =
-    [0;1;2;3;4;5]
-    |> List.reduce (+)
