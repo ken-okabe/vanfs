@@ -19,7 +19,7 @@
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714596612787.png)
 
-**VanFS is a project template** for 1:1 bindings from [F#](https://fsharp.org/) to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + FRP ([Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming))
+**VanFS is a project template** for 1:1 bindings from [F#](https://fsharp.org/) to [VanJS](https://vanjs.org/) (A tiny Reactive UI Framework without React/JSX) + [WebComponents](https://m3.material.io/develop/web) + micro FRP ([Functional reactive programming](https://en.wikipedia.org/wiki/Functional_reactive_programming))
 
 ## What is VanJS?
 
