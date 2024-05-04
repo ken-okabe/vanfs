@@ -179,6 +179,8 @@ The  **pipe operator**   `|>`   takes  **function as the operand**, which allows
 
 $a  \triangleright function$
 
+$\triangleright$ in F# code, `|>`
+
 `a |> function`
 
 **This operator extremely important and is used extensively when processing data in F#.**
@@ -272,8 +274,6 @@ let sum =
 ```
 
 `list |> reduce function`
-
-$\triangleright$, in F# code, `|>`
 
 $list \quad \triangleright  reduce \quad function$
 
