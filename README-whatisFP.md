@@ -374,5 +374,3 @@ This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Bi
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695101910856.png#gh-dark-mode-only)
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1695101924426.png#gh-light-mode-only)
-
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714763653696.png)
