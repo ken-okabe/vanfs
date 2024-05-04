@@ -186,7 +186,7 @@ In F#, we rarely need to add types manually thanks to its powerful type inferenc
 
 In reality, it is much more than that.
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1711717723241.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714543169576.png)
 
 The powerful F# compiler  **automatically generates type annotations**  in  **VSCode**  editor, eliminating the need for manual typing that TypeScript demands.
 
