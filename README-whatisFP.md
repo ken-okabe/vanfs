@@ -177,7 +177,9 @@ let (|>) x f = f x
  **Mathematics and Functional Programming: Omitting Parentheses  `( )`  for Function Application** 
 
 
-In mathematics, it is common practice to omit parentheses when applying functions, especially in advanced mathematical texts and papers. This is particularly evident with trigonometric functions like  **sine** , where  $\sin(θ)$  is often written simply as  $\sin θ$ .Similarly, in programming languages like F# and Haskell, function application  $f(x)$   `f(x)`  is often written as  `f x`  (*with a space between the function name and argument)*  when the context is clear. This style omits parentheses, which are considered redundant in these languages.
+In mathematics, it is common practice to omit parentheses when applying functions, especially in advanced mathematical texts and papers. This is particularly evident with trigonometric functions like  **sine** , where  $\sin(θ)$  is often written simply as  $\sin θ$ .
+
+Similarly, in programming languages like F# and Haskell, function application  $f(x)$   `f(x)`  is often written as  `f x`  (*with a space between the function name and argument)*  when the context is clear. This style omits parentheses, which are considered redundant in these languages.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
