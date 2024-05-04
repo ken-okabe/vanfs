@@ -90,8 +90,7 @@ Functions in JavaScript/TypeScript and F# are first-class values, which are expr
 
 [First-class functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) naturally lead us to the concept of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function), which become incredibly powerful tools in functional programming.
 
-
-Let's investigate a case in which  **a function returns [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).** 
+Let's investigate a case in which  **a function returns [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).**
 
 $3 \times 4 = 12$ .
 
@@ -117,7 +116,7 @@ let times3 =
 
 `times(3)` returns another function: `times3`.
 
- `times3`  is a function as the table:
+`times3`  is a function as the table:
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714764078204.png)
 
@@ -145,10 +144,9 @@ So, this is a **higher-order function** which returns a function as it's result.
 
 ## Operator that takes a function
 
-Let's investigate a case in which  **a function (operator) takes [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).** 
+Let's investigate a case in which  **a function (operator) takes [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).**
 
 $3 \times 4 = 12 ~$ is a familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation).
-
 
 There is another type of binary operations that takes function as the operand.
 
