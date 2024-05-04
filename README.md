@@ -214,6 +214,10 @@ export let cssURLs = [
 
  **Regardless, all the required code within the VanFS project is compiled into a single VanillaJS bundle using Fable and Vite.** 
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714047967751.png)
+
+See: [🚀 Getting Started](#getting-started)
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
 ## Why we should avoid using TypeScript and migrate to F#
