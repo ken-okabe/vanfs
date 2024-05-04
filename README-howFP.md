@@ -124,7 +124,9 @@ After all, Imperative programming is an approach to consider the flow of the cod
 
 [Flowchart](https://en.wikipedia.org/wiki/Flowchart)
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713950299457.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694897477508.png#gh-light-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images/main/img_1687332670182.png#gh-dark-mode-only)
 
 [Iteration](https://en.wikipedia.org/wiki/Iteration)
 
@@ -225,7 +227,9 @@ In functional programming, typically, every element is either an expression or a
 
 ## Simple operator for conditional
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714222493215.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694897419514.png#gh-light-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images/main/img_1687331578166.png#gh-dark-mode-only)
 
 [Conditional ](https://en.wikipedia.org/wiki/Conditional_(computer_programming))
 
@@ -294,7 +298,9 @@ let result =
 
 ## IO Monad for sequence
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714226994509.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694897378406.png#gh-light-mode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images/main/img_1687331557359.png#gh-dark-mode-only)
 
 In imperative programming, the order of statements in the code,  **from top to bottom** , determines the sequence of their execution  **without the need for explicit control structures** .
 
