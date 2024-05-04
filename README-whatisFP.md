@@ -293,7 +293,7 @@ $list \quad \triangleright  reduce \quad function$
  **It can be interpreted as creating a new binary operator:**
 
 $$
- \triangleright  reduce
+\triangleright  reduce
 $$
 
 ## Endo-functor
