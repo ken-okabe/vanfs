@@ -135,6 +135,82 @@ In fact, in modern web development, JavaScript has increasingly become  **a comp
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714597338717.png)
 
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+**VanFS project includes some TypeScript code.**
+
+---
+
+### 1. The internal mechanism of VanFS
+
+https://github.com/ken-okabe/vanfs/blob/main/van-api/ts/basic.ts
+
+TS code for the purpose of conversion  using JS Proxy:
+
+```ts
+// unary function ([a,b,c,...]) in F#  
+// -> n-ary function (a,b,c,...) in VanJS
+```
+
+**This is under the  `van-api`  directory which is essential and we would not want to modify it to keep things working.**
+
+---
+
+### 2. For styles and Web Components
+
+Users must install any required  **CSS**  or  **Web Components** . 
+
+**VanJS does not provide the specific installation support beause it's just a VanillaJS.** 
+
+On the other hand,  **VanFS**  clarifies the step-by-step process as below:
+
+- [🚀 Getting Started](#getting-started)
+
+#### CSS
+
+
+Everything we need to customize or import is located under web-imports directory.
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714863909626.png)
+
+- [🌐 Web Components](#web-components)
+
+#### Import and Register the web components
+
+##### /web-imports/components.ts 
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+
+```ts
+import {
+    provideFluentDesignSystem,
+    fluentCard,
+    fluentCheckbox
+} from "@fluentui/web-components";
+
+provideFluentDesignSystem()
+    .register(
+        fluentCard()
+    );
+
+provideFluentDesignSystem()
+    .register(
+        fluentCheckbox()
+    );
+```
+
+##### /web-imports/css-urls.ts
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
+
+```ts
+export let cssURLs = [
+ "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+];
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
+
 ## Why we should avoid using TypeScript and migrate to F#
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714520217543.png)
