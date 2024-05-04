@@ -92,9 +92,11 @@ Functions in JavaScript/TypeScript and F# are first-class values, which are expr
 
 Let's investigate a case in which  **a function returns [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).**
 
-$3 \times 4 = 12$ .
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714795722040.png)
 
-This can be written as
+$3 \times 4 = 12$
+
+This can be written as:
 
 ```js
 3 * 4           // F#/Haskell/JavaScript
@@ -142,19 +144,71 @@ In this case, `times(3)` returns another function: `times3`.
 
 So, this is a **higher-order function** which returns a function as it's result.
 
-## Operator that takes a function
+## Operator (=function) that takes a function
 
 Let's investigate a case in which  **a function (operator) takes [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).**
 
 $3 \times 4 = 12 ~$ is a familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation).
 
-There is another type of binary operations that takes function as the operand.
+There is another type of binary operations that takes  **function as the operand** .
+
+## Pipe Operator
+
+There is a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation) called  **[Pipeline (operation)](https://learn.microsoft.com/en-us/dotnet/fsharp/tour#pipelines)**.
+
+The  **pipe operator**   `|>`   takes  **function as the operand**, which allows you to establish "pipelines" of functions in a flexible manner. 
 
 $a  \triangleright function$
 
 `a |> function`
 
-This is a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation) called  **[Pipeline (operation)](https://learn.microsoft.com/en-us/dotnet/fsharp/tour#pipelines)**.
+ **This operator extremely important and is used extensively when processing data in F#.** 
+
+The **Pipe operator**  is simply defined as:
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let (|>) x f = f x
+```
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
+ **Mathematics and Functional Programming: Omitting Parentheses  `( )`  for Function Application** 
+
+
+In mathematics, it is common practice to omit parentheses when applying functions, especially in advanced mathematical texts and papers. This is particularly evident with trigonometric functions like  **sine** , where  $\sin(θ)$  is often written simply as  $\sin θ$ .Similarly, in programming languages like F# and Haskell, function application  $f(x)$   `f(x)`  is often written as  `f x`  (*with a space between the function name and argument)*  when the context is clear. This style omits parentheses, which are considered redundant in these languages.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
+
+Let's consider a function named  `double`  that takes a value and returns its double.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharplet double x = 
+    x * 2```
+
+```fsharp
+let result1 =
+    double(1)
+
+let result1' =
+    1 |> double
+
+// 2
+```
+
+```fsharp
+let result2 =
+    double(double(1))
+
+let result2' =
+    1 |> double |> double
+
+// 4
+```
+
+The  **pipe operator**   `|>`  eliminates the complicated nesting of `( )` notation and creates a clean  **pipeline**  by sequentially applying  `double`  functions to the data `1`.
 
 ---
 

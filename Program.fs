@@ -22,3 +22,18 @@ let Hello =
 
 add [document.body; Hello()]
 |> ignore
+
+let double x = x * 2
+
+let result1 =
+    double(1)
+
+let result1' =
+    1 |> double
+
+let result2 =
+    double(double(1))
+
+let result2' =
+    1 |> double |> double
+
