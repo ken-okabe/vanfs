@@ -282,13 +282,19 @@ It's also possible to rewrite:
 let sum =
     [0;1;2;3;4;5]
     |> List.reduce (+)
+
+// 15
 ```
 
 `list |> reduce function`
 
 $list \quad \triangleright  reduce \quad function$
 
-It can be interpreted as creating a new binary operator:   $\triangleright  reduce$  .
+ **It can be interpreted as creating a new binary operator:**
+
+$$
+ \triangleright  reduce
+$$
 
 ## Endo-functor
 
