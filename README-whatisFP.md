@@ -187,8 +187,10 @@ Let's consider a function named  `double`  that takes a value and returns its do
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
-```fsharplet double x = 
-    x * 2```
+```fsharp
+let double x = 
+    x * 2
+```
 
 ```fsharp
 let result1 =
