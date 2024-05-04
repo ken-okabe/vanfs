@@ -140,19 +140,36 @@ In  [mathematics](https://en.wikipedia.org/wiki/Mathematics "Mathematics")  and 
 -   takes one or more functions as arguments (i.e. a  [procedural parameter](https://en.wikipedia.org/wiki/Procedural_parameter "Procedural parameter"), which is a  [parameter](https://en.wikipedia.org/wiki/Parameter_(computer_science) "Parameter (computer science)")  of a  [procedure](https://en.wikipedia.org/wiki/Subroutine "Subroutine")  that is itself a procedure),
 -   returns a function as its result.
 
+As a result, we will have only  **3 cases** as below:
+
+
+### ① Operator (=function) that returns a function
+
+function: value ->  **function** 
+
+### ② Operator (=function) that takes a function
+
+function:  **function**  -> value
+
+### ③ Operator (=function) that takes a function and returns a function
+
+function:  **function**  ->  **function** 
+
 ---
 
 In this case, `times(3)` returns another function: `times3`.
 
 So, this is a **higher-order function** which returns a function as it's result.
 
+#### ① Operator (=function) that returns a function
+
+function: value ->  **function** 
+
 ## ② Operator (=function) that takes a function
 
 Let's investigate a case in which  **a function (operator) takes [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).**
 
-$3 \times 4 = 12 ~$ is a familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation).
-
-There is another type of binary operations that takes  **function as the operand** .
+function:  **function**  -> value
 
 ## Pipe Operator
 
@@ -220,6 +237,8 @@ The  **pipe operator**   `|>`  eliminates the complicated nesting of `( )` notat
 `double` is a  **function**  that takes a  **value**  and returns a  **value** .
 
 [List.reduce](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#reduce) is a  **function**  that takes a  **function**  and returns a  **function** .
+
+function:  **function**  ->  **function** 
 
 See [Advanced operator for iteration](https://github.com/ken-okabe/vanfs/blob/main/README-howFP.md#advanced-operator-for-iteration) in [💡 How does Functional Programming Code Drive?](./README-howFP.md)
 
