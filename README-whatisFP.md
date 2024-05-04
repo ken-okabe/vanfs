@@ -195,7 +195,7 @@ let (|>) x f = f x
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
-**Mathematics and Functional Programming: Omitting Parentheses  `( )`  for Function Application:**  $f (x)$ 
+**Mathematics and Functional Programming: Omitting Parentheses   $( )$   for Function Application:**  $f (x)$ 
 
 In mathematics, it is common practice to omit parentheses when applying functions, especially in advanced mathematical texts and papers. This is particularly evident with trigonometric functions like  **sine** , where  $\sin(θ)$  is often written simply as  $\sin θ$ .
 
