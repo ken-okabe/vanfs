@@ -86,9 +86,11 @@ Functions in JavaScript/TypeScript and F# are first-class values, which are expr
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
-## Higher-order function
+## Higher-order functions
 
 [First-class functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) naturally lead us to the concept of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function), which become incredibly powerful tools in functional programming.
+
+## ① Operator (=function) that returns a function
 
 Let's investigate a case in which  **a function returns [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).**
 
@@ -144,7 +146,7 @@ In this case, `times(3)` returns another function: `times3`.
 
 So, this is a **higher-order function** which returns a function as it's result.
 
-## Operator (=function) that takes a function
+## ② Operator (=function) that takes a function
 
 Let's investigate a case in which  **a function (operator) takes [first-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function).**
 
@@ -156,13 +158,13 @@ There is another type of binary operations that takes  **function as the operand
 
 There is a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation) called  **[Pipeline (operation)](https://learn.microsoft.com/en-us/dotnet/fsharp/tour#pipelines)**.
 
-The  **pipe operator**   `|>`   takes  **function as the operand**, which allows you to establish "pipelines" of functions in a flexible manner. 
+The  **pipe operator**   `|>`   takes  **function as the operand**, which allows you to establish "pipelines" of functions in a flexible manner.
 
 $a  \triangleright function$
 
 `a |> function`
 
- **This operator extremely important and is used extensively when processing data in F#.** 
+**This operator extremely important and is used extensively when processing data in F#.**
 
 The **Pipe operator**  is simply defined as:
 
@@ -174,8 +176,7 @@ let (|>) x f = f x
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
- **Mathematics and Functional Programming: Omitting Parentheses  `( )`  for Function Application** 
-
+**Mathematics and Functional Programming: Omitting Parentheses  `( )`  for Function Application**
 
 In mathematics, it is common practice to omit parentheses when applying functions, especially in advanced mathematical texts and papers. This is particularly evident with trigonometric functions like  **sine** , where  $\sin(θ)$  is often written simply as  $\sin θ$ .
 
@@ -214,7 +215,52 @@ let result2' =
 
 The  **pipe operator**   `|>`  eliminates the complicated nesting of `( )` notation and creates a clean  **pipeline**  by sequentially applying  `double`  functions to the data `1`.
 
----
+## ③ Operator (=function) that takes a function and returns a function
+
+`double` is a  **function**  that takes a  **value**  and returns a  **value** .
+
+[List.reduce](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#reduce) is a  **function**  that takes a  **function**  and returns a  **function** .
+
+See [Advanced operator for iteration](https://github.com/ken-okabe/vanfs/blob/main/README-howFP.md#advanced-operator-for-iteration) in [💡 How does Functional Programming Code Drive?](./README-howFP.md)
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let reducer =
+    List.reduce (+)
+```
+
+ `List.reduce (+)` takes a function:  `(+)`  and returns a function:  `reducer` .
+
+```fsharp
+let sum =
+    [0;1;2;3;4;5]
+    |> reducer // pipeline operation
+
+//15
+```
+
+## Create a new binary operator with the pipe operator   `|>`
+
+It's also possible to rewrite:
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let sum =
+    [0;1;2;3;4;5]
+    |> List.reduce (+)
+```
+
+`list |> reduce function`
+
+$\triangleright$, in F# code, `|>`
+
+$list \quad \triangleright  reduce \quad function$
+
+It can be interpreted as creating a new binary operator:   $\triangleright  reduce$  .
+
+## Endo-functor
 
 $list \quad \triangleright  map \quad function$
 
@@ -222,7 +268,7 @@ $list \quad \triangleright  map \quad function$
 
 This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Endo-functor**.
 
----
+## Monad
 
 $list \quad \triangleright  bind \quad monadicFunction$
 
@@ -231,8 +277,6 @@ $list \quad \triangleright  bind \quad monadicFunction$
 This is also a less familier [binary operation](https://en.wikipedia.org/wiki/Binary_operation)  called  **Monad**.
 
 ---
-
-$\triangleright$, in F# code, `|>`
 
 ---
 

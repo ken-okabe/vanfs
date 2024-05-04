@@ -37,3 +37,16 @@ let result2 =
 let result2' =
     1 |> double |> double
 
+
+let reducer =
+    List.reduce (+)
+
+let sum =
+    [0;1;2;3;4;5]
+    |> reducer
+
+//15
+
+let sum =
+    [0;1;2;3;4;5]
+    |> List.reduce (+)

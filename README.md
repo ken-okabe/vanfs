@@ -910,7 +910,7 @@ record Timeline<'a>
 
 ---
 
-## 1️⃣ Function to initialize `Timeline<'a>`
+## ① Function to initialize `Timeline<'a>`
 
 ### `Timeline`
 
@@ -946,7 +946,7 @@ console.log counter.lastVal
 
 ---
 
-## 2️⃣ Functions for the binary operations
+## ② Functions for the binary operations
 
 $$
 TimelineA ~ ~ * ~ ~ Function \quad  \rightarrow \quad  TimelineB
@@ -1033,7 +1033,7 @@ We could recognize the array `[2]` is identical to the  **Cell**  and  **Value**
 
 ---
 
-## 3️⃣ Function to update `Timeline<'a>`
+## ③ Function to update `Timeline<'a>`
 
 $$TimelineA \quad \triangleright nextT \quad newValue \quad \rightarrow \quad TimelineA'$$
 
@@ -1073,7 +1073,7 @@ console.log timelineA.lastVal
 
 ---
 
-## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
+## ①②③ action of  `Timeline<'a>`
 
 **The update to `timelineA` will trigger a reactive update of `timelineB` according to the rule defined by the binary operation.**
 
@@ -1084,14 +1084,14 @@ console.log timelineA.lastVal
 ```fsharp
 let double = fun a -> a * 2
 
-// 1️⃣ initialize timelineA
+// ① initialize timelineA
 let timelineA = Timeline 1
 
 // confirm the lastVal of timelineA
 console.log timelineA.lastVal
 // 1
 
-// 2️⃣ the binary operation
+// ② the binary operation
 let timelineB =
     timelineA |> mapT double
 
@@ -1100,7 +1100,7 @@ console.log timelineB.lastVal
 // 2
 
 //=====================================
-// 3️⃣ update the lastVal of timelineA
+// ③ update the lastVal of timelineA
 timelineA
 |> nextT 3
 |> ignore
@@ -1177,9 +1177,9 @@ let iconButton: Tag = tags?``md-icon-button``
 
 let Counter =
     fun _ ->
-        let counter = Timeline 0 // 1️⃣ initialize an Timeline
+        let counter = Timeline 0 // ① initialize an Timeline
 
-        counter // 2️⃣ the binary operation of the Timeline
+        counter // ② the binary operation of the Timeline
         |> mapT (fun value ->
                      console.log $"Counter: {value}")
         |> ignore
@@ -1189,14 +1189,14 @@ let Counter =
             h2 ["❤️ "; counter.el] // 👈 `counter.el`
             iconButton [           // for Reactive DOM element
                 {|onclick = fun _ ->
-                                counter // 3️⃣ update the Timeline
+                                counter // ③ update the Timeline
                                 |> nextT (counter.lastVal + 1)
                 |}
                 icon ["thumb_up"]
             ]
             iconButton [
                 {|onclick = fun _ ->
-                                counter // 3️⃣ update the Timeline
+                                counter // ③ update the Timeline
                                 |> nextT (counter.lastVal - 1)
                 |}
                 icon ["thumb_down"]
@@ -1327,7 +1327,7 @@ Initializing a **Timeline**  with `Null` value, the provided function remains un
 
 ---
 
-## 1️⃣ Function to initialize `Timeline<NullableT<'a>>`
+## ① Function to initialize `Timeline<NullableT<'a>>`
 
 ### `Timeline`
 
@@ -1354,9 +1354,9 @@ log timelineNullable.lastVal // use `log` of Timeline
 
 `Timeline` type and the function:
 
-1️⃣ Function to initialize `Timeline<'a>`
+① Function to initialize `Timeline<'a>`
 
-1️⃣ Function to initialize `Timeline<NullableT<'a>>`
+① Function to initialize `Timeline<NullableT<'a>>`
 
 is the  *same entity* .
 
@@ -1366,7 +1366,7 @@ On the other hand, in the case of  `Timeline<NullableT<'a>>`  where the paramete
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
-## 2️⃣ Functions for the binary operations
+## ② Functions for the binary operations
 
 $$
 TimelineA ~ ~ * ~ ~ Function \quad  \rightarrow \quad  TimelineB
@@ -1396,13 +1396,13 @@ $$
 let double =
     fun a -> NullableT (a * 2)
 
-// 1️⃣ initialize timelineA
+// ① initialize timelineA
 let timelineA = Timeline Null
 
 log timelineA.lastVal // use `log` of Timeline
 // Null
 
-// 2️⃣ the binary operation
+// ② the binary operation
 let timelineB =
     timelineA |> mapTN double
 // currently, `timelineA = Timeline Null`
@@ -1418,7 +1418,7 @@ log timelineB.lastVal // use `log` of Timeline
 
 The operator behaves similarly to JavaScript's Promise or its syntactic sugar, async-await.
 
-## 3️⃣ Function to update `Timeline<NullableT<'a>>`
+## ③ Function to update `Timeline<NullableT<'a>>`
 
 $$TimelineA \quad \triangleright nextTN \quad newNullableValue \quad \rightarrow \quad TimelineA'$$
 
@@ -1445,7 +1445,7 @@ let timelineA' =
 
 or, in most cases, we don’t need another  `timelineA'`  and want to discard it, so simply `ignore` the returned value.
 
-## 1️⃣2️⃣3️⃣ action of  `Timeline<'a>`
+## ①②③ action of  `Timeline<'a>`
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712818474514.png)
 
@@ -1457,13 +1457,13 @@ or, in most cases, we don’t need another  `timelineA'`  and want to discard it
 let double =
     fun a -> NullableT (a * 2)
 
-// 1️⃣ initialize timelineA
+// ① initialize timelineA
 let timelineA = Timeline Null
 
 log timelineA.lastVal // use `log` of Timeline
 // Null
 
-// 2️⃣ the binary operation
+// ② the binary operation
 let timelineB =
     timelineA |> mapTN double
 // currently, `timelineA = Timeline Null`
@@ -1472,7 +1472,7 @@ let timelineB =
 log timelineB.lastVal // use `log` of Timeline
 // Null
 
-// 3️⃣ update the lastVal of timelineA
+// ③ update the lastVal of timelineA
 timelineA
 |> nextTN (NullableT 3)
 |> ignore
