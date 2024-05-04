@@ -49,7 +49,9 @@ In F#, infix binary operators can also be written as prefix functions.
 
 In essence, symbols like   $+$   and   $\times$   represent alternative notations (syntactic sugar) for functions. It is the function that plays the central role in connecting two expressions.
 
-![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714761170610.png)
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694897647464.png#gh-light-maode-only)
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images2/main/img_1694897711592.png#gh-dark-mode-only)
 
 ```js
 1 + 2           // F#/Haskell/JavaScript
