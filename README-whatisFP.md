@@ -144,10 +144,9 @@ In  [mathematics](https://en.wikipedia.org/wiki/Mathematics "Mathematics")  and 
 
 As a result, we will have only  **3 cases** as below:
 
-
 ### ① Operator (=function) that returns a function
 
-function: value ->  **function** 
+function: value ->  **function**
 
 ### ② Operator (=function) that takes a function
 
@@ -155,7 +154,7 @@ function:  **function**  -> value
 
 ### ③ Operator (=function) that takes a function and returns a function
 
-function:  **function**  ->  **function** 
+function:  **function**  ->  **function**
 
 ---
 
@@ -165,7 +164,7 @@ So, this is a **higher-order function** which returns a function as it's result.
 
 #### ① Operator (=function) that returns a function
 
-function: value ->  **function** 
+function: value ->  **function**
 
 ## ② Operator (=function) that takes a function
 
@@ -197,10 +196,9 @@ let (|>) x f = f x
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
-**Mathematics and Functional Programming: Omitting Parentheses   $( )$   for Function Application:**  $f (x)$ 
+**Mathematics and Functional Programming: Omitting Parentheses   $( )$   for Function Application:**  $f (x)$
 
 In mathematics, it is common practice to omit parentheses when applying functions, especially in advanced mathematical texts and papers. This is particularly evident with trigonometric functions like  **sine** , where
-
 
 $$
 \sin(θ)
@@ -253,7 +251,7 @@ The  **pipe operator**   `|>`  eliminates the complicated nesting of `( )` notat
 
 [List.reduce](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#reduce) is a  **function**  that takes a  **function**  and returns a  **function** .
 
-function:  **function**  ->  **function** 
+function:  **function**  ->  **function**
 
 See [Advanced operator for iteration](https://github.com/ken-okabe/vanfs/blob/main/README-howFP.md#advanced-operator-for-iteration) in [💡 How does Functional Programming Code Drive?](./README-howFP.md)
 
@@ -264,7 +262,7 @@ let reducer =
     List.reduce (+)
 ```
 
- `List.reduce (+)` takes a function:  `(+)`  and returns a function:  `reducer` .
+`List.reduce (+)` takes a function:  `(+)`  and returns a function:  `reducer` .
 
 ```fsharp
 let sum =
@@ -292,7 +290,7 @@ let sum =
 
 $list \quad \triangleright  reduce \quad function$
 
- **It can be interpreted as creating a new binary operator:**
+**It can be interpreted as creating a new binary operator:**
 
 $$
 \triangleright  reduce

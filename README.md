@@ -97,6 +97,46 @@ https://codepen.io/kentechgeek/pen/VwNOVOx
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714590641481.png)
 
+## Components with parameters
+
+**VanJS**  components are just functions in JavaScript.
+
+**VanFS**  components are just functions in F#, and  **there are no strict rules like functional components in React.**
+
+However, if we aim for a consistent style for  **components with parameters**  that is similar to:
+
+```fsharp
+a [{|href="https://vanjs.org/"|}]
+```
+
+the following code should be more appropriate:
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let Greeting: Tag =
+    fun list ->
+        let name: string = list[0]?name
+        div [$"Hello {name}!"]
+
+add [document.body; Greeting [{|name="Ken"|}]]
+|> ignore
+```
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714896318658.png)
+
+Here is the corresponding TSX code:
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images4/main/tsx.svg">
+
+```js
+const Greeting: Component<{ name: string }> =
+    ({ name }) => 
+        <div>Hello {name}!</div>;
+
+render(() => <Greeting name="Ken" />, document.body);
+```
+
 ## Why VanJS is based on Vanilla JavaScript
 
 [VanJS: About - the Story behind VanJS](https://vanjs.org/about#story)
