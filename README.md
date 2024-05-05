@@ -158,16 +158,15 @@ TS code for the purpose of conversion  using JS Proxy:
 
 ### 2. For styles and Web Components
 
-Users must install any required  **CSS**  or  **Web Components** . 
+Users must install any required  **CSS**  or  **Web Components** .
 
-**VanJS does not provide the specific installation support beause it's just a VanillaJS.** 
+**VanJS does not provide the specific installation support beause it's just a VanillaJS.**
 
 On the other hand,  **VanFS**  clarifies the step-by-step process as below:
 
 - [🚀 Getting Started](#getting-started)
 
 #### CSS
-
 
 Everything we need to customize or import is located under web-imports directory.
 
@@ -177,7 +176,7 @@ Everything we need to customize or import is located under web-imports directory
 
 #### Import and Register the web components
 
-##### /web-imports/components.ts 
+##### /web-imports/components.ts
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/typescript.svg">
 
@@ -211,8 +210,7 @@ export let cssURLs = [
 
 ---
 
-
- **Regardless, all the required code within the VanFS project is compiled into a single VanillaJS bundle using Fable and Vite.** 
+**Regardless, all the required code within the VanFS project is compiled into a single VanillaJS bundle using Fable and Vite.**
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714047967751.png)
 
@@ -1010,7 +1008,7 @@ record Timeline<'a>
 ```js
 let counter = van.state(0);
 
-console.log counter.val;
+console.log(counter.val);
 // 0
 ```
 
