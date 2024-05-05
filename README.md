@@ -105,8 +105,7 @@ https://codepen.io/kentechgeek/pen/VwNOVOx
 
 However, if we aim for a consistent style for  **components with parameters**  that is similar to:
 
-```fsharp
-a [{|href="https://vanjs.org/"|}]
+```fsharpa [{|href="https://vanjs.org/"|}; "🍦VanJS"]
 ```
 
 the following code should be more appropriate:
