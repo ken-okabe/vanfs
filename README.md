@@ -1347,6 +1347,8 @@ Currently, this syntax will generate an error.
 
 Therefore, here's the alternative implementation:
 
+https://github.com/ken-okabe/vanfs/blob/main/timeline/x-nullable.fs
+
 ### `NullableT`
 
 ```fsharp
