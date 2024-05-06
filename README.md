@@ -929,7 +929,7 @@ In order to utilize the state management, VanJS provides two APIs: `van.state` a
 
 ## What is Functional Programming?
 
-Given the critical significance of functional programming in modern software development, I have dedicated a separate article to exploring its key concepts and benefits.
+Given the critical significance of Functional Programming in modern software development, I have dedicated a separate article to exploring its key concepts and benefits.
 
 ### [💡 What is Functional Programming?](./README-whatisFP.md)
 
@@ -1429,7 +1429,7 @@ This specification resembles F#'s native [nullable value types](https://learn.mi
 
 ---
 
- *[F# Nullness support](https://www.compositional-it.com/news-blog/fsharp-nullness-support/) may come soon!* 
+*[F# Nullness support](https://www.compositional-it.com/news-blog/fsharp-nullness-support/) may come soon!*
 
 >a preview of the work being done on the F# compiler to support .NET's nullness capabilities.
 

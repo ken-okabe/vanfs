@@ -8,11 +8,11 @@ What is  **Functional Programming** ? It's a programming paradigm that uses **Ex
 
 In contrast,  **Imperative Programming**  is a paradigm that uses  **Statements**  to control the flow of the code.
 
-Both programming paradigms have expressions and statements, but in functional programming, expressions are primarily used to compose other expressions, while in imperative programming, statements are primarily used to control the flow of execution.
+Both programming paradigms have expressions and statements, but in Functional Programming, expressions are primarily used to compose other expressions, while in Imperative Programming, statements are primarily used to control the flow of execution.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
-This insight is widely shared, and many people today may know  **what functional programming is.**
+This insight is widely shared, and many people today may know  **what Functional Programming is.**
 
 However, what is not widely shared is the  *answer to the mystery*  of  **how functional code drives without statements to control the flow of code** .
 
@@ -20,9 +20,9 @@ However, what is not widely shared is the  *answer to the mystery*  of  **how fu
 
 Alternatively, it might be more accurate to say that the  **engine is built-in**  from the start.
 
-In functional programming, code is a composition of  **expressions** , and the evaluation order of these expressions is strictly defined based on mathematical rules.
+In Functional Programming, code is a composition of  **expressions** , and the evaluation order of these expressions is strictly defined based on mathematical rules.
 
-Therefore,  **statements**  that control the flow of code, as in imperative programming, are not required in functional programming. (*In principle, at least.)*
+Therefore,  **statements**  that control the flow of code, as in Imperative Programming, are not required in Functional Programming. (*In principle, at least.)*
 
 ## Operator associativity
 
@@ -100,15 +100,15 @@ In mathematics, the order of operations, also known as  **operator precedence** 
 
 >These conventions exist to avoid notational [ambiguity](https://en.wikipedia.org/wiki/Ambiguity "Ambiguity") while allowing notation to remain brief.[[4]](https://en.wikipedia.org/wiki/Order_of_operations#cite_note-Swokowski-4) Where it is desired to override the precedence conventions, or even simply to emphasize them, [parentheses](https://en.wikipedia.org/wiki/Bracket#Parentheses "Bracket") ( ) can be used. For example,  $(2 + 3) \times 4 = 20$  forces addition to precede multiplication, while  $(3 + 5)^2  = 64$  forces addition to precede [exponentiation](https://en.wikipedia.org/wiki/Exponentiation "Exponentiation").
 
-## Know the operators in functional programming
+## Know the operators in Functional Programming
 
-Knowing how to use operators is essential for functional programming because the  **operator itself knows the order to perform the evaluations** .
+Knowing how to use operators is essential for Functional Programming because the  **operator itself knows the order to perform the evaluations** .
 
 ## Advanced operator for iteration
 
 #### What is the sum of the integers from  $0$  to  $5$ ?
 
-Accustomed to the conventions of imperative programming, many programmers typically employ a  `for`  loop to solve this problem.
+Accustomed to the conventions of Imperative Programming, many programmers typically employ a  `for`  loop to solve this problem.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
@@ -120,7 +120,7 @@ for (let i = 0; i <= 5; i++) {
 console.log(sum); // 15
 ```
 
-After all, Imperative programming is an approach to consider the flow of the code.
+After all, Imperative Programming is an approach to consider the flow of the code.
 
 [Flowchart](https://en.wikipedia.org/wiki/Flowchart)
 
@@ -139,7 +139,7 @@ After all, Imperative programming is an approach to consider the flow of the cod
 
 ---
 
-On the other hand, Functional programming is an approach to consider the expressions of Mathematics.
+On the other hand, Functional Programming is an approach to consider the expressions of Mathematics.
 
 #### What is the sum of the integers from  $0$  to  $5$ ?
 
@@ -155,7 +155,7 @@ $$
 
 The most important thing to understand is that this is a  **straightforward calculation** .
 
-However, in imperative programming, solving such problems often involves  **designing loops with ever-changing variables** . This can lead to complexities that obscure the problem's essence and increase the risk of introducing bugs.
+However, in Imperative Programming, solving such problems often involves  **designing loops with ever-changing variables** . This can lead to complexities that obscure the problem's essence and increase the risk of introducing bugs.
 
 The calculation for this problem proceeds as follows.
 
@@ -175,11 +175,11 @@ $$
 \end{gather*}
 $$
 
-So, know the operators in functional programming.
+So, know the operators in Functional Programming.
 
 The adequate operator that is capable of calculating this structure is called [Fold (higher-order function)](https://en.wikipedia.org/wiki/Fold_(higher-order_function))
 
-> In [functional programming](https://en.wikipedia.org/wiki/Functional_programming "Functional programming"), **fold** (also termed **reduce**, **accumulate**, **aggregate**, **compress**, or **inject**) refers to a family of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function "Higher-order function") that [analyze](https://en.wikipedia.org/wiki/Analysis "Analysis") a [recursive](https://en.wikipedia.org/wiki/Recursive_data_type "Recursive data type") data structure and through use of a given combining operation, recombine the results of [recursively](https://en.wikipedia.org/wiki/Recursion "Recursion") processing its constituent parts, building up a return value.
+> In [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming "Functional Programming"), **fold** (also termed **reduce**, **accumulate**, **aggregate**, **compress**, or **inject**) refers to a family of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function "Higher-order function") that [analyze](https://en.wikipedia.org/wiki/Analysis "Analysis") a [recursive](https://en.wikipedia.org/wiki/Recursive_data_type "Recursive data type") data structure and through use of a given combining operation, recombine the results of [recursively](https://en.wikipedia.org/wiki/Recursion "Recursion") processing its constituent parts, building up a return value.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
@@ -223,7 +223,7 @@ $$
 \end{gather*}
 $$
 
-In functional programming, typically, every element is either an expression or an operation. This paradigm allows for computations to be performed without the need for traditional control flow structures such as  `for`  loops.
+In Functional Programming, typically, every element is either an expression or an operation. This paradigm allows for computations to be performed without the need for traditional control flow structures such as  `for`  loops.
 
 ## Simple operator for conditional
 
@@ -234,7 +234,7 @@ In functional programming, typically, every element is either an expression or a
 [Conditional ](https://en.wikipedia.org/wiki/Conditional_(computer_programming))
 
 > ## Terminology
-> In  [imperative programming](https://en.wikipedia.org/wiki/Imperative_programming "Imperative programming")  languages, the term "conditional  [statement](https://en.wikipedia.org/wiki/Statement_(programming) "Statement (programming)")" is usually used, whereas in  [functional programming](https://en.wikipedia.org/wiki/Functional_programming "Functional programming"), the terms "conditional  [expression](https://en.wikipedia.org/wiki/Expression_(programming) "Expression (programming)")" or "conditional construct" are preferred, because these terms all have distinct meanings.
+> In  [Imperative Programming](https://en.wikipedia.org/wiki/Imperative_programming "Imperative Programming")  languages, the term "conditional  [statement](https://en.wikipedia.org/wiki/Statement_(programming) "Statement (programming)")" is usually used, whereas in  [Functional Programming](https://en.wikipedia.org/wiki/Functional_programming "Functional Programming"), the terms "conditional  [expression](https://en.wikipedia.org/wiki/Expression_(programming) "Expression (programming)")" or "conditional construct" are preferred, because these terms all have distinct meanings.
 
 In modern programming languages,  `if/else` is no longer a  **statement** but an  **expression** and  **operators** :
 
@@ -302,7 +302,7 @@ let result =
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images/main/img_1687331557359.png#gh-dark-mode-only)
 
-In imperative programming, the order of statements in the code,  **from top to bottom** , determines the sequence of their execution  **without the need for explicit control structures** .
+In Imperative Programming, the order of statements in the code,  **from top to bottom** , determines the sequence of their execution  **without the need for explicit control structures** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
@@ -311,7 +311,7 @@ console.log "Hello";
 console.log "world!";
 ```
 
-This style of imperative programming is also used in functional languages ​​like F# due to its simplicity, which is good.
+This style of Imperative Programming is also used in functional languages ​​like F# due to its simplicity, which is good.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
@@ -322,7 +322,7 @@ printfn "world!"
 
 On the other hand,  **pure functional languages**  ​​like [Haskell](https://www.haskell.org/) do not allow this style for sequnece simply because there is a strict rule that  **the order of code execution is determined by the order of mathematical operations.**
 
-However, the use of  `do`  notation allows programmers to write code in a similar style of imperative programming.
+However, the use of  `do`  notation allows programmers to write code in a similar style of Imperative Programming.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images4/main/haskell.svg">
 

@@ -4,7 +4,7 @@ What is  **Functional Programming** ? It's a programming paradigm that uses **Ex
 
 In contrast,  **Imperative Programming**  is a paradigm that uses  **Statements**  to control the flow of the code.
 
-Both programming paradigms have expressions and statements, but in functional programming, expressions are primarily used to compose other expressions, while in imperative programming, statements are primarily used to control the flow of execution.
+Both programming paradigms have expressions and statements, but in Functional Programming, expressions are primarily used to compose other expressions, while in Imperative Programming, statements are primarily used to control the flow of execution.
 
 [💡 How does Functional Programming Code Drive?](./README-howFP.md)
 
@@ -74,23 +74,23 @@ For instance, `1` is resolved to a value: `1`, so `1` itself is an expression.
 
 ## Functions are expressions
 
-In functional programming languages,  **functions are expressions.**
+In Functional Programming languages,  **functions are expressions.**
 
 In other words,  **functions are treated as [first-class values](https://en.wikipedia.org/wiki/First-class_citizen)** . This means  **they can be assigned to variables, passed as arguments, and returned from other functions.**
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
-**[First-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) is the fundamental requirement for a programming language to be considered a functional programming language.**
+**[First-class function](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) is the fundamental requirement for a programming language to be considered a Functional Programming language.**
 
-In [C](https://en.wikipedia.org/wiki/C_(programming_language)), functions are not first-class values, which means they cannot be treated as expressions. This lack of first-class functions prevents C from being considered a functional programming language.
+In [C](https://en.wikipedia.org/wiki/C_(programming_language)), functions are not first-class values, which means they cannot be treated as expressions. This lack of first-class functions prevents C from being considered a Functional Programming language.
 
-Functions in JavaScript/TypeScript and F# are first-class values, which are expressions. Therefore, both JavaScript/TypeScript and F# can be classified as functional programming languages.
+Functions in JavaScript/TypeScript and F# are first-class values, which are expressions. Therefore, both JavaScript/TypeScript and F# can be classified as Functional Programming languages.
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
 ## Higher-order functions
 
-[First-class functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) naturally lead us to the concept of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function), which become incredibly powerful tools in functional programming.
+[First-class functions](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) naturally lead us to the concept of [higher-order functions](https://en.wikipedia.org/wiki/Higher-order_function), which become incredibly powerful tools in Functional Programming.
 
 ## ① Operator (=function) that returns a function
 
