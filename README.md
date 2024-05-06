@@ -1423,6 +1423,12 @@ log nullable2.Value
 
 This specification resembles F#'s native [nullable value types](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/nullable-value-types), but unlike it,  **`NullableT`  can also represent any reference types.**
 
+---
+
+ *[F# Nullness support](https://www.compositional-it.com/news-blog/fsharp-nullness-support/) may come soon!* 
+
+>a preview of the work being done on the F# compiler to support .NET's nullness capabilities.
+
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/separator.svg">
 
 | Contents |
