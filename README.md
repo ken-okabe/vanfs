@@ -139,6 +139,8 @@ render(() => <Greeting name="Ken" />, document.body);
 
 ## Why VanJS is based on Vanilla JavaScript
 
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712047413143.png)
+
 [VanJS: About - the Story behind VanJS](https://vanjs.org/about#story)
 
 >But I think, in a nutshell, the best way to describe it is:  ***VanJS**  is the scripting language for UI, just like bash is the  *scripting language*  for terminal.*
@@ -152,6 +154,8 @@ render(() => <Greeting name="Ken" />, document.body);
 ## Why we should avoid using JavaScript
 
 **VanJS is a library based on Vanilla JavaScript for the well-established reasons.**
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1714981242090.png)
 
 However, to take full advantage of  **VanJS** , we should consider using  **alternative languages instead of JavaScript** , which are commonly referred to as  **AltJS** .
 
