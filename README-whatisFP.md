@@ -4,7 +4,7 @@ What is  **Functional Programming** ? It's a programming paradigm that uses **Ex
 
 In contrast,  **Imperative Programming**  is a paradigm that uses  **Statements**  to control the flow of the code.
 
-<video src="https://github.com/ken-okabe/fp60-mp4/raw/main/fp60-101f.mp4"  type="video/mp4">video1</video>
+<video src="https://github.com/ken-okabe/fp60-mp4/assets/1316994/4d34e701-4061-44f8-b1a2-7ae3f5ccf8f8"  type="video/mp4">video1</video>
 
 
 Both programming paradigms have expressions and statements, but in Functional Programming, expressions are primarily used to compose other expressions, while in Imperative Programming, statements are primarily used to control the flow of execution.
