@@ -12,17 +12,17 @@ Both programming paradigms have expressions and statements, but in Functional Pr
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
-This insight is widely shared, and many people today may know  **what Functional Programming is.**
+This insight is widely shared, and many people today may know what Functional Programming is.
 
-However, what is not widely shared is the  *answer to the mystery*  of  **how functional code drives without statements to control the flow of code** .
+However, less well-understood is  **how functional code achieves control flow without the use of explicit control statements such as `if` or `for` loops.** 
 
-## Battery included!
+## Battery included! Mathematics
 
-Alternatively, it might be more accurate to say that the  **engine is built-in**  from the start.
+The answer is mathematics. 
 
-In Functional Programming, code is a composition of  **expressions** , and the evaluation order of these expressions is strictly defined based on mathematical rules.
+In Functional Programming,  **code is a composition of expressions, and the evaluation order of these expressions is strictly defined based on mathematical rules.** 
 
-Therefore,  **statements**  that control the flow of code, as in Imperative Programming, are not required in Functional Programming. (*In principle, at least.)*
+Therefore, statements that control the flow of code, in principle, are not required in Functional Programming.
 
 ## Operator associativity
 
