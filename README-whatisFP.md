@@ -36,6 +36,8 @@ $double (1 + 2 + 3)$
 
 ---
 
+https://gist.github.com/assets/1316994/ef76c242-9487-48ef-945a-f3fae1301354
+
 These elements follow a set of  **associativity** and **precedence rules**  to determine the  **order of evaluation** .
 
 $double (1 + 2 + 3)$
@@ -44,7 +46,7 @@ $double (3 + 3)$
 
 $double (6)$
 
- $12$ 
+$12$
 
 **The expression ultimately produces a single resolved value. In programming, this resolved value can also be considered an expression itself.**
 
