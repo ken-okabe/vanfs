@@ -36,7 +36,7 @@ $double (1 + 2 + 3)$
 
 ---
 
-These elements follow a set of  **associativity** and **precedence rules**  to determine the order of evaluation.
+These elements follow a set of  **associativity** and **precedence rules**  to determine the  **order of evaluation** .
 
 $double (1 + 2 + 3)$
 
@@ -44,9 +44,9 @@ $double (3 + 3)$
 
 $double (6)$
 
-12
+ $12$ 
 
- **The expression ultimately produces a single resolved value. In programming, this resolved value can also be considered an expression itself.** 
+**The expression ultimately produces a single resolved value. In programming, this resolved value can also be considered an expression itself.**
 
 $$
 1 + 2 + 3 = 6
@@ -58,7 +58,7 @@ $$
 
 Expressions are essential tools for representing calculations and manipulating data in both mathematics and programming.
 
-Their ability to combine values, operators and functions with defined evaluation rules makes them possible  **building blocks for Functional Programming** .
+Their ability to combine values, operators and functions with defined evaluation rules makes them possible  **building blocks for Functional Programming**.
 
 ## What is Binary operation?
 
