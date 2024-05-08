@@ -14,13 +14,47 @@ Both programming paradigms have expressions and statements, but in Functional Pr
 
 In mathematics and programming, an expression is a combination of  **values**,  **operators**  and  **functions** .
 
-$$
-double (1 + 2) = 6
-$$
+---
+
+### Values
+
+$1 ~ ~ ~ ~ 2 ~ ~ ~ ~ 3$
+
+---
+
+### Operators
+
+![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1715129229923.png)
+
+$1 + 2+ 3$
+
+---
+
+### Functions
+
+$double (1 + 2 + 3)$
+
+---
 
 These elements follow a set of  **associativity** and **precedence rules**  to determine the order of evaluation.
 
+$double (1 + 2 + 3)$
+
+$double (3 + 3)$
+
+$double (6)$
+
+12
+
  **The expression ultimately produces a single resolved value. In programming, this resolved value can also be considered an expression itself.** 
+
+$$
+1 + 2 + 3 = 6
+$$
+
+$$
+double (1 + 2 + 3) = 12
+$$
 
 Expressions are essential tools for representing calculations and manipulating data in both mathematics and programming.
 
