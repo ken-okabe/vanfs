@@ -12,6 +12,22 @@ Both programming paradigms have expressions and statements, but in Functional Pr
 
 ## What is Expression?
 
+In mathematics and programming, an expression is a combination of  **values**,  **operators**  and  **functions** .
+
+$$
+double (1 + 2) = 6
+$$
+
+These elements follow a set of  **associativity** and **precedence rules**  to determine the order of evaluation.
+
+ **The expression ultimately produces a single resolved value. In programming, this resolved value can also be considered an expression itself.** 
+
+Expressions are essential tools for representing calculations and manipulating data in both mathematics and programming.
+
+Their ability to combine values, operators and functions with defined evaluation rules makes them possible  **building blocks for Functional Programming** .
+
+## What is Binary operation?
+
 $1 + 2$
 
 $5 - 3$
@@ -20,7 +36,7 @@ $2 \times 3$
 
 $8 \div 4$
 
-These are familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation) called **four arithmetic operations** , which is a type of  **Expressions** .
+These are familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation) called **four arithmetic operations** , which is a type of  **expressions** .
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712224131411.png)
 
