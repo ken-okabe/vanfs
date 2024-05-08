@@ -12,7 +12,8 @@ Both programming paradigms have expressions and statements, but in Functional Pr
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
-https://gist.github.com/assets/1316994/18c31c0c-0727-4863-8780-a750eec7c7f8
+https://gist.github.com/assets/1316994/7b2ef060-1fa6-47d8-912c-772ff317a9aa
+
 
 This insight is widely shared, and many people today may know what Functional Programming is.
 

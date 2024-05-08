@@ -4,7 +4,8 @@ What is  **Functional Programming** ? It's a programming paradigm that uses **Ex
 
 In contrast,  **Imperative Programming**  is a paradigm that uses  **Statements**  to control the flow of the code.
 
-https://gist.github.com/assets/1316994/39a55e67-a4a8-4e88-a6fb-1700609be09a
+https://gist.github.com/assets/1316994/62fdebe6-7fdf-49fb-a880-e9c80b461e5c
+
 
 Both programming paradigms have expressions and statements, but in Functional Programming, expressions are primarily used to compose other expressions, while in Imperative Programming, statements are primarily used to control the flow of execution.
 
@@ -36,7 +37,7 @@ $double (1 + 2 + 3)$
 
 ---
 
-https://gist.github.com/assets/1316994/ef76c242-9487-48ef-945a-f3fae1301354
+https://gist.github.com/assets/1316994/d57a4908-f6ec-43ad-9c2b-0b1ab2ad15d4
 
 These elements follow a set of  **associativity** and **precedence rules**  to determine the  **order of evaluation** .
 
