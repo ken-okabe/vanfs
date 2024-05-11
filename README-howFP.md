@@ -71,7 +71,7 @@ $$
 \end{align*}
 $$
 
- **Parentheses ( )**  can override this order.
+**Parentheses ( )**  can override this order.
 This results in the same answer in both cases, but it highlights the importance of  **associativity**  and the use of  **parentheses to control the order of evaluation** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
@@ -90,17 +90,29 @@ It is important to understand the associativity of operators when writing expres
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
-## Operator priority(precedence)
+## Operatorprecedence
 
-How about this expression?
+Expressions follow a set of  **Operator associativity**  and  **precedence**  rules to determine the order of evaluation.
+
+- Operator associativity
+
+- Operator precedence
+
+<video controls muted=false
+  src="https://gist.github.com/assets/1316994/5908d34e-9f66-4986-91dc-410ebed99df2" type="video/mp4">
+</video>
+
+What is  **Operator precedence** ?
+
+Let's consider an expression:
 
 $$
 1 + 2 \times 3
 $$
 
-This is also a combination of two binary operations, but with mix of  $+$  and  $\times$ .
+This is a combination of two binary operations.
 
-In this case, it is equivalent to:
+In this case, it is equivalent to as follows:
 
 $$
 1 + (2 \times 3)
@@ -108,9 +120,7 @@ $$
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1713914800211.png)
 
-But, why $1 + 2 \times 3$ becomes $1 + (2 \times 3)$ ??
-
-In mathematics, the order of operations, also known as  **operator precedence**  or  **operator priority** , is a set of rules that define the order in which operations should be performed in an expression. This is important because different orders of operations can produce different results.
+In mathematics,  **operator precedence**  (or  **priority** ) is a set of  **rules that define the order in which operations are evaluated in an expression** .
 
 $$
 \begin{align*}
@@ -121,11 +131,17 @@ $$
 \end{align*}
 $$
 
+It essentially determines which calculations are done first in a math problem with multiple operations.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
+
 [Order of operations](https://en.wikipedia.org/wiki/Order_of_operations)
 
 >For example, multiplication is granted a higher precedence than addition, and it has been this way since the introduction of modern [algebraic notation](https://en.wikipedia.org/wiki/Mathematical_notation "Mathematical notation").[[2]](https://en.wikipedia.org/wiki/Order_of_operations#cite_note-BS-2)[[3]](https://en.wikipedia.org/wiki/Order_of_operations#cite_note-Peterson-3) Thus, in the expression  $1 + 2 \times 3$ , the multiplication is performed before addition, and the expression has the value  $1 + (2 \times 3) = 7$ , and not  $(1 + 2) \times 3 = 9$ .
 
 >These conventions exist to avoid notational [ambiguity](https://en.wikipedia.org/wiki/Ambiguity "Ambiguity") while allowing notation to remain brief.[[4]](https://en.wikipedia.org/wiki/Order_of_operations#cite_note-Swokowski-4) Where it is desired to override the precedence conventions, or even simply to emphasize them, [parentheses](https://en.wikipedia.org/wiki/Bracket#Parentheses "Bracket") ( ) can be used. For example,  $(2 + 3) \times 4 = 20$  forces addition to precede multiplication, while  $(3 + 5)^2  = 64$  forces addition to precede [exponentiation](https://en.wikipedia.org/wiki/Exponentiation "Exponentiation").
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
 ## Know the operators in Functional Programming
 
