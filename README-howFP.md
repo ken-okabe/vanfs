@@ -14,7 +14,6 @@ Both programming paradigms have expressions and statements, but in Functional Pr
 
 https://gist.github.com/assets/1316994/7b2ef060-1fa6-47d8-912c-772ff317a9aa
 
-
 This insight is widely shared, and many people today may know what Functional Programming is.
 
 However, less well-understood is  **how functional code achieves control flow without the use of explicit control statements such as `if` or `for` loops.**
@@ -60,7 +59,12 @@ In mathematics, a **left-associative operator**  is an operator that is evaluate
 The addition operator ( $+$ ) is a  **left-associative operator**  in most programming languages and mathematical contexts. This means that the following expressions are evaluated as follows:
 
 $$
-1 + 2 + 3 = (1 + 2) + 3 = 6
+\begin{align*}
+&\quad ~ ~ ~ 1 + 2 + 3  \\
+&= (1 + 2) + 3 \\
+&= 3 + 3  \\
+&= 6 
+\end{align*}
 $$
 
 In contrast, a  **right-associative operator**  is an operator that is evaluated from right to left. For example, the exponentiation operator ( $\textasciicircum$ ) is  **right-associative** in many languages, so the following expression is evaluated as follows:
