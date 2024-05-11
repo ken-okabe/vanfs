@@ -90,7 +90,7 @@ It is important to understand the associativity of operators when writing expres
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
 
-## Operatorprecedence
+## Operator precedence
 
 Expressions follow a set of  **Operator associativity**  and  **precedence**  rules to determine the order of evaluation.
 
@@ -131,7 +131,7 @@ $$
 \end{align*}
 $$
 
-It essentially determines which calculations are done first in a math problem with multiple operations.
+It essentially determines which calculations are done first in a math problem with  **multiple operations** .
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/note.svg">
 
