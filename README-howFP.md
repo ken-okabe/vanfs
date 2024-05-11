@@ -112,6 +112,15 @@ But, why $1 + 2 \times 3$ becomes $1 + (2 \times 3)$ ??
 
 In mathematics, the order of operations, also known as  **operator precedence**  or  **operator priority** , is a set of rules that define the order in which operations should be performed in an expression. This is important because different orders of operations can produce different results.
 
+$$
+\begin{align*}
+&\quad ~ ~ ~ 1 + 2 \times 3  \\
+&= 1 + (2 \times 3) \\
+&= 1 + 6  \\
+&= 7
+\end{align*}
+$$
+
 [Order of operations](https://en.wikipedia.org/wiki/Order_of_operations)
 
 >For example, multiplication is granted a higher precedence than addition, and it has been this way since the introduction of modern [algebraic notation](https://en.wikipedia.org/wiki/Mathematical_notation "Mathematical notation").[[2]](https://en.wikipedia.org/wiki/Order_of_operations#cite_note-BS-2)[[3]](https://en.wikipedia.org/wiki/Order_of_operations#cite_note-Peterson-3) Thus, in the expression  $1 + 2 \times 3$ , the multiplication is performed before addition, and the expression has the value  $1 + (2 \times 3) = 7$ , and not  $(1 + 2) \times 3 = 9$ .
