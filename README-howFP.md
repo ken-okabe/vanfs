@@ -54,9 +54,7 @@ $$
 
 But, why $1 + 2 + 3$ becomes $(1 + 2) + 3$ ??
 
-In mathematics, a **left-associative operator**  is an operator that is evaluated from left to right. This means that when multiple instances of the operator appear in an expression, the operations are performed in the order that they are written, starting from the leftmost operator.
-
-The addition operator ( $+$ ) is a  **left-associative operator**  in most programming languages and mathematical contexts. This means that the following expressions are evaluated as follows:
+In mathematics, the addition operator **(+) is left-associative** , meaning we perform calculations  **from left to right**  when evaluating expressions containing  **multiple (+)  signs** .
 
 $$
 \begin{align*}
@@ -67,6 +65,9 @@ $$
 \end{align*}
 $$
 
+ **Parentheses ( )**  can override this order.
+This results in the same answer in both cases, but it highlights the importance of  **associativity**  and the use of  **parentheses to control the order of evaluation** .
+
 In contrast, a  **right-associative operator**  is an operator that is evaluated from right to left. For example, the exponentiation operator ( $\textasciicircum$ ) is  **right-associative** in many languages, so the following expression is evaluated as follows:
 
 $$
@@ -75,7 +76,7 @@ $$
 
 It is important to understand the associativity of operators when writing expressions, as it can affect the order of operations and the final result.
 
-In programming context, it's often described as [Operator associativity](https://en.wikipedia.org/wiki/Operator_associativity)
+It is important to understand the associativity of operators when writing expressions, as it can affect the order of operations and the final result.
 
 > In [programming language theory](https://en.wikipedia.org/wiki/Programming_language_theory "Programming language theory"), the **associativity** of an [operator](https://en.wikipedia.org/wiki/Operator_(programming) "Operator (programming)") is a property that determines how operators of the same [precedence](https://en.wikipedia.org/wiki/Order_of_operations "Order of operations") are grouped in the absence of [parentheses](https://en.wikipedia.org/wiki/Bracket_(mathematics) "Bracket (mathematics)"). If an [operand](https://en.wikipedia.org/wiki/Operand "Operand") is both preceded and followed by operators (for example, `^ 3 ^`), and those operators have equal precedence, then the operand may be used as input to two different operations (i.e. the two operations indicated by the two operators). The choice of which operations to apply the operand to, is determined by the **associativity** of the operators. Operators may be **associative** (meaning the operations can be grouped arbitrarily), **left-associative** (meaning the operations are grouped from the left), **right-associative** (meaning the operations are grouped from the right) or **non-associative** (meaning operations cannot be chained, often because the output type is incompatible with the input types). The associativity and precedence of an operator is a part of the definition of the programming language; different programming languages may have different associativity and precedence for the same type of operator.
 
