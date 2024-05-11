@@ -64,6 +64,14 @@ Their ability to combine values, operators and functions with defined evaluation
 
 ## What is Binary operation?
 
+<video controls muted=false
+  src="https://gist.github.com/assets/1316994/f1261018-37d8-4de1-bf17-0d4e87c9e2e6" type="video/mp4">
+</video>
+
+In mathematics, a  **binary operation**  is a  **rule that combines two elements** , called  **operands** , to produce  **another element using an operator.**
+
+The most common binary operations are  **addition** ,  **subtraction** ,  **multiplication** , and  **division** , collectively known as the  **four basic arithmetic operations** .
+
 $1 + 2$
 
 $5 - 3$
@@ -72,11 +80,13 @@ $2 \times 3$
 
 $8 \div 4$
 
-These are familier [binary operations](https://en.wikipedia.org/wiki/Binary_operation) called **four arithmetic operations** , which is a type of  **expressions** .
+Here  $+$   $-$   $\times$   $\div$ is called  **binary [operator](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/)** .
 
 ![image](https://raw.githubusercontent.com/ken-okabe/web-images4/main/img_1712224131411.png)
 
-Here  $+$   $-$   $\times$   $\div$ is called  **binary [operator](https://learn.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/)** .
+These combine two numbers to produce a new number.
+
+These operations are widely used in everyday life, throughout mathematics, and in various programming languages.
 
 ## Operators are functions
 
