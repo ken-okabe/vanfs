@@ -58,10 +58,7 @@ In mathematics, a **left-associative operator**  is an operator that is evaluate
 
 The addition operator ( $+$ ) is a  **left-associative operator**  in most programming languages and mathematical contexts. This means that the following expressions are evaluated as follows:
 
-$$\begin{align*}&\quad ~ ~ ~ ~ 1 + 2 + 3  \\
-& ~ \\&= ~ (1 + 2) + 3 \\
-& ~ \\&= ~ 3 + 3  \\
-& ~ \\&= ~ 6 \end{align*}$$
+$$\begin{align*}&\quad ~ ~ ~ 1 + 2 + 3  \\&= (1 + 2) + 3 \\&= 3 + 3  \\&= 6 \end{align*}$$
 
 In contrast, a  **right-associative operator**  is an operator that is evaluated from right to left. For example, the exponentiation operator ( $\textasciicircum$ ) is  **right-associative** in many languages, so the following expression is evaluated as follows:
 
