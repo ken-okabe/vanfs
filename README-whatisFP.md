@@ -124,17 +124,18 @@ plus 1 2        // F#/Haskell
 plus(1)(2)      // F#/Haskell/JavaScript
 ```
 
-## The building blocks of code, expressions, can simply be values
+---
 
-Especially, in programming context, the building blocks of code, expressions, can simply be values.
+ $2 ^ 3 = 8$ 
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_operators
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/javascript.svg">
 
->At a high level, an expression is a valid unit of code that resolves to a value.
+```js
+Math.pow(2, 3) // 8
 
-For instance, `1` is resolved to a value: `1`, so `1` itself is an expression.
+2 ** 3 // 8
+```
 
-`"Hello"` is resolved to a value: `"Hello"`, so `"Hello"` is an expression.
 
 ## Functions are expressions
 
