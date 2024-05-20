@@ -214,6 +214,22 @@ let times34 =
 
 A function like this is called a [Higher-order_function](https://en.wikipedia.org/wiki/Higher-order_function).
 
+Converting a binary function like `times(3, 4)` into a higher-order function is often called currying.
+
+```js
+times(3, 4)
+```
+
+↓
+
+```js
+times(3)(4)
+```
+
+```fsharp
+times 3 4 
+```
+
 ---
 
 In  [mathematics](https://en.wikipedia.org/wiki/Mathematics "Mathematics")  and  [computer science](https://en.wikipedia.org/wiki/Computer_science "Computer science"), a  **higher-order function**  (**HOF**) is a  [function](https://en.wikipedia.org/wiki/Function_(mathematics) "Function (mathematics)")  that does at least one of the following:
