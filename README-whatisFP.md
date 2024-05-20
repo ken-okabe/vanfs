@@ -177,8 +177,8 @@ times(3)(4)     // F#/Haskell/JavaScript
 
 ```js
 let times =
-    a => b =>
-        a * b
+    a => 
+        b => a * b
 
 let times3 =
     times(3)
