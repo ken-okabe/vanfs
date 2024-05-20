@@ -197,6 +197,21 @@ let times34 =
 times(3)(4) // 12
 ```
 
+In F#, we don't need to use parentheses, so this is simply written as `times 3 4`.
+
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let times =
+    fun a ->
+        fun b ->
+            a * b
+
+let times34 =
+    times 3 4  // 12
+```
+
 A function like this is called a [Higher-order_function](https://en.wikipedia.org/wiki/Higher-order_function).
 
 ---
