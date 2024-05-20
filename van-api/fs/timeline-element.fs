@@ -47,8 +47,7 @@ module TimelineElement =
         fun f -> (f >> Timeline) |> bindT
 
     //==============================================================
-    let log = // 'a -> unit
-        fun a -> printfn "%A" a
+
 
     let logT =
         fun a ->
