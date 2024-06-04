@@ -186,15 +186,9 @@ On the other hand, Functional Programming is an approach to consider the express
 
 #### What is the sum of the integers from  $0$  to  $5$ ?
 
-This is a math problem, and probably, bright math students would replace the problem to:
-
 $$
-S = \sum_{n=0}^{5} n
+0 +1 + 2 + 3 + 4 + 5
 $$
-
-* **S** represents the sum we want to find
-* **Σ** denotes the summation symbol
-* **(n | n ∈ [0, 5])** represents the set of integers from 0 to 5, inclusive
 
 The most important thing to understand is that this is a  **straightforward calculation** .
 
