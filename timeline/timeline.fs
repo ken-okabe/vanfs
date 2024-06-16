@@ -19,13 +19,13 @@ module Timeline =
 
     let bindT =
         fun monadf timelineA ->
-            let timelineB = timelineA.lastVal |> monadf // f a
+            let timelineB = timelineA.lastVal |> monadf
             let newFn =
                 fun a ->
                     timelineB
                     |> nextT (a |> monadf).lastVal
                     |> ignore
-            timelineA._fns <- timelineA._fns @ [ newFn ] // mutable
+            timelineA._fns <- timelineA._fns @ [ newFn ]
             timelineB
     //----------------------------------------------
     let mapT =

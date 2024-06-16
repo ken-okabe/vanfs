@@ -233,7 +233,11 @@ let sum = [0;1;2;3;4;5] |> List.reduce (+)
 printfn "%d" sum // 15
 ```
 
-* **(n | n ∈ [0, 5])** represents the set of integers from 0 to 5, inclusive
+```fsharp
+let reducer = List.reduce (+)
+let sum = [0;1;2;3;4;5] |> reducer
+printfn "%d" sum // 15
+```
 
 Here, we simply prepare the set of integers from 0 to 5 as   `[0,1,2,3,4,5]` or  `[0;1;2;3;4;5]` , but it's also possible to calculate such a list/array by using an adequate operator/function.
 

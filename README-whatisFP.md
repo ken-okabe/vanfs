@@ -309,11 +309,12 @@ Similarly, in programming languages like F# and Haskell, function application  $
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
 
 ```fsharp
-let f =
-    fun x -> x + 1
-
+let f = fun x -> x + 1
 let x = 1
-let y = f x   // 2
+
+let y = f x     // 2
+
+let z = x |> f  // 2
 ```
 
 <img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/notefooter.svg">
@@ -348,6 +349,26 @@ let result2' =
 ```
 
 The  **pipe operator**   `|>`  eliminates the complicated nesting of `( )` notation and creates a clean  **pipeline**  by sequentially applying  `double`  functions to the data `1`.
+
+<img width="100%" src="https://raw.githubusercontent.com/ken-okabe/web-images/main/fsharp.svg">
+
+```fsharp
+let f = fun x -> x + 1
+let g = fun x -> x * 2
+let x = 1
+
+let y = g (f x)      // 4
+
+let z = x |> f |> g  // 4
+```
+
+```fsharp
+let output =
+    input 
+    |> function1
+    |> function2
+    |> function3
+```
 
 ## ③ Operator (=function) that takes a function and returns a function
 
