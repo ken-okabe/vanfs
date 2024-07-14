@@ -19,13 +19,13 @@ module TimelineNullable =
             let timelineB =
                 if timelineA.lastVal = Null
                 then Timeline Null
-                else timelineA.lastVal.Value |> monadf
+                else timelineA.lastVal |> monadf
             let newFn =
                 fun nullable ->
                     if nullable = Null
                     then () // do nothing
                     else timelineB
-                            |> nextTN (nullable.Value |> monadf).lastVal
+                            |> nextTN (nullable |> monadf).lastVal
                             |> ignore
             timelineA._fns <- timelineA._fns @ [ newFn ] // mutable
             timelineB
