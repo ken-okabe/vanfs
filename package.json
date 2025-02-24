@@ -1,6 +1,6 @@
 {
   "name": "vanfs",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Micro Functional Reactive UI Framework in F# based on VanJS",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,11 @@
   "author": "Ken Okabe",
   "license": "MIT",
   "devDependencies": {
-    "vanjs-core": "^1.5.0",
+    "vanjs-core": "^1.5.3",
     "vite": "^5.2.7"
   },
   "dependencies": {
-    "@fluentui/web-components": "^2.6.0",
+    "@fluentui/web-components": "^2.6.1",
     "@material/web": "^1.4.0"
   }
 }

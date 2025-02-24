@@ -1,13 +1,12 @@
-namespace Van
-module Basic =
+module Van.Basic
 
-    open Browser.Types
-    open Fable.Core.JsInterop
+open Browser.Types
+open Fable.Core.JsInterop
 
-    type Tag = List<obj> -> Element
+type Tag = List<obj> -> Element
 
-    let tags: obj
-        = importMember "../ts/basic"
+let tags: obj
+    = importMember "../ts/basic"
 
-    let add: List<obj> -> Element
-        = importMember "../ts/basic"
+let add: List<obj> -> Element
+    = importMember "../ts/basic"

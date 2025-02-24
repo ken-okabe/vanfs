@@ -1,15 +1,26 @@
-module Timeline
+module Van.Timeline
+
+open Fable.Core.JsInterop
+
+type StateElement<'a> =
+    {``val``: 'a} // native VanJS state object
+// val is a reserved word in F#
+// so we use backticks to escape it
+
+let state<'a> (a: 'a): StateElement<'a> =
+    importMember "../ts/state"
 
 // Timeline type definition
 type Timeline<'a> =
     { mutable _last: 'a       // Stores the most recent value
-      mutable _fns: list<'a -> unit> }  // List of functions to execute on updates
-
+      mutable _fns: list<'a -> unit> // List of functions to execute on updates
+      el: StateElement<'a> } // <== add native VanJS state object
 // Timeline constructor
 let Timeline =
     fun a ->
         { _last = a          // Initialize with initial value
-          _fns = [] }        // Start with empty function list
+          _fns = []          // Start with empty function list
+          el = state a } // <== add native VanJS state object
 
 // Utility functions for null handling
 let inline Null<'a when 'a:not struct> =
@@ -32,6 +43,8 @@ module TL =
         fun a timeline ->
             timeline._last <- a                           // Update current value
             timeline._fns |> List.iter (fun f -> f a)    // Execute all registered functions
+            // Update the native VanJS state object simultaneously.
+            timeline.el?``val`` <- a // <======================= add
 
     // Monadic bind operation
     let bind =

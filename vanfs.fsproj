@@ -6,14 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="timeline/*" />
+    <Compile Include="timeline/*.fs" />
     <Compile Include="van-api/fs/*.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fable.Browser.Dom" Version="2.16.0" />
-    <PackageReference Include="Fable.Core" Version="4.3.0" />
+    <PackageReference Include="Fable.Browser.Dom" Version="2.18.1" />
+    <PackageReference Include="Fable.Core" Version="4.24.0" />
   </ItemGroup>
 
 </Project>
