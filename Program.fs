@@ -31,7 +31,7 @@ open Browser.Types
 open Fable.Core.JsInterop
 
 open Van.Basic // import tags, add
-open Van.Timeline // import Timeline
+open Van.TimelineElement // import Timeline
 
 let div: Tag = tags?div
 let h2: Tag = tags?h2
@@ -40,10 +40,10 @@ let iconButton: Tag = tags?``md-icon-button``
 
 let Counter =
     fun _ ->
-        let counter = Timeline 0 // ① initialize an Timeline
+        let counter = TimelineE 0 // ① initialize an Timeline
 
         counter // ② the binary operation of the Timeline
-        |> TL.map (fun value ->
+        |> TLE.map (fun value ->
                      console.log $"Counter: {value}")
         |> ignore
         // ignore the return value of `console.log`
@@ -53,14 +53,14 @@ let Counter =
             iconButton [           // for Reactive DOM element
                 {|onclick = fun _ ->
                                 counter // ③ update the Timeline
-                                |> TL.next ((counter |> TL.last) + 1)
+                                |> TLE.next ((counter |> TLE.last) + 1)
                 |}
                 icon ["thumb_up"]
             ]
             iconButton [
                 {|onclick = fun _ ->
                                 counter // ③ update the Timeline
-                                |> TL.next ((counter |> TL.last) - 1)
+                                |> TLE.next ((counter |> TLE.last) - 1)
                 |}
                 icon ["thumb_down"]
             ]

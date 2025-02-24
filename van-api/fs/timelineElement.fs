@@ -1,4 +1,4 @@
-module Van.Timeline
+module Van.TimelineElement
 
 open Fable.Core.JsInterop
 
@@ -11,12 +11,12 @@ let state<'a> (a: 'a): StateElement<'a> =
     importMember "../ts/state"
 
 // Timeline type definition
-type Timeline<'a> =
+type TimelineE<'a> =
     { mutable _last: 'a       // Stores the most recent value
       mutable _fns: list<'a -> unit> // List of functions to execute on updates
       el: StateElement<'a> } // <== add native VanJS state object
 // Timeline constructor
-let Timeline =
+let TimelineE =
     fun a ->
         { _last = a          // Initialize with initial value
           _fns = []          // Start with empty function list
@@ -32,7 +32,7 @@ let isNullT (value: 'a when 'a:not struct) =
     else false
 
 // Timeline operations module
-module TL =
+module TLE =
     // Get the last/current value
     let last =
         fun timeline ->
@@ -61,7 +61,7 @@ module TL =
     // Functor map operation
     let map =
         fun f timelineA ->
-            let timelineB = Timeline (timelineA._last |> f)  // Create new timeline with transformed value
+            let timelineB = TimelineE (timelineA._last |> f)  // Create new timeline with transformed value
             let newFn =                                      // Create function to propagate future updates
                 fun a ->
                     timelineB |> next (a |> f)
@@ -80,7 +80,7 @@ module TL =
 
     // Or operation for two timelines
     let Or timelineA timelineB =
-        let timelineAB = Timeline Null
+        let timelineAB = TimelineE Null
 
         // Map both timelines to update timelineAB only when it's Null
         timelineA
@@ -111,7 +111,7 @@ module TL =
         { result = aResult.result @ bResult.result }
 
     let And timelineA timelineB =
-        let timelineAB: Timeline<obj> = Timeline Null
+        let timelineAB: TimelineE<obj> = TimelineE Null
 
         // Map both timelines to update timelineAB
         let updateAnd () =
