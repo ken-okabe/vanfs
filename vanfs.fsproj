@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="Fable.Browser.Dom" Version="2.18.1" />
-    <PackageReference Include="Fable.Core" Version="4.24.0" />
+    <PackageReference Include="Fable.Core" Version="4.4.0" />
   </ItemGroup>
 
 </Project>
